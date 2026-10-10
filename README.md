@@ -34,7 +34,7 @@ We present these limitations alongside the visualizations so that viewers can in
 - Ashle Sanchez
 - Aisha Ahmed
 - Kayleen Mukire
-Course
+# Course
 This project was created for CS 1710: Data Visualization at Harvard University.
 Process book
 Our design process, research questions, sketches, voting process, and design-review notes are documented in the project process book.
