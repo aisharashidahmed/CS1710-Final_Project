@@ -1,11 +1,18 @@
 <script>
 	import { onMount } from 'svelte';
-	import { loadCompanies } from '#lib/data.js';
+	import { loadCompanies, sectorOrder } from '#lib/data.js';
 	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
+	import SectorBars from '#lib/SectorBars.svelte';
 
 	// Every company, loaded once and shared by all the charts below.
 	let data = $state.raw(null);
+
+	// Sector rows stay in this order (highest median ratio first) in every chart.
+	let order = $derived(data ? sectorOrder(data) : []);
+
+	// Sector the reader is hovering in the bar chart.
+	let hoveredSector = $state(null);
 
 	onMount(async () => {
 		data = await loadCompanies();
@@ -42,7 +49,11 @@
 	<section id="sectors">
 		<h2>Which sectors have the biggest gaps?</h2>
 		<p>Every sector has a large gap, but the companies inside each sector differ even more.</p>
-		<Placeholder label="Sector bar chart (median pay ratio)" height={300} />
+		{#if data}
+			<SectorBars {data} {order} {hoveredSector} onhover={(s) => (hoveredSector = s)} />
+		{:else}
+			<Placeholder label="Loading sectors…" height={300} />
+		{/if}
 		<Placeholder label="Company dot plot, linked to the sector bars" height={360} />
 	</section>
 
