@@ -201,13 +201,21 @@
 		max-width: 860px;
 		margin: 0 auto;
 		padding: 2rem 1rem 4rem;
-		font-family: system-ui, sans-serif;
-		line-height: 1.5;
+		line-height: 1.55;
 	}
 
 	section {
-		padding: 2.5rem 0;
+		padding: 3rem 0;
 		border-bottom: 1px solid #eee;
+	}
+
+	#hook {
+		padding-top: 1rem;
+	}
+
+	section > p {
+		max-width: 680px;
+		font-size: 1.05rem;
 	}
 
 	footer {
@@ -217,15 +225,23 @@
 	}
 
 	.hint {
+		margin: 1rem 0 0.25rem;
 		font-size: 0.85rem;
 		color: #666;
 	}
 
 	.showing {
-		margin-top: 1.5rem;
+		margin-top: 2rem;
+		padding: 0.5rem 0.75rem;
+		border-left: 3px solid #2563eb;
+		background: #f5f8ff;
 	}
 
 	.lede {
-		font-size: 1.25rem;
+		font-size: 1.3rem;
+	}
+
+	ol li {
+		margin-bottom: 0.4rem;
 	}
 </style>
