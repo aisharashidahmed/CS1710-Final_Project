@@ -3,6 +3,7 @@
 	import * as d3 from 'd3';
 	import { loadCompanies, sectorOrder, ratioLabel } from '#lib/data.js';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
+	import PayScatter from '#lib/PayScatter.svelte';
 	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
 	import SectorBars from '#lib/SectorBars.svelte';
@@ -91,7 +92,15 @@
 			The companies with the most extreme ratios are not always the ones with the highest-paid
 			CEOs.
 		</p>
-		<Placeholder label="Scatterplot: median worker pay vs. CEO pay, with a workdays card" height={420} />
+		{#if data}
+			<p class="hint">
+				Each dot is one company. Dots above a dashed line have a higher pay ratio than that line.
+				Hover a dot for its pay details.
+			</p>
+			<PayScatter {data} />
+		{:else}
+			<Placeholder label="Loading companies…" height={420} />
+		{/if}
 		<Placeholder label="Slope chart: CEO pay rank vs. pay ratio rank" />
 	</section>
 
