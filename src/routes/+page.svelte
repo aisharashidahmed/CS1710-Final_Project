@@ -44,8 +44,8 @@
 	<section id="hook">
 		<h1>The CEO Pay Gap</h1>
 		<p class="lede">
-			In 2021, Amazon's CEO earned 6,474 times what the company's median worker earned. Watch that
-			gap grow while you read.
+			In 2021, <span class="ceo">Amazon's CEO</span> earned <strong>6,474 times</strong> what the
+			company's <span class="worker">median worker</span> earned. Watch that gap grow while you read.
 		</p>
 		<Hook />
 		<p>Every company tells a version of this story. Scroll to see where yours fits.</p>
@@ -55,8 +55,9 @@
 	<section id="timeline">
 		<h2>When would you have had to start working?</h2>
 		<p>
-			A company's pay ratio is also the number of years its median worker would need to work to
-			earn what the CEO made in one year.
+			A company's pay ratio is also the number of years its
+			<span class="worker">median worker</span> would need to work to earn what the
+			<span class="ceo">CEO</span> made in one year.
 		</p>
 		<Placeholder
 			label="Pyramid timeline"
@@ -101,8 +102,9 @@
 	<section id="drivers">
 		<h2>Is it high pay at the top, or low pay at the bottom?</h2>
 		<p>
-			The companies with the most extreme ratios are not always the ones with the highest-paid
-			CEOs.
+			The companies with the most extreme ratios are not always the ones with the
+			<span class="ceo">highest-paid CEOs</span>. Sometimes the gap comes from
+			<span class="worker">very low worker pay</span>.
 		</p>
 		{#if data}
 			<p class="hint">
@@ -133,8 +135,8 @@
 	<section id="poverty">
 		<h2>Below the poverty line</h2>
 		<p>
-			At 34 S&amp;P 500 companies, the median worker earns less than the poverty line for a family
-			of four.
+			At <strong>34</strong> S&amp;P 500 companies, the <span class="worker">median worker</span>
+			earns less than the poverty line for a family of four.
 		</p>
 		<Placeholder
 			label="Below-the-poverty-line callout"
@@ -233,8 +235,8 @@
 	.showing {
 		margin-top: 2rem;
 		padding: 0.5rem 0.75rem;
-		border-left: 3px solid #2563eb;
-		background: #f5f8ff;
+		border-left: 3px solid var(--sector-dark);
+		background: #f5f5f5;
 	}
 
 	.lede {

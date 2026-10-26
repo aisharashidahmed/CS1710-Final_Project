@@ -80,7 +80,7 @@
 				y={y(s.sector)}
 				width={x(s.median) - x(0)}
 				height={y.bandwidth()}
-				fill={s.sector === hoveredSector ? '#1e3a8a' : '#2563eb'}
+				fill={s.sector === hoveredSector ? 'var(--sector-dark)' : 'var(--sector)'}
 				opacity={selectedSector === null || s.sector === selectedSector ? 1 : 0.35}
 				stroke={s.sector === selectedSector ? '#111' : 'none'}
 				stroke-width="2"

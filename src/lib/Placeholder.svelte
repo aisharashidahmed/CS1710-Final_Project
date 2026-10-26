@@ -32,7 +32,7 @@
 	}
 
 	.placeholder.novel {
-		border-color: #b2182b;
+		border-color: var(--ceo);
 		background: #fbf1f1;
 	}
 
@@ -47,7 +47,7 @@
 	}
 
 	.novel .tag {
-		background: #b2182b;
+		background: var(--ceo);
 	}
 
 	p {

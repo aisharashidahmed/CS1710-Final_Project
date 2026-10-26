@@ -21,17 +21,18 @@
 <div class="counter">
 	<p class="intro">Since you opened this page ({Math.floor(seconds)} seconds ago):</p>
 	<div class="row">
-		<div class="box ceo">
+		<div class="box ceo-box">
 			<span class="who">Amazon's CEO earned</span>
 			<span class="amount">{money((CEO_PAY / SECONDS_PER_YEAR) * seconds)}</span>
 		</div>
-		<div class="box worker">
+		<div class="box worker-box">
 			<span class="who">Amazon's median worker earned</span>
 			<span class="amount">{money((WORKER_PAY / SECONDS_PER_YEAR) * seconds)}</span>
 		</div>
 	</div>
 	<p class="note">
-		Based on 2021 pay: {money(CEO_PAY)} for the CEO and {money(WORKER_PAY)} for the median worker.
+		Based on 2021 pay: <span class="ceo">{money(CEO_PAY)}</span> for the CEO and
+		<span class="worker">{money(WORKER_PAY)}</span> for the median worker.
 	</p>
 </div>
 
@@ -61,8 +62,20 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.ceo .amount {
-		color: #b2182b;
+	.ceo-box .amount {
+		color: var(--ceo);
+	}
+
+	.worker-box .amount {
+		color: var(--worker);
+	}
+
+	.ceo-box {
+		border-top: 4px solid var(--ceo);
+	}
+
+	.worker-box {
+		border-top: 4px solid var(--worker);
 	}
 
 	.note {

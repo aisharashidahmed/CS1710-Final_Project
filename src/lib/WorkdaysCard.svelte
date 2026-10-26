@@ -26,13 +26,13 @@
 		<p class="big">{timeLabel}</p>
 		<p>
 			is how long it took CEO {company.ceo} to earn what the company's median worker earns in a full
-			year ({money(company.workerPay)}).
+			year (<span class="worker">{money(company.workerPay)}</span>).
 		</p>
 
 		<!-- One bar = one work year (260 days). The red sliver is the CEO's time. -->
 		<svg viewBox="0 0 {barWidth} 34">
-			<rect x="0" y="4" width={barWidth} height="16" fill="#e2e8f0" />
-			<rect x="0" y="4" width={Math.max(2, (days / WORKDAYS_PER_YEAR) * barWidth)} height="16" fill="#dc2626" />
+			<rect x="0" y="4" width={barWidth} height="16" fill="var(--worker)" opacity="0.25" />
+			<rect x="0" y="4" width={Math.max(2, (days / WORKDAYS_PER_YEAR) * barWidth)} height="16" fill="var(--ceo)" />
 			<text x="0" y="32">Jan 1</text>
 			<text x={barWidth} y="32" text-anchor="end">Dec 31 (worker's full year)</text>
 		</svg>
@@ -63,7 +63,7 @@
 		margin: 6px 0 0;
 		font-size: 26px;
 		font-weight: bold;
-		color: #dc2626;
+		color: var(--ceo);
 	}
 	p {
 		margin: 4px 0;

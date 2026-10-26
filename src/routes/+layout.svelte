@@ -11,7 +11,29 @@
 {@render children()}
 
 <style>
-	/* Site-wide basics. Colors: red = CEO, blue = companies/workers. */
+	/* Color story, used on every chart: red = CEO pay, blue = worker pay,
+	   light purple = a company (it has both), gray = a sector. */
+	:global(:root) {
+		--ceo: #b2182b;
+		--worker: #2166ac;
+		--company: #a68bd1;
+		--company-dark: #5e3c99;
+		--sector: #9a9a9a;
+		--sector-dark: #333;
+	}
+
+	/* Highlight key numbers in the story text. */
+	:global(.ceo) {
+		color: var(--ceo);
+		font-weight: 700;
+	}
+
+	:global(.worker) {
+		color: var(--worker);
+		font-weight: 700;
+	}
+
+	/* Site-wide basics. */
 	:global(body) {
 		margin: 0;
 		background: #fff;
