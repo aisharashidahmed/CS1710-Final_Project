@@ -31,6 +31,10 @@
 		return h / 1000 - 0.5;
 	}
 
+	function cy(d) {
+		return y(d.sector) + y.bandwidth() / 2 + jitter(d.ticker) * y.bandwidth() * 0.8;
+	}
+
 	let xAxisG = $state();
 	let yAxisG = $state();
 
@@ -73,16 +77,21 @@
 			<circle
 				role="presentation"
 				cx={x(d.ratio)}
-				cy={y(d.sector) + y.bandwidth() / 2 + jitter(d.ticker) * y.bandwidth() * 0.8}
+				cy={cy(d)}
 				r="3.5"
-				fill={hoveredSector !== null && d.sector === hoveredSector ? '#1e3a8a' : '#2563eb'}
-				fill-opacity="0.6"
+				fill={hoveredSector !== null && d.sector === hoveredSector ? 'var(--company-dark)' : 'var(--company)'}
+				fill-opacity="0.8"
 				opacity={hoveredSector === null || d.sector === hoveredSector ? 1 : 0.15}
 				onmouseenter={(e) => showTip(e, d)}
 				onmousemove={(e) => showTip(e, d)}
 				onmouseleave={() => (tip = null)}
 			/>
 		{/each}
+
+		<!-- Outline on the hovered dot, drawn last so it stays on top. -->
+		{#if tip}
+			<circle class="hovered" cx={x(tip.company.ratio)} cy={cy(tip.company)} r="5.5" />
+		{/if}
 
 		<g bind:this={xAxisG} transform="translate(0, {height - margin.bottom})" />
 		<g bind:this={yAxisG} transform="translate({margin.left}, 0)" />
@@ -105,6 +114,12 @@
 	}
 	circle {
 		cursor: default;
+	}
+	.hovered {
+		fill: none;
+		stroke: #111;
+		stroke-width: 2;
+		pointer-events: none;
 	}
 	.axis-label {
 		font-size: 13px;

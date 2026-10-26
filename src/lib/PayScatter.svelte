@@ -71,9 +71,9 @@
 				cx={x(d.workerPay)}
 				cy={y(d.ceoPay)}
 				r="4"
-				fill="#2563eb"
-				fill-opacity="0.6"
-				stroke="#1e3a8a"
+				fill="var(--company)"
+				fill-opacity="0.7"
+				stroke="var(--company-dark)"
 				stroke-width="0.5"
 				onmouseenter={(e) => showTip(e, d)}
 				onmousemove={(e) => showTip(e, d)}
@@ -81,6 +81,11 @@
 				onclick={() => onselect(d.ticker)}
 			/>
 		{/each}
+
+		<!-- Outline on the hovered dot, drawn on top of the other dots. -->
+		{#if tip}
+			<circle class="hovered" cx={x(tip.company.workerPay)} cy={y(tip.company.ceoPay)} r="6" />
+		{/if}
 
 		<!-- Ring around the clicked company, drawn last so it stays on top. -->
 		{#if selected}
@@ -90,10 +95,10 @@
 		<g bind:this={xAxisG} transform="translate(0, {height - margin.bottom})" />
 		<g bind:this={yAxisG} transform="translate({margin.left}, 0)" />
 
-		<text class="axis-label" x={(margin.left + width - margin.right) / 2} y={height - 10}>
+		<text class="axis-label worker-label" x={(margin.left + width - margin.right) / 2} y={height - 10}>
 			Median worker pay (log scale)
 		</text>
-		<text class="axis-label" transform="rotate(-90)" x={-(margin.top + height - margin.bottom) / 2} y={16}>
+		<text class="axis-label ceo-label" transform="rotate(-90)" x={-(margin.top + height - margin.bottom) / 2} y={16}>
 			CEO total pay (log scale)
 		</text>
 	</svg>
@@ -112,9 +117,15 @@
 	circle {
 		cursor: pointer;
 	}
+	.hovered {
+		fill: none;
+		stroke: #111;
+		stroke-width: 2;
+		pointer-events: none;
+	}
 	.selected {
 		fill: none;
-		stroke: #dc2626;
+		stroke: var(--ceo);
 		stroke-width: 2.5;
 		pointer-events: none;
 	}
@@ -128,7 +139,14 @@
 	}
 	.axis-label {
 		font-size: 13px;
+		font-weight: 600;
 		text-anchor: middle;
 		fill: #333;
+	}
+	.ceo-label {
+		fill: var(--ceo);
+	}
+	.worker-label {
+		fill: var(--worker);
 	}
 </style>
