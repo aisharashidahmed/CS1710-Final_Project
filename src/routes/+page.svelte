@@ -58,7 +58,14 @@
 			A company's pay ratio is also the number of years its median worker would need to work to
 			earn what the CEO made in one year.
 		</p>
-		<Placeholder label="Pyramid timeline: the year each company's median worker would have had to start" />
+		<Placeholder
+			label="Pyramid timeline"
+			plan={{
+				shows:
+					'A timeline from 5000 BCE to today with one mark per company at the year its median worker would have had to start working (2021 − pay ratio), next to landmarks like the Great Pyramid (about 2560 BCE) and 1776. Amazon lands at 4453 BCE; the typical company at 1831.',
+				interaction: 'Hover a mark to see the company and its start year; search to find your company.'
+			}}
+		/>
 	</section>
 
 	<!-- Rising insight 2 -->
@@ -112,7 +119,14 @@
 		{:else}
 			<Placeholder label="Loading companies…" height={420} />
 		{/if}
-		<Placeholder label="Slope chart: CEO pay rank vs. pay ratio rank" />
+		<Placeholder
+			label="Slope chart: CEO pay rank vs. pay ratio rank"
+			plan={{
+				shows:
+					"Two columns of ranks (1 = highest) with a line per company. Lines that jump up are companies whose gap comes mostly from low worker pay, like McDonald's (125th in CEO pay, 5th in ratio), Aptiv and Carnival; Etsy moves the other way.",
+				interaction: 'Hover a line to highlight it; the four example companies are labeled by default.'
+			}}
+		/>
 	</section>
 
 	<!-- Rising insight 4 -->
@@ -122,7 +136,15 @@
 			At 34 S&amp;P 500 companies, the median worker earns less than the poverty line for a family
 			of four.
 		</p>
-		<Placeholder label="Callout: companies whose median worker is below the poverty line" height={200} />
+		<Placeholder
+			label="Below-the-poverty-line callout"
+			height={200}
+			plan={{
+				shows:
+					"The 34 companies whose median worker earned under $26,500 (2021 poverty line, family of four) as a grid of cards, with each CEO's pay next to the worker's. 19 of the 34 are in Consumer Discretionary.",
+				interaction: 'Filter the cards by sector.'
+			}}
+		/>
 	</section>
 
 	<!-- Main message -->
@@ -132,14 +154,31 @@
 			Competitors in the same sector have very different gaps, so the size of the gap is a company
 			decision, not an industry rule.
 		</p>
-		<Placeholder label="Most vs. least equal company in each sector" />
+		<Placeholder
+			label="Most vs. least equal company in each sector"
+			plan={{
+				shows:
+					'For each sector, the company with the lowest and the highest pay ratio side by side (for example, Consumer Discretionary runs from 38:1 to 6,474:1), so competitors prove a smaller gap is possible.',
+				interaction: 'Pick a sector to compare its two extremes in detail.'
+			}}
+		/>
 	</section>
 
 	<!-- Solution -->
 	<section id="receipt">
 		<h2>Get your company's pay receipt</h2>
 		<p>Pick a company and see when its CEO "earned" a year of your pay.</p>
-		<Placeholder label="Pay receipt (novel view): pick a company, get a shareable receipt" height={400} />
+		<Placeholder
+			label="Your company's pay receipt"
+			height={400}
+			novel
+			plan={{
+				shows:
+					"A store-style receipt for the chosen company: CEO pay vs. median worker pay, the time on Jan 1 when the CEO had already “earned” the worker's year, and the year the worker would have had to start working to match the CEO.",
+				interaction:
+					'Search for a company to print its receipt, then download or share it as an image for campaign material.'
+			}}
+		/>
 	</section>
 
 	<section id="action">
