@@ -1,4 +1,5 @@
 <script>
+	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
 </script>
 
@@ -11,9 +12,11 @@
 	<section id="hook">
 		<h1>The CEO Pay Gap</h1>
 		<p class="lede">
-			While you read this page, a CEO earns more than many workers earn in a week.
+			In 2021, Amazon's CEO earned 6,474 times what the company's median worker earned. Watch that
+			gap grow while you read.
 		</p>
-		<Placeholder label="Live counter: CEO pay vs. worker pay, per second" height={160} />
+		<Hook />
+		<p>Every company tells a version of this story. Scroll to see where yours fits.</p>
 	</section>
 
 	<!-- Rising insight 1 -->
