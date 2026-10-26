@@ -4,6 +4,7 @@
 	import { loadCompanies, sectorOrder, ratioLabel } from '#lib/data.js';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
+	import WorkdaysCard from '#lib/WorkdaysCard.svelte';
 	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
 	import SectorBars from '#lib/SectorBars.svelte';
@@ -24,6 +25,10 @@
 	let filtered = $derived(
 		data && selectedSector ? data.filter((d) => d.sector === selectedSector) : data
 	);
+
+	// Company clicked in the scatterplot, shown in the workdays card (click again to clear).
+	let selectedTicker = $state(null);
+	let selectedCompany = $derived(data?.find((d) => d.ticker === selectedTicker) ?? null);
 
 	onMount(async () => {
 		data = await loadCompanies();
@@ -95,9 +100,15 @@
 		{#if data}
 			<p class="hint">
 				Each dot is one company. Dots above a dashed line have a higher pay ratio than that line.
-				Hover a dot for its pay details.
+				Hover a dot for its pay details. Click a dot to see how long its CEO takes to earn a worker's
+				year.
 			</p>
-			<PayScatter {data} />
+			<WorkdaysCard company={selectedCompany} />
+			<PayScatter
+				{data}
+				{selectedTicker}
+				onselect={(t) => (selectedTicker = selectedTicker === t ? null : t)}
+			/>
 		{:else}
 			<Placeholder label="Loading companies…" height={420} />
 		{/if}

@@ -4,7 +4,8 @@
 	import { moneyShort } from '#lib/data.js';
 
 	// x = median worker pay, y = CEO total pay (both log scales), one dot per company.
-	let { data } = $props();
+	// The page owns the selected company; clicks are reported through onselect.
+	let { data, selectedTicker = null, onselect } = $props();
 
 	const width = 760;
 	const height = 480;
@@ -36,6 +37,8 @@
 		const px = event.clientX - box.left;
 		tip = { company, x: px, y: event.clientY - box.top, flip: px > box.width - 240 };
 	}
+
+	let selected = $derived(data.find((d) => d.ticker === selectedTicker));
 </script>
 
 <div class="scatter" bind:this={wrapper}>
@@ -75,8 +78,14 @@
 				onmouseenter={(e) => showTip(e, d)}
 				onmousemove={(e) => showTip(e, d)}
 				onmouseleave={() => (tip = null)}
+				onclick={() => onselect(d.ticker)}
 			/>
 		{/each}
+
+		<!-- Ring around the clicked company, drawn last so it stays on top. -->
+		{#if selected}
+			<circle class="selected" cx={x(selected.workerPay)} cy={y(selected.ceoPay)} r="8" />
+		{/if}
 
 		<g bind:this={xAxisG} transform="translate(0, {height - margin.bottom})" />
 		<g bind:this={yAxisG} transform="translate({margin.left}, 0)" />
@@ -99,6 +108,15 @@
 		width: 100%;
 		height: auto;
 		display: block;
+	}
+	circle {
+		cursor: pointer;
+	}
+	.selected {
+		fill: none;
+		stroke: #dc2626;
+		stroke-width: 2.5;
+		pointer-events: none;
 	}
 	.ref {
 		stroke: #94a3b8;
