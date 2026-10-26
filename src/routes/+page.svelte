@@ -1,6 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
+	import { loadCompanies } from '#lib/data.js';
 	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
+
+	// Every company, loaded once and shared by all the charts below.
+	let data = $state.raw(null);
+
+	onMount(async () => {
+		data = await loadCompanies();
+	});
 </script>
 
 <svelte:head>
@@ -83,6 +92,11 @@
 			<li>Use those comparisons when bargaining.</li>
 		</ol>
 	</section>
+
+	<footer>
+		Data: AFL-CIO Executive Paywatch (Kaggle copy), S&amp;P 500 companies, fiscal year 2021.
+		{#if data}{data.length} companies loaded.{:else}Loading data…{/if}
+	</footer>
 </main>
 
 <style>
@@ -97,6 +111,12 @@
 	section {
 		padding: 2.5rem 0;
 		border-bottom: 1px solid #eee;
+	}
+
+	footer {
+		padding-top: 2rem;
+		font-size: 0.85rem;
+		color: #666;
 	}
 
 	.lede {
