@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
-	import { loadCompanies, sectorOrder } from '#lib/data.js';
+	import * as d3 from 'd3';
+	import { loadCompanies, sectorOrder, ratioLabel } from '#lib/data.js';
+	import CompanyStrip from '#lib/CompanyStrip.svelte';
 	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
 	import SectorBars from '#lib/SectorBars.svelte';
@@ -11,8 +13,16 @@
 	// Sector rows stay in this order (highest median ratio first) in every chart.
 	let order = $derived(data ? sectorOrder(data) : []);
 
-	// Sector the reader is hovering in the bar chart.
+	// Linking (highlight only): hovering a sector bar dims other sectors' dots.
 	let hoveredSector = $state(null);
+
+	// Filtering: clicking a sector bar keeps only that sector's companies (click again to clear).
+	let selectedSector = $state(null);
+
+	// The dot plot and the summary line read this subset; the bars keep every sector.
+	let filtered = $derived(
+		data && selectedSector ? data.filter((d) => d.sector === selectedSector) : data
+	);
 
 	onMount(async () => {
 		data = await loadCompanies();
@@ -50,11 +60,28 @@
 		<h2>Which sectors have the biggest gaps?</h2>
 		<p>Every sector has a large gap, but the companies inside each sector differ even more.</p>
 		{#if data}
-			<SectorBars {data} {order} {hoveredSector} onhover={(s) => (hoveredSector = s)} />
+			<p class="hint">Hover a sector to highlight its companies. Click a sector to show only it.</p>
+			<SectorBars
+				{data}
+				{order}
+				{hoveredSector}
+				{selectedSector}
+				onhover={(s) => (hoveredSector = s)}
+				onselect={(s) => (selectedSector = selectedSector === s ? null : s)}
+			/>
+			<p class="showing">
+				Showing <strong>{filtered.length}</strong> companies in
+				<strong>{selectedSector ?? 'all sectors'}</strong> · median pay ratio
+				<strong>{ratioLabel(d3.median(filtered, (d) => d.ratio))}</strong>
+				{#if selectedSector}
+					· <button onclick={() => (selectedSector = null)}>Show all sectors</button>
+				{/if}
+			</p>
+			<p class="hint">Each dot is one company. Hover a dot for its pay details.</p>
+			<CompanyStrip data={filtered} {order} {hoveredSector} />
 		{:else}
 			<Placeholder label="Loading sectors…" height={300} />
 		{/if}
-		<Placeholder label="Company dot plot, linked to the sector bars" height={360} />
 	</section>
 
 	<!-- Rising insight 3 -->
@@ -128,6 +155,15 @@
 		padding-top: 2rem;
 		font-size: 0.85rem;
 		color: #666;
+	}
+
+	.hint {
+		font-size: 0.85rem;
+		color: #666;
+	}
+
+	.showing {
+		margin-top: 1.5rem;
 	}
 
 	.lede {
