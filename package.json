@@ -7,6 +7,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"clean": "node scripts/clean.js",
 		"prepare": "svelte-kit sync || echo ''"
 	},
 	"devDependencies": {

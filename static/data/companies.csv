@@ -1,0 +1,493 @@
+ticker,company,ceo,sector,ceo_pay,worker_pay,pay_ratio,workdays,work_hours,start_year,below_poverty,ceo_pay_rank,ratio_rank
+AMZN,"Amazon.com, Inc.",Andrew Jassy,Consumer Discretionary,212701169,32855,6474,0.04,0.321,-4453,false,3,1
+WDC,Western Digital Corporation,David Goeckeler,Information Technology,32137338,9644,3332,0.078,0.624,-1311,true,27,2
+DISCA,"Warner Bros. Discovery, Inc.",David Zaslav,Communication Services,246573481,82964,2972,0.087,0.7,-951,false,2,3
+EXPE,"Expedia Group, Inc.",Peter Kern,Consumer Discretionary,296247749,102270,2897,0.09,0.718,-876,false,1,4
+MCD,McDonald's Corporation,Christopher Kempczinski,Consumer Discretionary,20028132,8897,2251,0.116,0.924,-230,true,125,5
+TJX,"The TJX Companies, Inc.",Ernie Herrman,Consumer Discretionary,31802000,14139,2249,0.116,0.925,-228,true,29,6
+YUM,"Yum! Brands, Inc.",David Gibbs,Consumer Discretionary,27578659,13082,2108,0.123,0.987,-87,true,45,7
+APTV,Aptiv Plc,Kevin Clark,Consumer Discretionary,14744780,7402,1992,0.131,1.044,29,true,241,8
+ORCL,Oracle Corporation,Safra Catz,Information Technology,138192032,75043,1842,0.141,1.129,179,false,6,9
+KO,The Coca-Cola Company,James Quincey,Consumer Staples,24883878,13894,1791,0.145,1.161,230,true,59,10
+CCL,Carnival Corporation,Arnold Donald,Consumer Discretionary,15063788,8658,1740,0.149,1.195,281,true,232,11
+INTC,Intel Corporation,Patrick Gelsinger,Information Technology,178590400,104400,1711,0.152,1.216,310,false,4,12
+BBWI,"Bath & Body Works, Inc.",Andrew Meslow,Consumer Discretionary,17668627,10632,1662,0.156,1.252,359,true,174,13
+ALGN,"Align Technology, Inc.",Joseph Hogan,Health Care,21591400,13011,1659,0.157,1.254,362,true,94,14
+SBUX,Starbucks Corporation,Kevin Johnson,Consumer Discretionary,20425162,12935,1579,0.165,1.317,442,true,118,15
+ROST,"Ross Stores, Inc.",Barbara Rentler,Consumer Discretionary,15989635,10806,1480,0.176,1.405,541,true,211,16
+AAPL,Apple Inc.,Timothy Cook,Information Technology,98734394,68254,1447,0.18,1.437,574,false,7,17
+FLT,"FLEETCOR Technologies, Inc.",Ronald Clarke,Information Technology,57923473,41265,1404,0.185,1.481,617,false,10,18
+STX,Seagate Technology Holdings plc,William Mosley,Information Technology,11641189,9757,1193,0.218,1.744,828,true,337,19
+CMG,"Chipotle Mexican Grill, Inc.",Brian Niccol,Consumer Discretionary,17880580,15811,1131,0.23,1.839,890,true,169,20
+RCL,Royal Caribbean Group,Richard Fain,Consumer Discretionary,15812027,14706,1075,0.242,1.935,946,true,215,21
+PM,Philip Morris International Inc.,Jacek Olczak,Consumer Staples,10557568,18196,1055,0.246,1.972,966,true,367,22
+NCLH,Norwegian Cruise Line Holdings Ltd.,Frank Rio,Consumer Discretionary,19668768,19319,1018,0.255,2.043,1003,true,141,23
+WMT,Walmart Inc.,C. McMillon,Consumer Staples,25670673,25335,1013,0.257,2.053,1008,true,50,24
+DG,Dollar General Corporation,Todd Vasos,Consumer Discretionary,16618873,17773,935,0.278,2.225,1086,true,195,25
+BKNG,Booking Holdings Inc.,Glenn Fogel,Consumer Discretionary,53982195,58005,931,0.279,2.234,1090,false,12,26
+SWKS,"Skyworks Solutions, Inc.",Liam Griffin,Information Technology,16150421,17409,928,0.28,2.241,1093,true,200,27
+JPM,JPMorgan Chase & Co.,James Dimon,Financials,84428145,92112,917,0.284,2.268,1104,false,8,28
+ON,ON Semiconductor Corporation,Hassane El-Khoury,Information Technology,12825562,17475,912,0.285,2.281,1109,true,303,29
+LYV,"Live Nation Entertainment, Inc.",Michael Rapino,Communication Services,13842464,15740,879,0.296,2.366,1142,true,272,30
+EL,"The Estee Lauder Companies, Inc.",Fabrizio Freda,Consumer Staples,25480056,29236,872,0.298,2.385,1149,false,53,31
+LVS,Las Vegas Sands Corp.,Robert G. Goldstein,Consumer Discretionary,31204900,35879,866,0.3,2.402,1155,false,31,32
+APH,Amphenol Corporation,R. Norwitt,Information Technology,13092697,16042,816,0.319,2.549,1205,true,290,33
+AVY,Avery Dennison Corporation,Mitchell Butier,Materials,12433721,15256,815,0.319,2.552,1206,true,314,34
+LOW,"Lowes Companies, Inc.",Marvin Ellison,Consumer Discretionary,17871715,22697,787,0.33,2.643,1234,true,170,35
+TGT,Target Corporation,Brian Cornell,Consumer Discretionary,19758766,25501,775,0.335,2.684,1246,true,139,36
+LIN,Linde Plc,Stephen Angel,Materials,31426032,40659,773,0.336,2.691,1248,false,30,37
+NKE,"NIKE, Inc.",John Donahoe II,Consumer Discretionary,28838060,37410,771,0.337,2.698,1250,false,39,38
+DLTR,"Dollar Tree, Inc.",Michael Witynski,Consumer Discretionary,10249698,13490,760,0.342,2.737,1261,true,380,39
+CPRT,"Copart, Inc.",Jeffrey Liaw,Industrials,31033606,41662,744,0.349,2.796,1277,false,32,40
+NOW,"ServiceNow, Inc.",William McDermott,Information Technology,165802037,233859,709,0.367,2.934,1312,false,5,41
+WBA,"Walgreens Boots Alliance, Inc.",Rosalind Brewer,Consumer Staples,17287489,24530,705,0.369,2.95,1316,true,180,42
+CHTR,"Charter Communications, Inc.",Thomas Rutledge,Communication Services,41860263,60007,698,0.372,2.98,1323,false,14,43
+RL,Ralph Lauren Corporation,Patrice Louvet,Consumer Discretionary,18553058,26670,696,0.374,2.989,1325,false,156,44
+WHR,Whirlpool Corporation,Marc Bitzer,Consumer Discretionary,18751901,27128,692,0.376,3.006,1329,false,153,45
+KR,The Kroger Co.,W. McMullen,Consumer Staples,18168730,26763,679,0.383,3.063,1342,false,164,46
+ADI,"Analog Devices, Inc.",Vincent Roche,Information Technology,30824323,46141,668,0.389,3.114,1353,false,33,47
+ULTA,"Ulta Beauty, Inc.",David Kimbell,Consumer Discretionary,8539767,13403,659,0.395,3.156,1362,true,426,48
+ACN,Accenture Plc,Julie Sweet,Information Technology,33701108,51635,653,0.398,3.185,1368,false,24,49
+DXC,DXC Technology Co.,Michael Salvino,Information Technology,28716680,44156,650,0.4,3.2,1371,false,40,50
+DIS,The Walt Disney Company,Robert Chapek,Communication Services,32464293,50430,644,0.404,3.23,1377,false,26,51
+CZR,"Caesars Entertainment, Inc.",Thomas Reeg,Consumer Discretionary,22576517,35618,634,0.41,3.281,1387,false,86,52
+HLT,"Hilton Worldwide Holdings, Inc.",Christopher Nassetta,Consumer Discretionary,23285248,36915,631,0.412,3.296,1390,false,76,53
+MU,"Micron Technology, Inc.",Sanjay Mehrotra,Information Technology,28840809,48310,597,0.436,3.484,1424,false,38,54
+TEL,TE Connectivity Ltd.,Terrence Curtin,Information Technology,14715856,24975,589,0.441,3.531,1432,true,242,55
+SPGI,"S&P Global, Inc.",Douglas Peterson,Financials,16143770,27835,580,0.448,3.586,1441,false,203,56
+VFC,VF Corp.,Steven Rendle,Consumer Discretionary,15423154,26784,576,0.451,3.611,1445,false,226,57
+CTSH,Cognizant Technology Solutions Corporation,Brian Humphries,Information Technology,19687285,34225,575,0.452,3.617,1446,false,140,58
+BWA,BorgWarner Inc.,Frederic Lissalde,Consumer Discretionary,17592090,31740,554,0.469,3.755,1467,false,175,59
+UPS,"United Parcel Service, Inc.",Carol Tome,Industrials,27620893,50379,548,0.474,3.796,1473,false,44,60
+DRI,"Darden Restaurants, Inc.",Eugene Lee Jr.,Consumer Discretionary,11891842,21931,542,0.48,3.838,1479,true,330,61
+BBY,"Best Buy Co., Inc.",Corie Barry,Consumer Discretionary,15631157,29999,521,0.499,3.992,1500,false,224,62
+MDLZ,"Mondelez International, Inc.",Dirk de Put,Consumer Staples,16128320,31024,520,0.5,4,1501,false,204,63
+MOS,The Mosaic Company,James O'Rourke,Materials,12297011,24013,512,0.508,4.063,1509,true,319,64
+GLW,Corning Incorporated,Wendell Weeks,Information Technology,20766032,40760,509,0.511,4.086,1512,false,109,65
+MAR,"Marriott International, Inc.",Anthony Capuano,Consumer Discretionary,18391882,36505,506,0.514,4.111,1515,false,161,66
+PEP,"PepsiCo, Inc.",Ramon Laguarta,Consumer Staples,25506607,52297,488,0.533,4.262,1533,false,52,67
+CAT,Caterpillar Inc.,Donald Umpleby III,Industrials,24298032,51102,475,0.547,4.379,1546,false,64,68
+TPR,"Tapestry, Inc.",Joanne Crevoiserat,Consumer Discretionary,13739426,29147,471,0.552,4.416,1550,false,276,69
+CVS,CVS Health Corporation,Karen Lynch,Health Care,20388412,45010,458,0.568,4.541,1563,false,119,70
+HD,"The Home Depot, Inc.",Craig Menear,Consumer Discretionary,13059751,28697,455,0.571,4.571,1566,false,291,71
+ORLY,"O'Reilly Automotive, Inc.",Gregory Johnson,Consumer Discretionary,12764270,28113,454,0.573,4.581,1567,false,305,72
+AZO,"AutoZone, Inc.",William Rhodes III,Consumer Discretionary,14330010,31751,451,0.576,4.612,1570,false,255,73
+HSY,The Hershey Company,Michele Buck,Consumer Staples,16144570,36149,447,0.582,4.653,1574,false,202,74
+BDX,"Becton, Dickinson and Company",Thomas Polen,Health Care,16711230,37748,443,0.587,4.695,1578,false,192,75
+AMT,American Tower Corporation,Thomas Bartlett,Real Estate,16114574,37616,428,0.607,4.86,1593,false,206,76
+GM,General Motors Company,Mary Barra,Consumer Discretionary,29136780,69433,420,0.619,4.952,1601,false,37,77
+NXPI,NXP Semiconductors NV,Kurt Sievers,Information Technology,20911892,50138,417,0.624,4.988,1604,false,106,78
+HWM,Howmet Aerospace Inc.,John Plant,Industrials,17189000,58921,415,0.627,5.012,1606,false,181,79
+GPN,Global Payments Inc.,Jeffrey Sloan,Information Technology,23318393,56202,415,0.627,5.012,1606,false,74,80
+MPWR,"Monolithic Power Systems, Inc.",Michael Hsing,Information Technology,20254831,48913,414,0.628,5.024,1607,false,123,81
+GE,General Electric Company,H. Culp Jr.,Industrials,22663449,55064,412,0.631,5.049,1609,false,82,82
+IRM,Iron Mountain Incorporated,William Meaney,Real Estate,17046118,41600,410,0.634,5.073,1611,false,185,83
+CMCSA,Comcast Corporation,Brian Roberts,Communication Services,33978581,83840,405,0.642,5.136,1616,false,23,84
+AAP,"Advance Auto Parts, Inc.",Thomas Greco,Consumer Discretionary,10052271,24960,403,0.645,5.161,1618,true,385,85
+DPZ,"Domino's Pizza, Inc.",Richard Allison,Consumer Discretionary,7138003,17782,401,0.648,5.187,1620,true,457,86
+VTRS,Viatris Inc.,Michael Goettler,Health Care,14669592,36865,398,0.653,5.226,1623,false,244,87
+OMC,"Omnicom Group, Inc.",John Wren,Communication Services,19981715,50612,395,0.658,5.266,1626,false,127,88
+FIS,"Fidelity National Information Services, Inc.",Gary Norcross,Information Technology,25023771,64135,390,0.667,5.333,1631,false,56,89
+TSCO,Tractor Supply Company,Harry Lawton III,Consumer Discretionary,11117251,29046,383,0.679,5.431,1638,false,347,90
+CL,Colgate-Palmolive Company,Noel Wallace,Consumer Staples,15458151,40469,382,0.681,5.445,1639,false,225,91
+PYPL,"PayPal Holdings, Inc.",Daniel Schulman,Information Technology,32070353,83905,382,0.681,5.445,1639,false,28,92
+MGM,MGM Resorts International,William Hornbuckle,Consumer Discretionary,13274524,34988,379,0.686,5.488,1642,false,287,93
+AXP,American Express Company,Stephen Squeri,Financials,25513922,67460,378,0.688,5.503,1643,false,51,94
+C,Citigroup Inc.,Jane Fraser,Financials,20541324,55285,372,0.699,5.591,1649,false,116,95
+HCA,"HCA Healthcare, Inc.",Samuel Hazen,Health Care,20635260,56044,368,0.707,5.652,1653,false,113,96
+SHW,The Sherwin-Williams Company,John Morikis,Materials,15843760,43321,366,0.71,5.683,1655,false,213,97
+CNP,"CenterPoint Energy, Inc.",David Lesar,Utilities,37809810,103170,366,0.71,5.683,1655,false,18,98
+TDG,TransDigm Group Incorporated,Kevin Stein,Industrials,21484504,58837,365,0.712,5.699,1656,false,98,99
+PSA,Public Storage,Joseph Russell,Real Estate,10358153,28787,360,0.722,5.778,1661,false,375,100
+JCI,Johnson Controls International Plc,George Oliver,Industrials,15667017,43640,359,0.724,5.794,1662,false,220,101
+LH,Laboratory Corporation of America Holdings,Adam Schechter,Health Care,20551605,57614,357,0.728,5.826,1664,false,115,102
+F,Ford Motor Company,James Farley Jr.,Consumer Discretionary,22813174,64003,356,0.73,5.843,1665,false,80,103
+PPG,"PPG Industries, Inc.",Michael McGarry,Materials,13418214,37282,354,0.734,5.876,1667,false,285,104
+FDS,FactSet Research Systems Inc.,F. Snow,Financials,6604998,18958,348,0.747,5.977,1673,true,463,105
+HON,Honeywell International Inc.,Darius Adamczyk,Industrials,26100120,75529,346,0.751,6.012,1675,false,49,106
+ETN,Eaton Corporation plc,Craig Arnold,Industrials,19367607,56287,344,0.756,6.047,1677,false,143,107
+ITW,Illinois Tool Works Inc.,E. Santi,Industrials,20787622,61011,341,0.762,6.1,1680,false,108,108
+STZ,"Constellation Brands, Inc.",William Newlands,Consumer Staples,12040281,35606,338,0.769,6.154,1683,false,323,109
+NWL,"Newell Brands, Inc.",Ravichandra Saligram,Consumer Discretionary,11438798,33913,337,0.772,6.172,1684,false,343,110
+BAX,Baxter International Inc.,Jose Almeida,Health Care,15634734,46351,337,0.772,6.172,1684,false,223,111
+LEN,Lennar Corporation,Richard Beckwitt and Jonathan Jaffe,Consumer Discretionary,34045217,101561,335,0.776,6.209,1686,false,22,112
+MKC,"McCormick & Company, Incorporated",Lawrence Kurzius,Consumer Staples,12718656,38004,335,0.776,6.209,1686,false,308,113
+ADP,"Automatic Data Processing, Inc.",Carlos Rodriguez,Information Technology,20827092,62238,335,0.776,6.209,1686,false,107,114
+PH,Parker-Hannifin Corporation,Thomas Williams,Industrials,18448169,56416,327,0.795,6.361,1694,false,159,115
+AMAT,"Applied Materials, Inc.",Gary Dickerson,Information Technology,35265559,109304,323,0.805,6.44,1698,false,20,116
+CB,Chubb Limited,Evan Greenberg,Financials,23181184,71894,322,0.807,6.46,1699,false,78,117
+MMC,"Marsh & McLennan Companies, Inc.",Daniel Glaser,Financials,21519703,67143,321,0.81,6.48,1700,false,96,118
+RHI,Robert Half International Inc.,M. Waddell,Industrials,8971474,28191,318,0.818,6.541,1703,false,415,119
+TMUS,"T-Mobile US, Inc.",G. Sievert,Communication Services,22610659,72572,312,0.833,6.667,1709,false,84,120
+UHS,"Universal Health Services, Inc.",Marc Miller,Health Care,14020942,45454,309,0.841,6.731,1712,false,265,121
+ALL,The Allstate Corporation,Thomas Wilson,Financials,19066920,62235,306,0.85,6.797,1715,false,148,122
+HPQ,HP Inc.,Enrique Lores,Information Technology,20733806,67667,306,0.85,6.797,1715,false,110,123
+AIG,"American International Group, Inc.",Peter Zaffino,Financials,21905220,71936,305,0.852,6.82,1716,false,90,124
+COO,"The Cooper Companies, Inc.",Albert White III,Health Care,10994906,36105,305,0.852,6.82,1716,false,353,125
+WTW,Willis Towers Watson PLC,John Haley,Financials,20337292,66942,304,0.855,6.842,1717,false,122,126
+AES,The AES Corporation,Andres Gluski,Utilities,14379190,47543,302,0.861,6.887,1719,false,251,127
+UNH,UnitedHealth Group Incorporated,Andrew Witty,Health Care,18433143,61379,301,0.864,6.91,1720,false,160,128
+LUMN,"Lumen Technologies, Inc.",Jeffrey Storey,Communication Services,22654781,75984,298,0.872,6.98,1723,false,83,129
+CI,Cigna Corporation,David Cordani,Health Care,19872266,66917,297,0.875,7.003,1724,false,133,130
+JNJ,Johnson & Johnson,Alex Gorsky,Health Care,26741959,90000,297,0.875,7.003,1724,false,48,131
+WYNN,"Wynn Resorts, Limited",Matthew Maddox,Consumer Discretionary,12928747,44048,294,0.884,7.075,1727,false,295,132
+HAL,Halliburton Company,Jeffrey Miller,Energy,23591982,81076,291,0.893,7.148,1730,false,69,133
+CMI,Cummins Inc.,N. Linebarger,Industrials,15645919,53864,291,0.893,7.148,1730,false,222,134
+IPG,"The Interpublic Group of Companies, Inc.",Philippe Krakowsky,Communication Services,17371647,59814,290,0.897,7.172,1731,false,179,135
+ADM,Archer-Daniels-Midland Company,Juan Luciano,Consumer Staples,23508841,81320,290,0.897,7.172,1731,false,72,136
+WFC,Wells Fargo & Company,Charles Scharf,Financials,21350906,73578,290,0.897,7.172,1731,false,99,137
+CNC,Centene Corporation,Michael Neidorff,Health Care,20637990,71217,290,0.897,7.172,1731,false,112,138
+MCK,McKesson Corporation,Brian Tyler,Health Care,18152082,62610,290,0.897,7.172,1731,false,166,139
+FISV,"Fiserv, Inc.",Frank Bisignano,Information Technology,20385208,70276,290,0.897,7.172,1731,false,120,140
+DOV,Dover Corporation,Richard Tobin,Industrials,14085860,48794,289,0.9,7.197,1732,false,264,141
+HPE,Hewlett Packard Enterprise Company,Antonio Neri,Information Technology,19052415,65944,289,0.9,7.197,1732,false,149,142
+MSFT,Microsoft Corporation,Satya Nadella,Information Technology,54946310,190302,289,0.9,7.197,1732,false,11,143
+TSN,"Tyson Foods, Inc.",Donnie King,Consumer Staples,12014497,41967,286,0.909,7.273,1735,false,324,144
+GPC,Genuine Parts Company,Paul Donahue,Consumer Discretionary,11810704,41606,284,0.915,7.324,1737,false,333,145
+ENPH,"Enphase Energy, Inc.",Badrinarayanan Kothandaraman,Information Technology,19019162,67267,283,0.919,7.35,1738,false,150,146
+KMB,Kimberly-Clark Corporation,Michael Hsu,Consumer Staples,12009162,42749,281,0.925,7.402,1740,false,325,147
+MOH,"Molina Healthcare, Inc.",Joseph Zubretsky,Health Care,19961698,71916,278,0.935,7.482,1743,false,130,148
+TXN,Texas Instruments Incorporated,Richard Templeton,Information Technology,19195411,69407,277,0.939,7.509,1744,false,145,149
+OTIS,Otis Worldwide Corp.,Judith Marks,Industrials,13770306,49941,276,0.942,7.536,1745,false,274,150
+APD,"Air Products and Chemicals, Inc.",Seifollah Ghasemi,Materials,18483105,66930,276,0.942,7.536,1745,false,157,151
+MCHP,Microchip Technology Incorporated,Ganesh Moorthy,Information Technology,12759667,46326,275,0.945,7.564,1746,false,306,152
+PG,The Procter & Gamble Company,Jon Moeller,Consumer Staples,17716015,65918,273,0.952,7.619,1748,false,172,153
+VICI,"VICI Properties, Inc.",Edward Pitoniak,Real Estate,7662894,28107,273,0.952,7.619,1748,false,449,154
+FDX,FedEx Corporation,Frederick Smith,Industrials,10596150,39177,271,0.959,7.675,1750,false,365,155
+FTV,Fortive Corporation,James Lico,Industrials,16598719,61746,269,0.967,7.732,1752,false,196,156
+MAS,Masco Corporation,Keith Allman,Industrials,13410774,50305,267,0.974,7.79,1754,false,286,157
+KMX,"CarMax, Inc.",William Nash,Consumer Discretionary,13689123,51674,265,0.981,7.849,1756,false,279,158
+CRL,"Charles River Laboratories International, Inc.",James Foster,Health Care,13705581,51848,264,0.985,7.879,1757,false,278,159
+PFE,Pfizer Inc.,Albert Bourla,Health Care,24353219,92986,262,0.992,7.939,1759,false,63,160
+EMR,Emerson Electric Co.,Surendralal Karsanbhai,Industrials,15178106,58101,262,0.992,7.939,1759,false,230,161
+DOW,"Dow, Inc.",James Fitterling,Materials,24858892,95607,260,1,8,1761,false,60,162
+DHI,"D.R. Horton, Inc.",David Auld,Consumer Discretionary,29996862,116088,259,1.004,8.031,1762,false,34,163
+DHR,Danaher Corporation,Rainer Blair,Health Care,17152267,66203,259,1.004,8.031,1762,false,182,164
+NWSA,News Corporation,Robert Thomson,Communication Services,19662203,76185,258,1.008,8.062,1763,false,142,165
+AIZ,"Assurant, Inc.",Alan Colberg,Financials,11504780,44558,258,1.008,8.062,1763,false,341,166
+IBM,International Business Machines Corporation,Arvind Krishna,Information Technology,17550959,67926,258,1.008,8.062,1763,false,177,167
+MS,Morgan Stanley,James Gorman,Financials,34941635,137069,255,1.02,8.157,1766,false,21,168
+HUM,Humana Inc.,Bruce Broussard,Health Care,16528036,64797,255,1.02,8.157,1766,false,197,169
+PCG,PG&E Corporation,Patricia Poppe,Utilities,51198471,201157,255,1.02,8.157,1766,false,13,170
+SLB,Schlumberger NV,Olivier Peuch,Energy,16795502,66138,254,1.024,8.189,1767,false,190,171
+ABT,Abbott Laboratories,Robert Ford,Health Care,24914886,97952,254,1.024,8.189,1767,false,57,172
+TMO,Thermo Fisher Scientific Inc.,Marc Casper,Health Care,21234358,83666,254,1.024,8.189,1767,false,101,173
+GD,General Dynamics Corporation,Phebe Novakovic,Industrials,23553862,92585,254,1.024,8.189,1767,false,71,174
+MMM,3M Company,Michael Roman,Industrials,18200584,71821,253,1.028,8.221,1768,false,163,175
+COF,Capital One Financial Corporation,Richard Fairbank,Financials,20457553,81029,252,1.032,8.254,1769,false,117,176
+CSCO,"Cisco Systems, Inc.",Charles Robbins,Information Technology,29283936,117400,249,1.044,8.353,1772,false,36,177
+TFX,Teleflex Incorporated,Liam Kelly,Health Care,8673634,34907,248,1.048,8.387,1773,false,422,178
+FCX,"Freeport-McMoRan, Inc.",Richard Adkerson,Materials,19111894,77036,248,1.048,8.387,1773,false,147,179
+AVGO,Broadcom Inc.,Hock Tan,Information Technology,60703627,247541,245,1.061,8.49,1776,false,9,180
+AON,Aon Plc,Gregory Case,Financials,19868384,81645,244,1.066,8.525,1777,false,134,181
+WAB,Westinghouse Air Brake Technologies Corporation,Rafael Santana,Industrials,11027238,45266,244,1.066,8.525,1777,false,350,182
+CBRE,"CBRE Group, Inc.",Robert Sulentic,Real Estate,13908085,57349,243,1.07,8.56,1778,false,269,183
+LKQ,LKQ Corporation,Dominick Zarcone,Consumer Discretionary,9445636,38982,242,1.074,8.595,1779,false,406,184
+K,Kellogg Company,Steven Cahillane,Consumer Staples,10678337,44125,242,1.074,8.595,1779,false,361,185
+DE,Deere & Company,John May,Industrials,19912826,82240,242,1.074,8.595,1779,false,131,186
+MNST,Monster Beverage Corporation,Rodney Sacks,Consumer Staples,16707577,69417,241,1.079,8.631,1780,false,193,187
+KEYS,"Keysight Technologies, Inc.",Ronald Nersesian,Information Technology,18566410,77082,241,1.079,8.631,1780,false,155,188
+MSI,"Motorola Solutions, Inc.",Gregory Brown,Information Technology,19980639,82965,241,1.079,8.631,1780,false,128,189
+AFL,Aflac Incorporated,Daniel Amos,Financials,15728233,65458,240,1.083,8.667,1781,false,218,190
+AMCR,Amcor Plc,Ronald Delia,Materials,9872758,41332,239,1.088,8.703,1782,false,391,191
+MTCH,"Match Group, Inc.",Sharmistha Dubey,Communication Services,25397675,106881,238,1.092,8.739,1783,false,54,192
+GS,"The Goldman Sachs Group, Inc.",David Solomon,Financials,39545072,165828,238,1.092,8.739,1783,false,17,193
+FOXA,Fox Corporation,Lachlan Murdoch,Communication Services,21748681,91803,237,1.097,8.776,1784,false,91,194
+PFG,"Principal Financial Group, Inc.",Daniel Houston,Financials,17566163,75348,236,1.102,8.814,1785,false,176,195
+CSGP,"CoStar Group, Inc.",Andrew Florance,Industrials,22164341,94511,235,1.106,8.851,1786,false,87,196
+SWK,"Stanley Black & Decker, Inc.",James Loree,Industrials,13167893,56016,235,1.106,8.851,1786,false,288,197
+ZBH,"Zimmer Biomet Holdings, Inc.",Bryan Hanson,Health Care,14981058,63981,234,1.111,8.889,1787,false,235,198
+BSX,Boston Scientific Corporation,Michael Mahoney,Health Care,16064039,68891,233,1.116,8.927,1788,false,208,199
+MTD,Mettler-Toledo International Inc.,Patrick Kaltenbach,Health Care,11811322,51436,233,1.116,8.927,1788,false,332,200
+BAC,Bank of America Corporation,Brian Moynihan,Financials,23729169,102497,232,1.121,8.966,1789,false,68,201
+T,AT&T Inc.,John Stankey,Communication Services,24820879,107570,231,1.126,9.004,1790,false,61,202
+STT,State Street Corporation,Ronald O'Hanley,Financials,14113660,61463,230,1.13,9.043,1791,false,262,203
+AMD,"Advanced Micro Devices, Inc.",Lisa Su,Information Technology,29498107,128263,230,1.13,9.043,1791,false,35,204
+ABC,AmerisourceBergen Corporation,Steven Collis,Health Care,14873815,65076,229,1.135,9.083,1792,false,238,205
+USB,U.S. Bancorp,Andrew Cecere,Financials,19166276,85166,225,1.156,9.244,1796,false,146,206
+ZBRA,Zebra Technologies Corporation,Anders Gustafsson,Information Technology,13589616,60450,225,1.156,9.244,1796,false,282,207
+BKR,Baker Hughes Company,Lorenzo Simonelli,Energy,15646452,69701,224,1.161,9.286,1797,false,221,208
+PNC,"The PNC Financial Services Group, Inc.",William Demchak,Financials,17506270,78333,224,1.161,9.286,1797,false,178,209
+CARR,Carrier Global Corp.,David Gitlin,Industrials,14892815,66377,224,1.161,9.286,1797,false,237,210
+NEM,Newmont Corporation,Thomas Palmer,Materials,12667105,56621,224,1.161,9.286,1797,false,311,211
+LLY,Eli Lilly and Company,David Ricks,Health Care,21509985,97130,221,1.176,9.412,1800,false,97,212
+PGR,The Progressive Corporation,Susan Griffith,Financials,14462961,65874,220,1.182,9.455,1801,false,249,213
+ROP,"Roper Technologies, Inc.",L. Hunn,Information Technology,21532055,98550,219,1.187,9.498,1802,false,95,214
+COST,Costco Wholesale Corporation,W. Jelinek,Consumer Staples,9905070,45450,218,1.193,9.541,1803,false,389,215
+MET,"MetLife, Inc.",Michel Khalaf,Financials,16621373,76392,218,1.193,9.541,1803,false,194,216
+ADBE,"Adobe, Inc.",Shantanu Narayen,Information Technology,36128725,165733,218,1.193,9.541,1803,false,19,217
+EPAM,"EPAM Systems, Inc.",Arkadiy Dobkin,Information Technology,5921524,27200,218,1.193,9.541,1803,false,471,218
+PLD,"Prologis, Inc.",Hamid Moghadam,Real Estate,24901490,114183,218,1.193,9.541,1803,false,58,219
+DGX,Quest Diagnostics Incorporated,Stephen Rusckowski,Health Care,14557818,67206,217,1.198,9.585,1804,false,246,220
+AJG,Arthur J. Gallagher & Co.,J. Gallagher,Financials,13882255,64135,216,1.204,9.63,1805,false,271,221
+MDT,Medtronic Plc,Geoffrey Martha,Health Care,16849633,78244,215,1.209,9.674,1806,false,189,222
+QCOM,QUALCOMM Incorporated,Cristiano Amon,Information Technology,20638924,98200,215,1.209,9.674,1806,false,111,223
+SYK,Stryker Corporation,Kevin Lobo,Health Care,16359898,76715,213,1.221,9.765,1808,false,199,224
+PARA,Paramount Global,Robert Bakish,Communication Services,20035212,94580,212,1.226,9.811,1809,false,124,225
+CAH,"Cardinal Health, Inc.",Michael Kaufmann,Health Care,13463557,63906,211,1.232,9.858,1810,false,283,226
+RTX,Raytheon Technologies Corp.,Gregory Hayes,Industrials,23316063,112078,208,1.25,10,1813,false,75,227
+CAG,"Conagra Brands, Inc.",Sean Connolly,Consumer Staples,11947054,57855,206,1.262,10.097,1815,false,328,228
+IQV,"IQVIA Holdings, Inc.",Ari Bousbib,Health Care,28615851,139803,205,1.268,10.146,1816,false,41,229
+IR,"Ingersoll Rand, Inc.",Vicente Reynal,Industrials,10613486,51757,205,1.268,10.146,1816,false,364,230
+NFLX,"Netflix, Inc.",Reed Hastings,Communication Services,40823725,201743,202,1.287,10.297,1819,false,15,231
+NDAQ,"Nasdaq, Inc.",Adena Friedman,Financials,19965893,98946,202,1.287,10.297,1819,false,129,232
+TT,Trane Technologies Plc,David Regnery,Industrials,12888518,63916,202,1.287,10.297,1819,false,299,233
+SCHW,The Charles Schwab Corporation,Walter Bettinger II,Financials,21938404,109269,201,1.294,10.348,1820,false,89,234
+LNC,Lincoln National Corporation,Dennis Glass,Financials,16760924,84240,199,1.307,10.452,1822,false,191,235
+BLK,"BlackRock, Inc.",Laurence Fink,Financials,32587335,164492,198,1.313,10.505,1823,false,25,236
+GIS,"General Mills, Inc.",Jeffrey Harmening,Consumer Staples,12266195,62454,196,1.327,10.612,1825,false,320,237
+CTLT,"Catalent, Inc.",John Chiminski,Health Care,12407517,63242,196,1.327,10.612,1825,false,317,238
+KLAC,KLA Corporation,Richard Wallace,Information Technology,20568625,105278,195,1.333,10.667,1826,false,114,239
+TRMB,Trimble Inc.,Robert Painter,Information Technology,13956821,71625,195,1.333,10.667,1826,false,267,240
+AOS,A. O. Smith Corporation,Kevin Wheeler,Industrials,6897982,35561,194,1.34,10.722,1827,false,459,241
+A,"Agilent Technologies, Inc.",Michael McMullen,Health Care,15967631,82890,193,1.347,10.777,1828,false,212,242
+PAYX,"Paychex, Inc.",Martin Mucci,Information Technology,11025026,56960,193,1.347,10.777,1828,false,351,243
+EMN,Eastman Chemical Company,Mark Costa,Materials,17798861,92880,192,1.354,10.833,1829,false,171,244
+NEE,"NextEra Energy, Inc.",James Robo,Utilities,25335936,132798,191,1.361,10.89,1830,false,55,245
+KHC,The Kraft Heinz Company,Miguel Patricio,Consumer Staples,8605599,45260,190,1.368,10.947,1831,false,425,246
+DFS,Discover Financial Services,Roger Hochschild,Financials,12087218,63770,190,1.368,10.947,1831,false,322,247
+EXPD,"Expeditors International of Washington, Inc.",Jeffrey Musser,Industrials,13026304,68690,190,1.368,10.947,1831,false,293,248
+XYL,Xylem Inc.,Patrick Decker,Industrials,10441670,55094,190,1.368,10.947,1831,false,373,249
+EQIX,"Equinix, Inc.",Charles Meyers,Real Estate,23248193,122075,190,1.368,10.947,1831,false,77,250
+DXCM,"DexCom, Inc.",Kevin Sayer,Health Care,11985324,63500,189,1.376,11.005,1832,false,326,251
+AME,"AMETEK, Inc.",David Zapico,Industrials,12919431,68238,189,1.376,11.005,1832,false,296,252
+HRL,Hormel Foods Corporation,James Snee,Consumer Staples,9478102,50369,188,1.383,11.064,1833,false,404,253
+ROL,"Rollins, Inc.",Gary Rollins,Industrials,8393601,44843,187,1.39,11.123,1834,false,431,254
+BK,The Bank of New York Mellon Corporation,Thomas Gibbons,Financials,14128042,76123,186,1.398,11.183,1835,false,261,255
+EW,Edwards Lifesciences Corporation,Michael Mussallem,Health Care,13613305,73036,186,1.398,11.183,1835,false,281,256
+CSX,CSX Corporation,James Foote,Industrials,20006806,107772,186,1.398,11.183,1835,false,126,257
+UDR,"UDR, Inc.",Thomas Toomey,Real Estate,14228333,76519,186,1.398,11.183,1835,false,257,258
+V,Visa Inc.,Alfred Kelly Jr.,Information Technology,28103602,152395,184,1.413,11.304,1837,false,43,259
+PKI,"PerkinElmer, Inc.",Prahlad Singh,Health Care,9661006,52960,182,1.429,11.429,1839,false,401,260
+TRV,"The Travelers Companies, Inc.",Alan Schnitzer,Financials,19853697,109586,181,1.436,11.492,1840,false,136,261
+TECH,Bio-Techne Corporation,Charles Kummeth,Health Care,15370548,84964,181,1.436,11.492,1840,false,227,262
+TXT,Textron Inc.,Scott Donnelly,Industrials,18576014,102647,181,1.436,11.492,1840,false,154,263
+AVB,"AvalonBay Communities, Inc.",Timothy Naughton,Real Estate,14371460,79313,181,1.436,11.492,1840,false,252,264
+RMD,ResMed Inc.,Michael Farrell,Health Care,11659210,64956,180,1.444,11.556,1841,false,336,265
+ROK,"Rockwell Automation, Inc.",Blake Moret,Industrials,10987704,61470,180,1.444,11.556,1841,false,354,266
+LYB,LyondellBasell Industries NV,Bhavesh V. Patel,Materials,19011033,106258,179,1.453,11.62,1842,false,151,267
+SRE,Sempra Energy,Jeffrey Martin,Utilities,24675982,137800,179,1.453,11.62,1842,false,62,268
+CHRW,"C.H. Robinson Worldwide, Inc.",Robert Biesterfeld,Industrials,10233276,57391,178,1.461,11.685,1843,false,381,269
+EFX,Equifax Inc.,Mark Begor,Industrials,16065575,90330,178,1.461,11.685,1843,false,207,270
+MSCI,MSCI Inc.,Henry Fernandez,Financials,10338312,58415,177,1.469,11.751,1844,false,377,271
+SYF,Synchrony Financial,Brian Doubles,Financials,8880347,50316,177,1.469,11.751,1844,false,418,272
+SEE,Sealed Air Corporation,Edward Doheny II,Materials,9674692,54633,177,1.469,11.751,1844,false,400,273
+DAL,"Delta Air Lines, Inc.",Edward Bastian,Industrials,12360420,70240,176,1.477,11.818,1845,false,318,274
+J,"Jacobs Solutions, Inc.",Steven Demetriou,Industrials,14615521,83173,176,1.477,11.818,1845,false,245,275
+VRSK,"Verisk Analytics, Inc.",Scott Stephenson,Industrials,12796321,72679,176,1.477,11.818,1845,false,304,276
+ETSY,"Etsy, Inc.",Josh Silverman,Consumer Discretionary,40584292,231338,175,1.486,11.886,1846,false,16,277
+QRVO,"Qorvo, Inc.",Robert Bruggeworth,Information Technology,10072684,57510,175,1.486,11.886,1846,false,383,278
+EA,Electronic Arts Inc.,Andrew Wilson,Communication Services,19858539,115569,172,1.512,12.093,1849,false,135,279
+PRU,"Prudential Financial, Inc.",Charles Lowrey,Financials,19799737,114931,172,1.512,12.093,1849,false,137,280
+IP,International Paper Company,Mark Sutton,Materials,15228707,88581,172,1.512,12.093,1849,false,228,281
+RF,Regions Financial Corporation,John Turner Jr.,Financials,13444577,79540,169,1.538,12.308,1852,false,284,282
+BA,The Boeing Company,David Calhoun,Industrials,21093605,124844,169,1.538,12.308,1852,false,104,283
+EXR,Extra Space Storage Inc.,Joseph Margolis,Real Estate,7315982,43361,169,1.538,12.308,1852,false,454,284
+WRK,WestRock Company,David Sewell,Materials,11576270,68878,168,1.548,12.381,1853,false,339,285
+VZ,Verizon Communications Inc.,Hans Vestberg,Communication Services,20342871,122492,166,1.566,12.53,1855,false,121,286
+AMGN,Amgen Inc.,Robert Bradway,Health Care,21721154,130589,166,1.566,12.53,1855,false,92,287
+NOC,Northrop Grumman Corporation,Kathy Warden,Industrials,19876767,119721,166,1.566,12.53,1855,false,132,288
+CTVA,"Corteva, Inc.",Charles Magro,Materials,792786,85572,166,1.566,12.53,1855,false,490,289
+WY,Weyerhaeuser Company,Devin Stockfish,Real Estate,12715531,76688,166,1.566,12.53,1855,false,310,290
+AMP,"Ameriprise Financial, Inc.",James Cracchiolo,Financials,21229464,129010,165,1.576,12.606,1856,false,102,291
+HBAN,Huntington Bancshares Incorporated,Stephen Steinour,Financials,9619178,58430,165,1.576,12.606,1856,false,402,292
+SNA,Snap-on Incorporated,Nicholas Pinchuk,Industrials,9872946,59712,165,1.576,12.606,1856,false,390,293
+MLM,"Martin Marietta Materials, Inc.",C. Nye,Materials,14939587,90423,165,1.576,12.606,1856,false,236,294
+HOLX,"Hologic, Inc.",Stephen MacMillan,Health Care,14748400,89791,164,1.585,12.683,1857,false,240,295
+XRAY,DENTSPLY SIRONA Inc.,Donald Casey Jr.,Health Care,9251884,56466,164,1.585,12.683,1857,false,409,296
+LMT,Lockheed Martin Corporation,James Taiclet Jr.,Industrials,18111211,110113,164,1.585,12.683,1857,false,167,297
+PNR,Pentair plc,John Stauch,Industrials,9429546,57343,164,1.585,12.683,1857,false,407,298
+SYY,Sysco Corporation,Kevin Hourican,Consumer Staples,13656506,83737,163,1.595,12.761,1858,false,280,299
+SPG,"Simon Property Group, Inc.",David Simon,Real Estate,10475192,64069,163,1.595,12.761,1858,false,370,300
+UNP,Union Pacific Corporation,Lance Fritz,Industrials,14523819,89878,162,1.605,12.84,1859,false,248,301
+WM,"Waste Management, Inc.",James Fish,Industrials,13057363,80744,162,1.605,12.84,1859,false,292,302
+WST,"West Pharmaceutical Services, Inc.",Eric Green,Health Care,9472757,57357,161,1.615,12.919,1860,false,405,303
+ZTS,Zoetis Inc.,Kristin Peck,Health Care,13098491,81497,161,1.615,12.919,1860,false,289,304
+ADSK,"Autodesk, Inc.",Andrew Anagnost,Information Technology,22095521,137042,161,1.615,12.919,1860,false,88,305
+SO,The Southern Company,Thomas Fanning,Utilities,21243559,132450,161,1.615,12.919,1860,false,100,306
+EBAY,eBay Inc.,Jamie Iannone,Consumer Discretionary,21685102,135528,160,1.625,13,1861,false,93,307
+CPB,Campbell Soup Company,Mark Clouse,Consumer Staples,10277065,64277,160,1.625,13,1861,false,379,308
+ABBV,AbbVie Inc.,Richard Gonzalez,Health Care,23912154,149662,160,1.625,13,1861,false,65,309
+ECL,Ecolab Inc.,Christophe Beck,Materials,8365889,52339,160,1.625,13,1861,false,432,310
+FITB,Fifth Third Bancorp,Greg Carmichael,Financials,10531649,66720,158,1.646,13.165,1863,false,368,311
+NDSN,Nordson Corporation,Sundaram Nagarajan,Industrials,10308750,65527,157,1.656,13.248,1864,false,378,312
+CRM,"Salesforce, Inc.",Marc Benioff,Information Technology,28602112,181612,157,1.656,13.248,1864,false,42,313
+VNO,Vornado Realty Trust,Steven Roth,Real Estate,9763351,62287,157,1.656,13.248,1864,false,395,314
+KMI,"Kinder Morgan, Inc.",Steven Kean,Energy,18000259,115388,156,1.667,13.333,1865,false,168,315
+BR,"Broadridge Financial Solutions, Inc.",Timothy Gokey,Information Technology,10068228,64515,156,1.667,13.333,1865,false,384,316
+FMC,FMC Corporation,Mark Douglas,Materials,8489671,54297,156,1.667,13.333,1865,false,430,317
+PKG,Packaging Corporation of America,Mark Kowlzan,Materials,12157313,78062,156,1.667,13.333,1865,false,321,318
+ANSS,"ANSYS, Inc.",Ajei Gopal,Information Technology,18260634,118588,154,1.688,13.506,1867,false,162,319
+LW,"Lamb Weston Holdings, Inc.",Thomas Werner,Consumer Staples,7858113,51398,153,1.699,13.595,1868,false,442,320
+TFC,Truist Financial Corporation,William Rogers Jr.,Financials,10395426,95659,153,1.699,13.595,1868,false,374,321
+URI,"United Rentals, Inc.",Matthew Flannery,Industrials,12716100,83417,152,1.711,13.684,1869,false,309,322
+INVH,"Invitation Homes, Inc.",Dallas Tanner,Real Estate,9710445,63730,152,1.711,13.684,1869,false,399,323
+CFG,"Citizens Financial Group, Inc.",Bruce Saun,Financials,12430076,82418,151,1.722,13.775,1870,false,315,324
+WEC,"WEC Energy Group, Inc.",J. Fletcher,Utilities,18481871,122530,151,1.722,13.775,1870,false,158,325
+CME,CME Group Inc.,Terrence Duffy,Financials,22924737,153565,150,1.733,13.867,1871,false,79,326
+HIG,"The Hartford Financial Services Group, Inc.",Christopher Swift,Financials,15824348,106940,148,1.757,14.054,1873,false,214,327
+IFF,International Flavors & Fragrances Inc.,Andreas Fibig,Materials,9767380,66105,148,1.757,14.054,1873,false,394,328
+GL,Globe Life Inc.,Gary Coleman,Financials,8353754,56843,147,1.769,14.15,1874,false,434,329
+CTAS,Cintas Corporation,Todd Schneider,Industrials,7777100,53321,146,1.781,14.247,1875,false,443,330
+FRC,First Republic Bank,Hafize Erkan,Financials,23458948,162300,145,1.793,14.345,1876,false,73,331
+NTRS,Northern Trust Corporation,Michael O'Grady,Financials,10449233,72300,145,1.793,14.345,1876,false,372,332
+ODFL,"Old Dominion Freight Line, Inc.",Greg Gantt,Industrials,10577833,72726,145,1.793,14.345,1876,false,366,333
+MAA,"Mid-America Apartment Communities, Inc.",H. Bolton,Real Estate,7667655,52777,145,1.793,14.345,1876,false,448,334
+MHK,"Mohawk Industries, Inc.",Jeffrey Lorberbaum,Consumer Discretionary,5190696,36391,143,1.818,14.545,1878,false,477,335
+MPC,Marathon Petroleum Corporation,Michael Hennigan,Energy,21185206,148850,142,1.831,14.648,1879,false,103,336
+LHX,"L3Harris Technologies, Inc.",Christopher Kubasik,Industrials,15697749,110846,142,1.831,14.648,1879,false,219,337
+LRCX,Lam Research Corporation,Timothy Archer,Information Technology,16941156,119322,142,1.831,14.648,1879,false,187,338
+DUK,Duke Energy Corporation,Lynn Good,Utilities,16451236,115895,142,1.831,14.648,1879,false,198,339
+KDP,Keurig Dr Pepper Inc.,Robert Gamgort,Consumer Staples,7772521,55207,141,1.844,14.752,1880,false,444,340
+NSC,Norfolk Southern Corporation,James Squires,Industrials,14016942,99945,140,1.857,14.857,1881,false,266,341
+DLR,"Digital Realty Trust, Inc.",A. Stein,Real Estate,17139601,122276,140,1.857,14.857,1881,false,183,342
+CE,Celanese Corporation,Lori Ryerkerk,Materials,12570992,90427,139,1.871,14.964,1882,false,313,343
+DD,"DuPont de Nemours, Inc.",Edward Breen,Materials,15106986,108955,139,1.871,14.964,1882,false,231,344
+EQT,EQT Corporation,Toby Rice,Energy,16919763,122460,138,1.884,15.072,1883,false,188,345
+WRB,W. R. Berkley Corporation,W. Berkley Jr.,Financials,14147305,102973,138,1.884,15.072,1883,false,260,346
+GWW,"W.W. Grainger, Inc.",Donald Macpherson,Industrials,9015594,65633,138,1.884,15.072,1883,false,413,347
+BF.B,Brown-Forman Corporation,Lawson Whiting,Consumer Staples,8364936,61040,137,1.898,15.182,1884,false,433,348
+MRNA,"Moderna, Inc.",Stephane Bancel,Health Care,18155739,133074,136,1.912,15.294,1885,false,165,349
+EQR,Equity Residential,Mark Parrell,Real Estate,8490527,62996,135,1.926,15.407,1886,false,429,350
+AEP,"American Electric Power Company, Inc.",Nicholas Akins,Utilities,15051215,111771,135,1.926,15.407,1886,false,233,351
+CLX,The Clorox Company,Linda Rendle,Consumer Staples,8534808,63866,134,1.94,15.522,1887,false,427,352
+IDXX,"IDEXX Laboratories, Inc.",Jay Mazelsky,Health Care,9065021,67638,134,1.94,15.522,1887,false,411,353
+LDOS,"Leidos Holdings, Inc.",Roger Krone,Industrials,12876007,95935,134,1.94,15.522,1887,false,301,354
+COP,ConocoPhillips,Ryan Lance,Energy,23886640,179428,133,1.955,15.639,1888,false,66,355
+BMY,Bristol-Myers Squibb Company,Giovanni Caforio,Health Care,19784806,148649,133,1.955,15.639,1888,false,138,356
+MRK,"Merck & Co., Inc.",Robert Davis,Health Care,13722121,102803,133,1.955,15.639,1888,false,277,357
+INTU,Intuit Inc.,Sasan Goodarzi,Information Technology,27174857,203814,133,1.955,15.639,1888,false,46,358
+CTRA,Coterra Energy Inc.,Thomas Jorden,Energy,11061939,91440,131,1.985,15.878,1890,false,349,359
+PSX,Phillips 66,Greg Garland,Energy,20953206,161584,130,2,16,1891,false,105,360
+RJF,"Raymond James Financial, Inc.",Paul Reilly,Financials,13901046,106782,130,2,16,1891,false,270,361
+VMC,Vulcan Materials Company,J. Hill,Materials,10774795,80122,130,2,16,1891,false,359,362
+FANG,"Diamondback Energy, Inc.",Travis Stice,Energy,13839995,108354,128,2.031,16.25,1893,false,273,363
+ALB,Albemarle Corporation,Jerry Masters Jr.,Materials,9040753,70574,128,2.031,16.25,1893,false,412,364
+VTR,"Ventas, Inc.",Debra Cafaro,Real Estate,14263728,111261,128,2.031,16.25,1893,false,256,365
+CDAY,"Ceridian HCM Holding, Inc.",David Ossip,Information Technology,10626701,83919,127,2.047,16.378,1894,false,363,366
+WELL,Welltower Inc.,Shankh Mitra,Real Estate,12753710,100206,127,2.047,16.378,1894,false,307,367
+UAL,"United Airlines Holdings, Inc.",J. Kirby,Industrials,9845064,78245,126,2.063,16.508,1895,false,392,368
+MA,Mastercard Incorporated,Michael Miebach,Information Technology,16120055,128154,126,2.063,16.508,1895,false,205,369
+ETR,Entergy Corporation,Leo Denault,Utilities,17045744,135272,126,2.063,16.508,1895,false,186,370
+XOM,Exxon Mobil Corporation,Darren Woods,Energy,23572488,189082,125,2.08,16.64,1896,false,70,371
+RSG,"Republic Services, Inc.",Jon Ark,Industrials,7925408,68217,125,2.08,16.64,1896,false,441,372
+BEN,"Franklin Resources, Inc.",Jennifer Johnson,Financials,15734999,126915,124,2.097,16.774,1897,false,217,373
+TROW,"T. Rowe Price Group, Inc.",William Stromberg,Financials,17127330,138173,124,2.097,16.774,1897,false,184,374
+ILMN,"Illumina, Inc.",Francis deSouza,Health Care,14333634,115398,124,2.097,16.774,1897,false,254,375
+JKHY,"Jack Henry & Associates, Inc.",David Foss,Information Technology,9758392,78477,124,2.097,16.774,1897,false,396,376
+CVX,Chevron Corporation,Michael Wirth,Energy,22610285,183531,123,2.114,16.911,1898,false,85,377
+CHD,"Church & Dwight Co., Inc.",Matthew Farrell,Consumer Staples,8889526,73466,121,2.149,17.19,1900,false,417,378
+HSIC,"Henry Schein, Inc.",Stanley Bergman,Health Care,10786180,72625,121,2.149,17.19,1900,false,358,379
+IT,"Gartner, Inc.",Eugene Hall,Information Technology,14096168,118762,119,2.185,17.479,1902,false,263,380
+PHM,"PulteGroup, Inc.",Ryan Marshall,Consumer Discretionary,16149555,136630,118,2.203,17.627,1903,false,201,381
+TRGP,Targa Resources Corp.,Matthew Meloy,Energy,14691940,124880,118,2.203,17.627,1903,false,243,382
+ICE,"Intercontinental Exchange, Inc.",Jeffrey Sprecher,Financials,14788386,125579,118,2.203,17.627,1903,false,239,383
+KEY,KeyCorp,Christopher Gorman,Financials,8653484,73571,118,2.203,17.627,1903,false,424,384
+ALLE,Allegion Plc,David Petratis,Industrials,7688243,65338,118,2.203,17.627,1903,false,447,385
+WAT,Waters Corporation,Udit Batra,Health Care,8653559,74470,116,2.241,17.931,1905,false,423,386
+AAL,American Airlines Group Inc.,W. Parker,Industrials,7238011,62765,115,2.261,18.087,1906,false,455,387
+GNRC,Generac Holdings Inc.,Aaron Jagdfeld,Industrials,7519813,65543,115,2.261,18.087,1906,false,451,388
+VLO,Valero Energy Corporation,Joseph Gorder,Energy,22684706,198219,114,2.281,18.246,1907,false,81,389
+L,Loews Corporation,James Tisch,Financials,6119523,53781,114,2.281,18.246,1907,false,470,390
+CCI,Crown Castle Inc.,Jay Brown,Real Estate,14553510,128795,113,2.301,18.407,1908,false,247,391
+JBHT,"J.B. Hunt Transport Services, Inc.",John Roberts,Industrials,8801881,78560,112,2.321,18.571,1909,false,420,392
+GRMN,Garmin Ltd.,Clifton Pemble,Consumer Discretionary,4238341,38118,111,2.342,18.739,1910,false,482,393
+HII,"Huntington Ingalls Industries, Inc.",C. Petters,Industrials,7714066,69551,111,2.342,18.739,1910,false,445,394
+MCO,Moodys Corporation,Robert Fauber,Financials,9750157,88985,110,2.364,18.909,1911,false,398,395
+BIO,"Bio-Rad Laboratories, Inc.",Norman Schwartz,Health Care,8695925,78820,110,2.364,18.909,1911,false,421,396
+IEX,IDEX Corporation,Eric Ashleman,Industrials,6719772,61933,109,2.385,19.083,1912,false,462,397
+NVDA,NVIDIA Corporation,Jen-Hsun Huang,Information Technology,23737661,217542,109,2.385,19.083,1912,false,67,398
+BIIB,Biogen Inc.,Michel Vounatsos,Health Care,17689665,163551,108,2.407,19.259,1913,false,173,399
+AKAM,"Akamai Technologies, Inc.",F. Leighton,Information Technology,11951574,112018,107,2.43,19.439,1914,false,327,400
+TAP,Molson Coors Beverage Company,Gavin Hattersley,Consumer Staples,8234680,77432,106,2.453,19.623,1915,false,437,401
+BLL,Ball Corporation,John Hayes,Materials,13924380,131452,106,2.453,19.623,1915,false,268,402
+BXP,"Boston Properties, Inc.",Owen Thomas,Real Estate,12894537,123647,104,2.5,20,1917,false,298,403
+SBAC,SBA Communications Corp.,Jeffrey Stoops,Real Estate,9995179,96104,104,2.5,20,1917,false,386,404
+PWR,"Quanta Services, Inc.",Earl Austin Jr.,Industrials,10967217,106665,103,2.524,20.194,1918,false,355,405
+TDY,Teledyne Technologies Incorporated,Robert Mehrabian,Information Technology,6567058,64003,103,2.524,20.194,1918,false,464,406
+MRO,Marathon Oil Corporation,Lee Tillman,Energy,12997292,128010,102,2.549,20.392,1919,false,294,407
+SNPS,"Synopsys, Inc.",Chi-Foon Chan,Information Technology,9976485,98215,102,2.549,20.392,1919,false,387,408
+MTB,M&T Bank Corporation,Rene Jones,Financials,6868174,68270,101,2.574,20.594,1920,false,461,409
+BRO,"Brown & Brown, Inc.",J. Brown,Financials,9201035,91957,100,2.6,20.8,1921,false,410,410
+SJM,The J. M. Smucker Company,Mark Smucker,Consumer Staples,8511639,86742,98,2.653,21.224,1923,false,428,411
+EXC,Exelon Corporation,Christopher Crane,Utilities,15757378,160633,98,2.653,21.224,1923,false,216,412
+KIM,Kimco Realty Corporation,Conor Flynn,Real Estate,10488138,108000,97,2.68,21.443,1924,false,369,413
+PEG,Public Service Enterprise Group Incorporated,Ralph Izzo,Utilities,14208674,146034,97,2.68,21.443,1924,false,258,414
+PXD,Pioneer Natural Resources Company,Scott Sheffield,Energy,16002825,166480,96,2.708,21.667,1925,false,209,415
+XEL,Xcel Energy Inc.,Robert Frenzel,Utilities,8350364,122532,95,2.737,21.895,1926,false,435,416
+SEDG,"SolarEdge Technologies, Inc.",Zivi Lando,Information Technology,7361336,78132,94,2.766,22.128,1927,false,453,417
+O,Realty Income Corporation,Sumit Roy,Real Estate,12861011,136304,94,2.766,22.128,1927,false,302,418
+LNT,Alliant Energy Corporation,John Larsen,Utilities,10449260,110610,94,2.766,22.128,1927,false,371,419
+STE,STERIS Plc (Ireland),Daniel Carestio,Health Care,5903168,67300,93,2.796,22.366,1928,false,472,420
+META,"Meta Platforms, Inc.",Mark Zuckerberg,Communication Services,26823061,292785,92,2.826,22.609,1929,false,47,421
+GILD,"Gilead Sciences, Inc.",Daniel O'Day,Health Care,19229466,211687,91,2.857,22.857,1930,false,144,422
+NTAP,"NetApp, Inc.",George Kurian,Information Technology,18883551,206477,91,2.857,22.857,1930,false,152,423
+CF,"CF Industries Holdings, Inc.",W. Will,Materials,11685670,128415,91,2.857,22.857,1930,false,335,424
+POOL,Pool Corporation,Peter Arvan,Consumer Discretionary,5575384,61709,90,2.889,23.111,1931,false,476,425
+JNPR,"Juniper Networks, Inc.",Rami Rahim,Information Technology,11870290,132117,90,2.889,23.111,1931,false,331,426
+PTC,PTC Inc.,James Heppelmann,Information Technology,12887116,143681,90,2.889,23.111,1931,false,300,427
+MO,"Altria Group, Inc.",William Gifford Jr.,Consumer Staples,12626972,142614,89,2.921,23.371,1932,false,312,428
+STLD,"Steel Dynamics, Inc.",Mark Millett,Materials,10999918,126721,87,2.989,23.908,1934,false,352,429
+APA,APA Corp.,John Christmann,Energy,15040707,174903,86,3.023,24.186,1935,false,234,430
+CDW,CDW Corp.,Christine Leahy,Information Technology,8943903,103536,86,3.023,24.186,1935,false,416,431
+FE,FirstEnergy Corp.,Steven Strah,Utilities,10714062,124120,86,3.023,24.186,1935,false,360,432
+NRG,"NRG Energy, Inc.",Mauricio Gutierrez,Utilities,10854224,126289,86,3.023,24.186,1935,false,357,433
+TER,"Teradyne, Inc.",Mark Jagiela,Information Technology,10954713,128299,85,3.059,24.471,1936,false,356,434
+ANET,"Arista Networks, Inc.",Jayshree Ullal,Information Technology,15993632,190816,84,3.095,24.762,1937,false,210,435
+ESS,"Essex Property Trust, Inc.",Michael Schall,Real Estate,7183068,85350,84,3.095,24.762,1937,false,456,436
+EVRG,"Evergy, Inc.",David Campbell,Utilities,11138082,133369,84,3.095,24.762,1937,false,345,437
+WMB,"The Williams Companies, Inc.",Alan Armstrong,Energy,13759533,167343,82,3.171,25.366,1939,false,275,438
+DTE,DTE Energy Company,Gerardo Norcia,Utilities,11128277,136472,82,3.171,25.366,1939,false,346,439
+EIX,Edison International,Pedro Pizarro,Utilities,14364340,175717,82,3.171,25.366,1939,false,253,440
+NUE,Nucor Corporation,Leon Topalian,Materials,11618019,142635,81,3.21,25.679,1940,false,338,441
+AWK,"American Water Works Company, Inc.",Walter Lynch,Utilities,7398128,91238,81,3.21,25.679,1940,false,452,442
+SIVB,SVB Financial Group,Greg Becker,Financials,9922132,125638,79,3.291,26.329,1942,false,388,443
+SBNY,Signature Bank,Joseph DePaolo,Financials,8975851,115807,78,3.333,26.667,1943,false,414,444
+ED,"Consolidated Edison, Inc.",Timothy Cawley,Utilities,10342198,132803,78,3.333,26.667,1943,false,376,445
+PPL,PPL Corporation,Vincent Sorgi,Utilities,11356481,147670,77,3.377,27.013,1944,false,344,446
+NI,NiSource Inc.,Joseph Hamrock,Utilities,9535782,124663,76,3.421,27.368,1945,false,403,447
+CMA,Comerica Incorporated,Curtis Farmer,Financials,7696094,102385,75,3.467,27.733,1946,false,446,448
+AEE,Ameren Corporation,Warner Baxter,Utilities,9807836,132415,74,3.514,28.108,1947,false,393,449
+D,"Dominion Energy, Inc.",Robert Blue,Utilities,8161083,110406,74,3.514,28.108,1947,false,438,450
+CPT,Camden Property Trust,Richard Campo,Real Estate,4285423,58767,73,3.562,28.493,1948,false,481,451
+OXY,Occidental Petroleum Corporation,Vicki Hollub,Energy,11068539,157013,71,3.662,29.296,1950,false,348,452
+FTNT,"Fortinet, Inc.",Ken Xie,Information Technology,14203211,202875,70,3.714,29.714,1951,false,259,453
+ACGL,Arch Capital Group Ltd.,Marc Grandisson,Financials,9336013,129028,69,3.768,30.145,1952,false,408,454
+IVZ,Invesco Ltd.,Martin Flanagan,Financials,12897752,187854,69,3.768,30.145,1952,false,297,455
+ALK,"Alaska Air Group, Inc.",Benito Minicucci,Industrials,5130162,74911,69,3.768,30.145,1952,false,478,456
+LUV,Southwest Airlines Co.,Gary Kelly,Industrials,5819756,84872,69,3.768,30.145,1952,false,473,457
+DVN,Devon Energy Corporation,Richard Muncrief,Energy,11914547,179900,67,3.881,31.045,1954,false,329,458
+PEAK,"Healthpeak Properties, Inc.",Thomas Herzog,Real Estate,11713883,177521,66,3.939,31.515,1955,false,334,459
+VRTX,Vertex Pharmaceuticals Incorporated,Reshma Kewalramani,Health Care,15198856,234107,65,4,32,1956,false,229,460
+CBOE,"Cboe Global Markets, Inc.",Edward Tilly,Financials,10646558,165355,64,4.063,32.5,1957,false,362,461
+HES,Hess Corporation,John Hess,Energy,12408198,197547,63,4.127,33.016,1958,false,316,462
+TYL,"Tyler Technologies, Inc.",H. Moore Jr,Information Technology,5590005,88714,63,4.127,33.016,1958,false,475,463
+REG,Regency Centers Corporation,Lisa Palmer,Real Estate,7026315,111237,63,4.127,33.016,1958,false,458,464
+CINF,Cincinnati Financial Corporation,Steven Johnston,Financials,6490767,105458,62,4.194,33.548,1959,false,466,465
+ZION,"Zions Bancorporation, NA",Harris Simmons,Financials,4656113,76160,61,4.262,34.098,1960,false,480,466
+FRT,Federal Realty Investment Trust,Donald Wood,Real Estate,7520917,125770,60,4.333,34.667,1961,false,450,467
+RE,"Everest Re Group, Ltd.",Juan Andrade,Financials,8866126,151276,59,4.407,35.254,1962,false,419,468
+FAST,Fastenal Company,Daniel Florness,Industrials,2423614,40843,59,4.407,35.254,1962,false,488,469
+ATO,Atmos Energy Corporation,John Akers,Utilities,4839562,81388,59,4.407,35.254,1962,false,479,470
+PNW,Pinnacle West Capital Corporation,Jeffrey Guldner,Utilities,8100157,136805,59,4.407,35.254,1962,false,439,471
+NVR,"NVR, Inc.",Paul Saville,Consumer Discretionary,4162400,71417,58,4.483,35.862,1963,false,483,472
+INCY,Incyte Corporation,Herve Hoppenot,Health Care,14444265,248810,58,4.483,35.862,1963,false,250,473
+ISRG,"Intuitive Surgical, Inc.",Gary Guthart,Health Care,8059409,140163,58,4.483,35.862,1963,false,440,474
+FFIV,"F5, Inc.",Francois Locoh-Donou,Information Technology,11469726,206330,56,4.643,37.143,1965,false,342,475
+HST,"Host Hotels & Resorts, Inc.",James Risoleo,Real Estate,11520730,206292,56,4.643,37.143,1965,false,340,476
+EOG,"EOG Resources, Inc.",Ezra Yacob,Energy,9752887,185838,51,5.098,40.784,1970,false,397,477
+CMS,CMS Energy Corporation,Garrick Rochow,Utilities,6871068,135987,51,5.098,40.784,1970,false,460,478
+DISH,DISH Network Corporation,W. Carlson,Communication Services,2895882,58161,50,5.2,41.6,1971,false,487,479
+VRSN,"VeriSign, Inc.",D. Bidzos,Information Technology,10118313,201444,50,5.2,41.6,1971,false,382,480
+ES,Eversource Energy,Joseph Nolan Jr.,Utilities,6467078,133297,50,5.2,41.6,1971,false,468,481
+DVA,DaVita Inc.,Javier Rodriguez,Health Care,3298439,67535,49,5.306,42.449,1972,false,484,482
+FSLR,"First Solar, Inc.",Mark Widmar,Information Technology,6542454,139587,47,5.532,44.255,1974,false,465,483
+ARE,"Alexandria Real Estate Equities, Inc.",Stephen Richardson,Real Estate,8320228,176113,47,5.532,44.255,1974,false,436,484
+REGN,"Regeneron Pharmaceuticals, Inc.",Leonard Schleifer,Health Care,6470514,149250,43,6.047,48.372,1978,false,467,485
+PAYC,"Paycom Software, Inc.",Chad Richison,Information Technology,2958410,70036,42,6.19,49.524,1979,false,486,486
+HAS,"Hasbro, Inc.",Richard Stoddart,Consumer Discretionary,3130233,82787,38,6.842,54.737,1983,false,485,487
+MKTX,MarketAxess Holdings Inc.,Richard McVey,Financials,5742184,162120,35,7.429,59.429,1986,false,474,488
+GOOGL,Alphabet Inc.,Sundar Pichai,Communication Services,6322599,295884,21,12.381,99.048,2000,false,469,489
+ATVI,"Activision Blizzard, Inc.",Robert Kotick,Communication Services,826549,117207,7,37.143,297.143,2014,false,489,490
+BRK.B,Berkshire Hathaway Inc.,Warren Buffett,Financials,373204,58881,6,43.333,346.667,2015,false,491,491
+TTWO,"Take-Two Interactive Software, Inc.",Strauss Zelnick,Communication Services,142996,70096,2,130,1040,2019,false,492,492
