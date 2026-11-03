@@ -83,6 +83,7 @@
 				fill={s.sector === hoveredSector ? 'var(--sector-dark)' : 'var(--sector)'}
 				opacity={selectedSector === null || s.sector === selectedSector ? 1 : 0.35}
 				stroke={s.sector === selectedSector ? '#111' : 'none'}
+				class="bar-fill"
 				stroke-width="2"
 			/>
 			<text class="count" x={x(s.median) + 4} y={y(s.sector) + y.bandwidth() / 2} dominant-baseline="middle">
@@ -104,6 +105,12 @@
 		width: 100%;
 		height: auto;
 		display: block;
+	}
+	/* Hover and selection changes fade instead of snapping. */
+	.bar-fill {
+		transition:
+			fill 200ms,
+			opacity 300ms;
 	}
 	.bar.clickable {
 		cursor: pointer;

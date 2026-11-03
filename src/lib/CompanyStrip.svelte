@@ -1,6 +1,9 @@
 <script>
 	import * as d3 from 'd3';
+	import { Tween } from 'svelte/motion';
+	import { fade } from 'svelte/transition';
 	import Tooltip from '#lib/Tooltip.svelte';
+	import { DURATION, easing } from '#lib/motion.js';
 
 	// One dot per company: x = pay ratio (log scale), one row per sector.
 	let { data, order, hoveredSector = null } = $props();
@@ -12,6 +15,9 @@
 	// Only rows for sectors that are in the (possibly filtered) data.
 	let rows = $derived(order.filter((s) => data.some((d) => d.sector === s)));
 	let height = $derived(margin.top + margin.bottom + rows.length * rowHeight);
+
+	// When filtering, the chart grows or shrinks smoothly instead of jumping.
+	const shownHeight = Tween.of(() => height, { duration: DURATION, easing });
 
 	// Ratios run from 2:1 to 6,474:1, so a log scale keeps the low end readable.
 	const x = d3.scaleLog().domain([1, 10000]).range([margin.left, width - margin.right]);
@@ -47,7 +53,11 @@
 		);
 	});
 	$effect(() => {
-		d3.select(yAxisG).call(d3.axisLeft(y).tickSize(0).tickPadding(6));
+		d3.select(yAxisG)
+			.transition()
+			.duration(DURATION)
+			.ease(d3.easeCubicOut)
+			.call(d3.axisLeft(y).tickSize(0).tickPadding(6));
 	});
 
 	let wrapper;
@@ -60,24 +70,27 @@
 	}
 </script>
 
-<div class="strip" bind:this={wrapper}>
-	<svg viewBox="0 0 {width} {height}">
+<div class="strip" bind:this={wrapper} style:--duration="{DURATION}ms">
+	<svg viewBox="0 0 {width} {shownHeight.current}">
 		<!-- Light row backgrounds so each sector reads as one group. -->
 		{#each rows as sector, i (sector)}
 			<rect
+				class="row"
 				x={margin.left}
-				y={y(sector)}
+				style:transform="translateY({y(sector)}px)"
 				width={width - margin.left - margin.right}
 				height={y.bandwidth()}
 				fill={i % 2 ? '#fff' : '#f1f5f9'}
+				transition:fade={{ duration: DURATION }}
 			/>
 		{/each}
 
 		{#each data as d (d.ticker)}
+			<!-- Dots are placed with a CSS transform so they slide to their new row when filtering. -->
 			<circle
 				role="presentation"
-				cx={x(d.ratio)}
-				cy={cy(d)}
+				class="dot"
+				style:transform="translate({x(d.ratio)}px, {cy(d)}px)"
 				r="3.5"
 				fill={hoveredSector !== null && d.sector === hoveredSector ? 'var(--company-dark)' : 'var(--company)'}
 				fill-opacity="0.8"
@@ -85,6 +98,7 @@
 				onmouseenter={(e) => showTip(e, d)}
 				onmousemove={(e) => showTip(e, d)}
 				onmouseleave={() => (tip = null)}
+				transition:fade={{ duration: DURATION }}
 			/>
 		{/each}
 
@@ -93,10 +107,10 @@
 			<circle class="hovered" cx={x(tip.company.ratio)} cy={cy(tip.company)} r="5.5" />
 		{/if}
 
-		<g bind:this={xAxisG} transform="translate(0, {height - margin.bottom})" />
+		<g bind:this={xAxisG} transform="translate(0, {shownHeight.current - margin.bottom})" />
 		<g bind:this={yAxisG} transform="translate({margin.left}, 0)" />
 
-		<text class="axis-label" x={(margin.left + width - margin.right) / 2} y={height - 8}>
+		<text class="axis-label" x={(margin.left + width - margin.right) / 2} y={shownHeight.current - 8}>
 			CEO-to-worker pay ratio (log scale)
 		</text>
 	</svg>
@@ -114,6 +128,13 @@
 	}
 	circle {
 		cursor: default;
+	}
+	.dot,
+	.row {
+		transition:
+			transform var(--duration) cubic-bezier(0.33, 1, 0.68, 1),
+			opacity 200ms,
+			fill 200ms;
 	}
 	.hovered {
 		fill: none;
