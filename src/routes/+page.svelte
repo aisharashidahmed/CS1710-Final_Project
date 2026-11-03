@@ -13,7 +13,20 @@
 	import PayReceipt from '#lib/PayReceipt.svelte';
 	import Hook from '#lib/Hook.svelte';
 	import Placeholder from '#lib/Placeholder.svelte';
+	import SectionNav from '#lib/SectionNav.svelte';
 	import SectorBars from '#lib/SectorBars.svelte';
+
+	// Menu labels for the story sections, in page order.
+	const sections = [
+		{ id: 'hook', label: 'Start' },
+		{ id: 'timeline', label: 'Timeline' },
+		{ id: 'sectors', label: 'Sectors' },
+		{ id: 'drivers', label: 'Top or bottom?' },
+		{ id: 'poverty', label: 'Poverty line' },
+		{ id: 'message', label: 'Same industry' },
+		{ id: 'receipt', label: 'Pay receipt' },
+		{ id: 'action', label: 'Take action' }
+	];
 
 	// Every company, loaded once and shared by all the charts below.
 	let data = $state.raw(null);
@@ -44,6 +57,8 @@
 <svelte:head>
 	<title>The CEO Pay Gap</title>
 </svelte:head>
+
+<SectionNav {sections} />
 
 <main>
 	<!-- Hook -->
@@ -201,6 +216,8 @@
 	section {
 		padding: 3rem 0;
 		border-bottom: 1px solid #eee;
+		/* Leave room for the sticky menu when jumping to a section. */
+		scroll-margin-top: 3rem;
 	}
 
 	/* The opening fills the first screen. */
