@@ -33,6 +33,13 @@
 		font-weight: 700;
 	}
 
+	/* Links to sections (#timeline, ...) scroll smoothly, unless the reader prefers less motion. */
+	@media (prefers-reduced-motion: no-preference) {
+		:global(html) {
+			scroll-behavior: smooth;
+		}
+	}
+
 	/* Site-wide basics. */
 	:global(body) {
 		margin: 0;

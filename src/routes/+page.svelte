@@ -48,13 +48,17 @@
 <main>
 	<!-- Hook -->
 	<section id="hook">
+		<p class="kicker">A data story for labor union representatives</p>
 		<h1>The CEO Pay Gap</h1>
 		<p class="lede">
 			In 2021, <span class="ceo">Amazon's CEO</span> earned <strong>6,474 times</strong> what the
 			company's <span class="worker">median worker</span> earned. Watch that gap grow while you read.
 		</p>
 		<Hook />
-		<p>Every company tells a version of this story. Scroll to see where yours fits.</p>
+		<a class="scroll-cue" href="#timeline">
+			Every company tells a version of this story. Scroll to see where yours fits.
+			<span class="arrow" aria-hidden="true">↓</span>
+		</a>
 	</section>
 
 	<!-- Rising insight 1 -->
@@ -199,8 +203,55 @@
 		border-bottom: 1px solid #eee;
 	}
 
+	/* The opening fills the first screen. */
 	#hook {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: calc(100vh - 4rem);
 		padding-top: 1rem;
+	}
+
+	#hook h1 {
+		font-size: clamp(2.6rem, 8vw, 4.5rem);
+		letter-spacing: -0.02em;
+	}
+
+	.kicker {
+		margin: 0 0 0.5rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #777;
+	}
+
+	.scroll-cue {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
+		margin-top: 1.5rem;
+		color: #555;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.arrow {
+		font-size: 1.5rem;
+		animation: bob 1.6s ease-in-out infinite;
+	}
+
+	@keyframes bob {
+		50% {
+			transform: translateY(6px);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.arrow {
+			animation: none;
+		}
 	}
 
 	section > p {
