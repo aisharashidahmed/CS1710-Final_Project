@@ -57,6 +57,7 @@
 	});
 </script>
 
+<div class="chart">
 <svg viewBox="0 0 {width} {height}">
 	{#each sectors as s (s.sector)}
 		<!-- The whole row is the hover/click target, so short bars are still easy to hit. -->
@@ -99,6 +100,7 @@
 		Median CEO-to-worker pay ratio
 	</text>
 </svg>
+</div>
 
 <style>
 	svg {

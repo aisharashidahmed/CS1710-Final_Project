@@ -125,7 +125,7 @@
 	</datalist>
 </div>
 
-<div class="timeline" bind:this={wrapper}>
+<div class="timeline chart" bind:this={wrapper}>
 	<svg
 		viewBox="0 0 {width} {height}"
 		bind:this={svg}

@@ -78,6 +78,7 @@
 
 	<!-- Rising insight 1 -->
 	<section id="timeline">
+		<p class="kicker">Part 1 · Timeline</p>
 		<h2>When would you have had to start working?</h2>
 		<p>
 			A company's pay ratio is also the number of years its
@@ -102,6 +103,7 @@
 
 	<!-- Rising insight 2 -->
 	<section id="sectors">
+		<p class="kicker">Part 2 · Sectors</p>
 		<h2>Which sectors have the biggest gaps?</h2>
 		<p>Every sector has a large gap, but the companies inside each sector differ even more.</p>
 		{#if data}
@@ -131,6 +133,7 @@
 
 	<!-- Rising insight 3 -->
 	<section id="drivers">
+		<p class="kicker">Part 3 · Top or bottom?</p>
 		<h2>Is it high pay at the top, or low pay at the bottom?</h2>
 		<p>
 			The companies with the most extreme ratios are not always the ones with the
@@ -159,6 +162,7 @@
 
 	<!-- Rising insight 4 -->
 	<section id="poverty">
+		<p class="kicker">Part 4 · Poverty line</p>
 		<h2>Below the poverty line</h2>
 		<p>
 			At <strong>34</strong> S&amp;P 500 companies, the <span class="worker">median worker</span>
@@ -171,6 +175,7 @@
 
 	<!-- Main message -->
 	<section id="message">
+		<p class="kicker">Main message</p>
 		<h2>Same industry, different choices</h2>
 		<p>
 			Competitors in the same sector have very different gaps, so the size of the gap is a company
@@ -183,6 +188,7 @@
 
 	<!-- Solution -->
 	<section id="receipt">
+		<p class="kicker">Your company</p>
 		<h2>Get your company's pay receipt</h2>
 		<p>Pick a company and see when its CEO "earned" a year of your pay.</p>
 		{#if data}
@@ -191,17 +197,40 @@
 	</section>
 
 	<section id="action">
+		<p class="kicker">What you can do</p>
 		<h2>Take action</h2>
-		<ol>
-			<li>Find your company's pay ratio in its proxy statement (required since 2018).</li>
-			<li>Compare it to competitors in the same sector.</li>
-			<li>Use those comparisons when bargaining.</li>
+		<p>
+			Since 2018, the Dodd-Frank Act has required public companies to report their CEO-to-worker
+			pay ratio. That makes the gap something workers can look up and challenge.
+		</p>
+		<ol class="steps">
+			<li>
+				<strong>Find your company's ratio</strong> in its yearly proxy statement (search "pay ratio"
+				in the company's DEF 14A filing on SEC EDGAR).
+			</li>
+			<li>
+				<strong>Compare it to competitors</strong> in the same sector, using the charts above.
+			</li>
+			<li>
+				<strong>Bring the comparison to the table.</strong> If a competitor pays fairly, a smaller gap
+				is possible.
+			</li>
 		</ol>
 	</section>
 
 	<footer>
-		Data: AFL-CIO Executive Paywatch (Kaggle copy), S&amp;P 500 companies, fiscal year 2021.
-		{#if data}{data.length} companies loaded.{:else}Loading data…{/if}
+		<p>
+			<strong>Data:</strong> AFL-CIO Executive Paywatch (Kaggle copy), S&amp;P 500 companies, fiscal
+			year 2021.
+			{#if data}{data.length} companies loaded.{:else}Loading data…{/if}
+			Each company chooses its own "median employee" (sometimes part-time or outside the U.S.), which
+			explains some extreme ratios.
+		</p>
+		<p>
+			<strong>Made by</strong> Ashle Sanchez, Aisha Ahmed and Kayleen Mukire for CS 1710: Data
+			Visualization, Harvard University. ·
+			<a href="https://github.com/aisharashidahmed/CS1710-Final_Project">Code on GitHub</a>
+		</p>
 	</footer>
 </main>
 
@@ -226,6 +255,8 @@
 		flex-direction: column;
 		justify-content: center;
 		min-height: calc(100vh - 4rem);
+		/* On phones, ignore the browser's address bar when sizing the first screen. */
+		min-height: calc(100svh - 4rem);
 		padding-top: 1rem;
 	}
 
@@ -276,10 +307,66 @@
 		font-size: 1.05rem;
 	}
 
+	section > .kicker {
+		margin-bottom: 0.25rem;
+	}
+
+	/* Take action: numbered cards. */
+	.steps {
+		display: grid;
+		gap: 0.75rem;
+		margin: 1.5rem 0 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: step;
+	}
+
+	.steps li {
+		position: relative;
+		margin: 0;
+		padding: 1rem 1rem 1rem 3.25rem;
+		border-radius: 8px;
+		background: #f6f6f6;
+		counter-increment: step;
+	}
+
+	.steps li::before {
+		content: counter(step);
+		position: absolute;
+		top: 0.9rem;
+		left: 1rem;
+		width: 1.6rem;
+		height: 1.6rem;
+		border-radius: 50%;
+		background: var(--sector-dark);
+		color: #fff;
+		font-weight: 700;
+		line-height: 1.6rem;
+		text-align: center;
+	}
+
 	footer {
 		padding-top: 2rem;
 		font-size: 0.85rem;
 		color: #666;
+	}
+
+	footer a {
+		color: inherit;
+	}
+
+	@media (max-width: 640px) {
+		main {
+			padding-top: 1rem;
+		}
+
+		section {
+			padding: 2rem 0;
+		}
+
+		.lede {
+			font-size: 1.1rem;
+		}
 	}
 
 	.hint {
@@ -299,7 +386,5 @@
 		font-size: 1.3rem;
 	}
 
-	ol li {
-		margin-bottom: 0.4rem;
-	}
+
 </style>

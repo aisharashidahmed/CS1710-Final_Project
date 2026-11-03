@@ -70,7 +70,7 @@
 	}
 </script>
 
-<div class="strip" bind:this={wrapper} style:--duration="{DURATION}ms">
+<div class="strip chart" bind:this={wrapper} style:--duration="{DURATION}ms">
 	<svg viewBox="0 0 {width} {shownHeight.current}">
 		<!-- Light row backgrounds so each sector reads as one group. -->
 		{#each rows as sector, i (sector)}

@@ -40,6 +40,19 @@
 		}
 	}
 
+	/* Wrap each chart in class="chart". On phones the chart keeps a readable minimum width
+	   and scrolls sideways instead of shrinking its labels to an unreadable size. */
+	@media (max-width: 640px) {
+		:global(.chart) {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		:global(.chart > svg) {
+			min-width: 600px;
+		}
+	}
+
 	/* Site-wide basics. */
 	:global(body) {
 		margin: 0;

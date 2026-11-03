@@ -41,7 +41,7 @@
 	let selected = $derived(data.find((d) => d.ticker === selectedTicker));
 </script>
 
-<div class="scatter" bind:this={wrapper}>
+<div class="scatter chart" bind:this={wrapper}>
 	<svg viewBox="0 0 {width} {height}">
 		<defs>
 			<clipPath id="plot-area">
