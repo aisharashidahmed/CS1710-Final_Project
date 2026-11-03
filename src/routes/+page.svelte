@@ -3,6 +3,7 @@
 	import * as d3 from 'd3';
 	import { loadCompanies, sectorOrder, ratioLabel } from '#lib/data.js';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
+	import PyramidTimeline from '#lib/PyramidTimeline.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
 	import WorkdaysCard from '#lib/WorkdaysCard.svelte';
 	// Teammates' charts (each person edits only their own file).
@@ -64,14 +65,20 @@
 			<span class="worker">median worker</span> would need to work to earn what the
 			<span class="ceo">CEO</span> made in one year.
 		</p>
-		<Placeholder
-			label="Pyramid timeline"
-			plan={{
-				shows:
-					'A timeline from 5000 BCE to today with one mark per company at the year its median worker would have had to start working (2021 − pay ratio), next to landmarks like the Great Pyramid (about 2560 BCE) and 1776. Amazon lands at 4453 BCE; the typical company at 1831.',
-				interaction: 'Hover a mark to see the company and its start year; search to find your company.'
-			}}
-		/>
+		{#if data}
+			<p class="hint">
+				Each dot is one company, stacked by century. Hover a dot for details, or search for your
+				company to pin it on the timeline.
+			</p>
+			<PyramidTimeline {data} />
+			<p class="showing">
+				Amazon's median worker would have had to start in <strong>4453 BCE</strong>, before the
+				Great Pyramid was built. At <strong>180</strong> companies the start date is 1776 or
+				earlier, and the typical company lands in <strong>1831</strong>.
+			</p>
+		{:else}
+			<Placeholder label="Loading timeline…" height={300} />
+		{/if}
 	</section>
 
 	<!-- Rising insight 2 -->

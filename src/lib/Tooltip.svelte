@@ -1,7 +1,8 @@
 <script>
 	import { money, ratioLabel } from '#lib/data.js';
 
-	// tip = { company, x, y, flip } in pixels relative to the chart wrapper.
+	// tip = { company, x, y, flip, extra? } in pixels relative to the chart wrapper.
+	// extra is an optional last line for chart-specific details.
 	let { tip } = $props();
 </script>
 
@@ -12,6 +13,7 @@
 		<div>CEO ({tip.company.ceo}): {money(tip.company.ceoPay)}</div>
 		<div>Median worker: {money(tip.company.workerPay)}</div>
 		<div>Pay ratio: <strong>{ratioLabel(tip.company.ratio)}</strong></div>
+		{#if tip.extra}<div>{tip.extra}</div>{/if}
 	</div>
 {/if}
 
