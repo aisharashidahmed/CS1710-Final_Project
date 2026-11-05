@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	import { loadCompanies, sectorOrder, ratioLabel } from '#lib/data.js';
+	import { loadCompanies, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
 	import TimelineStory from '#lib/TimelineStory.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
@@ -107,25 +107,40 @@
 		<h2>Which sectors have the biggest gaps?</h2>
 		<p>Every sector has a large gap, but the companies inside each sector differ even more.</p>
 		{#if data}
-			<p class="hint">Hover a sector to highlight its companies. Click a sector to show only it.</p>
-			<SectorBars
-				{data}
-				{order}
-				{hoveredSector}
-				{selectedSector}
-				onhover={(s) => (hoveredSector = s)}
-				onselect={(s) => (selectedSector = selectedSector === s ? null : s)}
-			/>
-			<p class="showing">
-				Showing <strong>{filtered.length}</strong> companies in
-				<strong>{selectedSector ?? 'all sectors'}</strong> · median pay ratio
-				<strong>{ratioLabel(d3.median(filtered, (d) => d.ratio))}</strong>
-				{#if selectedSector}
-					· <button onclick={() => (selectedSector = null)}>Show all sectors</button>
-				{/if}
-			</p>
-			<p class="hint">Each dot is one company. Hover a dot for its pay details.</p>
-			<CompanyStrip data={filtered} {order} {hoveredSector} />
+			{@const focus = hoveredSector ?? selectedSector}
+			<!-- Bars and dots side by side, so linking and filtering show up next to the bar you touch. -->
+			<div class="side-by-side">
+				<div class="bars">
+					<p class="hint">Hover a sector to highlight its companies. Click a sector to show only it.</p>
+					<SectorBars
+						{data}
+						{order}
+						{hoveredSector}
+						{selectedSector}
+						onhover={(s) => (hoveredSector = s)}
+						onselect={(s) => (selectedSector = selectedSector === s ? null : s)}
+					/>
+					<p class="showing">
+						Showing <strong>{filtered.length}</strong> companies in
+						<strong>{selectedSector ?? 'all sectors'}</strong> · median pay ratio
+						<strong>{ratioLabel(d3.median(filtered, (d) => d.ratio))}</strong>
+						{#if selectedSector}
+							· <button onclick={() => (selectedSector = null)}>Show all sectors</button>
+						{/if}
+					</p>
+					<p class="sector-examples">
+						{#if focus}
+							<strong>{focus}</strong> includes {SECTOR_EXAMPLES[focus]}.
+						{:else}
+							Hover a sector to see what kinds of companies it includes.
+						{/if}
+					</p>
+				</div>
+				<div class="dots">
+					<p class="hint">Each dot is one company. Hover a dot for its pay details.</p>
+					<CompanyStrip data={filtered} {order} {hoveredSector} />
+				</div>
+			</div>
 		{:else}
 			<Placeholder label="Loading sectors…" height={300} />
 		{/if}
@@ -378,6 +393,33 @@
 		margin: 1rem 0 0.25rem;
 		font-size: 0.85rem;
 		color: #666;
+	}
+
+	/* Wide screens: bars and dots side by side, wider than the page column like the timeline story. */
+	.side-by-side {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+		gap: 2.5rem;
+		align-items: start;
+		width: min(1500px, calc(100vw - 4rem));
+		margin-left: calc(50% - min(750px, calc(50vw - 2rem)));
+	}
+
+	.sector-examples {
+		min-height: 3em;
+		color: #444;
+	}
+
+	@media (max-width: 1000px) {
+		.side-by-side {
+			display: block;
+			width: auto;
+			margin-left: 0;
+		}
+
+		.bars {
+			max-width: 640px;
+		}
 	}
 
 	.showing {

@@ -36,6 +36,21 @@ export function sectorOrder(companies) {
 		.map((d) => d[0]);
 }
 
+// Plain examples of what each sector contains (S&P's GICS sectors), for readers who don't know the names.
+export const SECTOR_EXAMPLES = {
+	'Communication Services': 'phone and internet companies, media, video games',
+	'Consumer Discretionary': 'retail, restaurants, travel, cars',
+	'Consumer Staples': 'groceries, household goods, drinks',
+	Energy: 'oil and gas',
+	Financials: 'banks, insurance, investing',
+	'Health Care': 'drug makers, hospitals, medical devices, health insurance',
+	Industrials: 'airlines, machinery, defense, shipping',
+	'Information Technology': 'software, chips, computers',
+	Materials: 'chemicals, mining, packaging',
+	'Real Estate': 'property owners and landlords',
+	Utilities: 'electricity, gas, water'
+};
+
 export const money = d3.format('$,.0f');
 export const moneyShort = (n) => d3.format('$.3s')(n).replace('G', 'B');
 export const ratioLabel = (r) => `${d3.format(',')(Math.round(r))}:1`;

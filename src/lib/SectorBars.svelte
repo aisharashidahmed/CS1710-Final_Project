@@ -13,9 +13,10 @@
 		onselect = null
 	} = $props();
 
-	const width = 760;
-	const height = 360;
-	const margin = { top: 10, right: 60, bottom: 45, left: 170 };
+	// Sized to sit beside the company dot plot.
+	const width = 520;
+	const height = 400;
+	const margin = { top: 10, right: 50, bottom: 45, left: 170 };
 
 	// Median pay ratio and company count per sector, in the fixed page order.
 	let sectors = $derived.by(() => {

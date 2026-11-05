@@ -1,5 +1,5 @@
 <script>
-	import { money, ratioLabel } from '#lib/data.js';
+	import { money, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
 
 	// tip = { company, x, y, flip, extra? } in pixels relative to the chart wrapper.
 	// extra is an optional last line for chart-specific details.
@@ -9,7 +9,7 @@
 {#if tip}
 	<div class="tooltip" class:flip={tip.flip} style:left="{tip.x}px" style:top="{tip.y}px">
 		<strong>{tip.company.company}</strong>
-		<div>{tip.company.sector}</div>
+		<div>{tip.company.sector} <span class="examples">({SECTOR_EXAMPLES[tip.company.sector]})</span></div>
 		<div>CEO ({tip.company.ceo}): {money(tip.company.ceoPay)}</div>
 		<div>Median worker: {money(tip.company.workerPay)}</div>
 		<div>Pay ratio: <strong>{ratioLabel(tip.company.ratio)}</strong></div>
@@ -35,5 +35,8 @@
 	}
 	.tooltip.flip {
 		transform: translate(calc(-100% - 12px), 12px);
+	}
+	.examples {
+		color: #777;
 	}
 </style>

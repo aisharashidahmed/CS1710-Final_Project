@@ -53,7 +53,7 @@ Three people work on this page at once, so **each chart lives in its own file an
 
 When a chart stores a picked or hovered company in state, use `$state.raw(...)`, not `$state(...)`. Plain `$state` wraps the object in a proxy, so `d === picked` stops matching the original company object (or store the `ticker` instead and compare tickers).
 
-`SectorRange` also receives `order`: sector names from highest to lowest median ratio, the same order as the sector bars. Helpers in `data.js`: `money` ($212,701,169), `moneyShort` ($213M), `ratioLabel` (6,474:1).
+`SectorRange` also receives `order`: sector names from highest to lowest median ratio, the same order as the sector bars. Helpers in `data.js`: `money` ($212,701,169), `moneyShort` ($213M), `ratioLabel` (6,474:1), and `SECTOR_EXAMPLES[sector]` (plain examples, e.g. "retail, restaurants, travel, cars").
 
 ## Look and feel
 

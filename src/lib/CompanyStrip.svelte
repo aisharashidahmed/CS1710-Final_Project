@@ -20,7 +20,13 @@
 	const shownHeight = Tween.of(() => height, { duration: DURATION, easing });
 
 	// Ratios run from 2:1 to 6,474:1, so a log scale keeps the low end readable.
-	const x = d3.scaleLog().domain([1, 10000]).range([margin.left, width - margin.right]);
+	// The reader can switch to a regular (linear) scale to see how extreme the outliers are.
+	let linear = $state(false);
+	let x = $derived(
+		linear
+			? d3.scaleLinear().domain([0, 7000]).range([margin.left, width - margin.right])
+			: d3.scaleLog().domain([1, 10000]).range([margin.left, width - margin.right])
+	);
 
 	let y = $derived(
 		d3
@@ -45,12 +51,15 @@
 	let yAxisG = $state();
 
 	$effect(() => {
-		d3.select(xAxisG).call(
-			d3
-				.axisBottom(x)
-				.tickValues([1, 10, 100, 1000, 10000])
-				.tickFormat((d) => `${d3.format(',')(d)}:1`)
-		);
+		d3.select(xAxisG)
+			.transition()
+			.duration(DURATION)
+			.call(
+				d3
+					.axisBottom(x)
+					.tickValues(linear ? [0, 1000, 2000, 3000, 4000, 5000, 6000, 7000] : [1, 10, 100, 1000, 10000])
+					.tickFormat((d) => `${d3.format(',')(d)}:1`)
+			);
 	});
 	$effect(() => {
 		d3.select(yAxisG)
@@ -69,6 +78,11 @@
 		tip = { company, x: px, y: event.clientY - box.top, flip: px > box.width - 240 };
 	}
 </script>
+
+<div class="scale-toggle" role="group" aria-label="Axis scale">
+	<button type="button" class:on={!linear} onclick={() => (linear = false)}>Log scale</button>
+	<button type="button" class:on={linear} onclick={() => (linear = true)}>Regular scale</button>
+</div>
 
 <div class="strip chart" bind:this={wrapper} style:--duration="{DURATION}ms">
 	<svg viewBox="0 0 {width} {shownHeight.current}">
@@ -93,7 +107,9 @@
 				style:transform="translate({x(d.ratio)}px, {cy(d)}px)"
 				r="3.5"
 				fill={hoveredSector !== null && d.sector === hoveredSector ? 'var(--company-dark)' : 'var(--company)'}
-				fill-opacity="0.8"
+				fill-opacity="0.55"
+				stroke="#fff"
+				stroke-width="0.75"
 				opacity={hoveredSector === null || d.sector === hoveredSector ? 1 : 0.15}
 				onmouseenter={(e) => showTip(e, d)}
 				onmousemove={(e) => showTip(e, d)}
@@ -111,7 +127,7 @@
 		<g bind:this={yAxisG} transform="translate({margin.left}, 0)" />
 
 		<text class="axis-label" x={(margin.left + width - margin.right) / 2} y={shownHeight.current - 8}>
-			CEO-to-worker pay ratio (log scale)
+			CEO-to-worker pay ratio ({linear ? 'regular scale' : 'log scale: each step is 10× the last'})
 		</text>
 	</svg>
 	<Tooltip {tip} />
@@ -141,6 +157,21 @@
 		stroke: #111;
 		stroke-width: 2;
 		pointer-events: none;
+	}
+	.scale-toggle {
+		display: inline-flex;
+		margin: 0.25rem 0 0.5rem;
+		border: 1px solid #bbb;
+		border-radius: 999px;
+		overflow: hidden;
+	}
+	.scale-toggle button {
+		border: none;
+		border-radius: 0;
+	}
+	.scale-toggle button.on {
+		background: var(--sector-dark);
+		color: #fff;
 	}
 	.axis-label {
 		font-size: 13px;
