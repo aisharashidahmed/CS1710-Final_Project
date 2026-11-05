@@ -3,7 +3,7 @@
 	import * as d3 from 'd3';
 	import { loadCompanies, sectorOrder, ratioLabel } from '#lib/data.js';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
-	import PyramidTimeline from '#lib/PyramidTimeline.svelte';
+	import TimelineStory from '#lib/TimelineStory.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
 	import WorkdaysCard from '#lib/WorkdaysCard.svelte';
 	// Teammates' charts (each person edits only their own file).
@@ -89,24 +89,13 @@
 		<p class="kicker">Part 1 · Timeline</p>
 		<h2>When would you have had to start working?</h2>
 		<p>
-			At Amazon, the pay ratio is 6,474 to 1, so the
-			<span class="worker">median worker</span> would have to work <strong>6,474 years</strong> to
-			earn what the <span class="ceo">CEO</span> made in one. To finish by 2021, that worker would
-			have had to start in <strong>4454 BCE</strong>. Search for a company to see its numbers as
-			years, careers, and minutes.
+			A pay ratio is also the number of years the <span class="worker">median worker</span> would
+			need to work to earn what the <span class="ceo">CEO</span> made in one year. Count back from
+			2021, and you get the year that worker would have had to start. Scroll to go from a small gap
+			to the largest one.
 		</p>
 		{#if data}
-			<p class="hint">
-				On the timeline below, each dot is one company, placed at the year its worker would have had
-				to start. Dots are stacked by century. Hover a dot for details, and click it to see its
-				numbers in the card above.
-			</p>
-			<PyramidTimeline {data} />
-			<p class="showing">
-				Amazon's median worker would have had to start in <strong>4454 BCE</strong>, before the
-				Great Pyramid was built. At <strong>180</strong> companies the start date is 1776 or
-				earlier, and the typical company lands in <strong>1831</strong>.
-			</p>
+			<TimelineStory {data} />
 		{:else}
 			<Placeholder label="Loading timeline…" height={300} />
 		{/if}
