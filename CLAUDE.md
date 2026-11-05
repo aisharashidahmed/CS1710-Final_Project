@@ -47,9 +47,11 @@ Three people work on this page at once, so **each chart lives in its own file an
 | `workerPay` | median worker pay in dollars |
 | `ratio` | CEO-to-worker pay ratio (2 to 6,474) |
 | `workdays`, `workHours` | time for the CEO to earn the median worker's yearly pay (260 workdays / 2,080 hours per year) |
-| `startYear` | 2021 − ratio: year the worker would have had to start working to earn the CEO's one-year pay (negative = BCE) |
+| `startYear` | 2021 − ratio, minus 1 more for BCE years (there is no year 0): year the worker would have had to start working to earn the CEO's one-year pay (negative = BCE) |
 | `belowPoverty` | true if `workerPay` < $26,500 (2021 poverty line, family of four) |
 | `ceoPayRank`, `ratioRank` | 1 = highest CEO pay / highest ratio |
+
+When a chart stores a picked or hovered company in state, use `$state.raw(...)`, not `$state(...)`. Plain `$state` wraps the object in a proxy, so `d === picked` stops matching the original company object (or store the `ticker` instead and compare tickers).
 
 `SectorRange` also receives `order`: sector names from highest to lowest median ratio, the same order as the sector bars. Helpers in `data.js`: `money` ($212,701,169), `moneyShort` ($213M), `ratioLabel` (6,474:1).
 

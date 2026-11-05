@@ -1,11 +1,11 @@
 ticker,company,ceo,sector,ceo_pay,worker_pay,pay_ratio,workdays,work_hours,start_year,below_poverty,ceo_pay_rank,ratio_rank
-AMZN,"Amazon.com, Inc.",Andrew Jassy,Consumer Discretionary,212701169,32855,6474,0.04,0.321,-4453,false,3,1
-WDC,Western Digital Corporation,David Goeckeler,Information Technology,32137338,9644,3332,0.078,0.624,-1311,true,27,2
-DISCA,"Warner Bros. Discovery, Inc.",David Zaslav,Communication Services,246573481,82964,2972,0.087,0.7,-951,false,2,3
-EXPE,"Expedia Group, Inc.",Peter Kern,Consumer Discretionary,296247749,102270,2897,0.09,0.718,-876,false,1,4
-MCD,McDonald's Corporation,Christopher Kempczinski,Consumer Discretionary,20028132,8897,2251,0.116,0.924,-230,true,125,5
-TJX,"The TJX Companies, Inc.",Ernie Herrman,Consumer Discretionary,31802000,14139,2249,0.116,0.925,-228,true,29,6
-YUM,"Yum! Brands, Inc.",David Gibbs,Consumer Discretionary,27578659,13082,2108,0.123,0.987,-87,true,45,7
+AMZN,"Amazon.com, Inc.",Andrew Jassy,Consumer Discretionary,212701169,32855,6474,0.04,0.321,-4454,false,3,1
+WDC,Western Digital Corporation,David Goeckeler,Information Technology,32137338,9644,3332,0.078,0.624,-1312,true,27,2
+DISCA,"Warner Bros. Discovery, Inc.",David Zaslav,Communication Services,246573481,82964,2972,0.087,0.7,-952,false,2,3
+EXPE,"Expedia Group, Inc.",Peter Kern,Consumer Discretionary,296247749,102270,2897,0.09,0.718,-877,false,1,4
+MCD,McDonald's Corporation,Christopher Kempczinski,Consumer Discretionary,20028132,8897,2251,0.116,0.924,-231,true,125,5
+TJX,"The TJX Companies, Inc.",Ernie Herrman,Consumer Discretionary,31802000,14139,2249,0.116,0.925,-229,true,29,6
+YUM,"Yum! Brands, Inc.",David Gibbs,Consumer Discretionary,27578659,13082,2108,0.123,0.987,-88,true,45,7
 APTV,Aptiv Plc,Kevin Clark,Consumer Discretionary,14744780,7402,1992,0.131,1.044,29,true,241,8
 ORCL,Oracle Corporation,Safra Catz,Information Technology,138192032,75043,1842,0.141,1.129,179,false,6,9
 KO,The Coca-Cola Company,James Quincey,Consumer Staples,24883878,13894,1791,0.145,1.161,230,true,59,10

@@ -51,7 +51,7 @@
 	}
 
 	p {
-		max-width: 560px;
+		max-width: 800px;
 		margin: 0.25rem 0 0;
 		font-size: 0.9rem;
 	}

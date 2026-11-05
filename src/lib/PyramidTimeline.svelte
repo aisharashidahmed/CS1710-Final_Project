@@ -1,8 +1,10 @@
 <script>
 	import * as d3 from 'd3';
 	import Tooltip from '#lib/Tooltip.svelte';
+	import CompanySearch from '#lib/CompanySearch.svelte';
+	import TimeCompare from '#lib/TimeCompare.svelte';
 
-	// One dot per company at its startYear (2021 − pay ratio): the year its median worker would
+	// One dot per company at its startYear (2021 − pay ratio, see scripts/clean.js): the year its median worker would
 	// have had to start working to earn the CEO's one-year pay. Dots are stacked by century
 	// (a unit chart), so the height of each pile shows how many companies land in that century.
 	let { data } = $props();
@@ -50,18 +52,17 @@
 	const landmarks = [
 		{ year: -2560, label: 'Great Pyramid of Giza' },
 		{ year: -753, label: 'Rome founded' },
-		{ year: 1, label: 'Year 1' },
-		{ year: 1776, label: '1776' }
+		// There is no year 0: 1 BCE is followed directly by 1 CE.
+		{ year: 1, label: '1 CE' },
+		// Near the right edge, so this label ends at its line instead of centering on it.
+		{ year: 1776, label: 'U.S. independence (1776)', anchor: 'end' }
 	];
 
 	const yearLabel = (y) => (y < 0 ? `${-y} BCE` : `${y}`);
 
 	// Search: pick a company to pin its label on the timeline. Amazon is pinned by default.
-	let query = $state('');
-	let pinned = $derived(
-		data.find((d) => d.company.toLowerCase() === query.trim().toLowerCase()) ??
-			data.find((d) => d.ticker === 'AMZN')
-	);
+	// $state.raw keeps the plain company object, so `p.d === pinned` below still matches.
+	let pinned = $state.raw(data.find((d) => d.ticker === 'AMZN'));
 	let pinnedPoint = $derived(placed.find((p) => p.d === pinned));
 
 	let xAxisG = $state();
@@ -86,7 +87,8 @@
 	let wrapper;
 	let svg;
 	let tip = $state(null);
-	let hovered = $state(null);
+	// $state.raw for the same reason as `pinned`: clicking copies hovered.d into pinned.
+	let hovered = $state.raw(null);
 
 	function onmove(event) {
 		const [mx, my] = d3.pointer(event, svg);
@@ -110,20 +112,8 @@
 	}
 </script>
 
-<div class="controls">
-	<label for="timeline-search">Find your company:</label>
-	<input
-		id="timeline-search"
-		list="timeline-companies"
-		placeholder="e.g. McDonald's Corporation"
-		bind:value={query}
-	/>
-	<datalist id="timeline-companies">
-		{#each data as d (d.ticker)}
-			<option value={d.company}></option>
-		{/each}
-	</datalist>
-</div>
+<CompanySearch {data} selected={pinned} onpick={(d) => (pinned = d)} />
+<TimeCompare company={pinned} />
 
 <div class="timeline chart" bind:this={wrapper}>
 	<svg
@@ -132,10 +122,19 @@
 		role="presentation"
 		onmousemove={onmove}
 		onmouseleave={onleave}
+		onclick={() => hovered && (pinned = hovered.d)}
+		class:pointing={hovered}
 	>
 		{#each landmarks as l (l.year)}
 			<line class="landmark" x1={x(l.year)} x2={x(l.year)} y1={margin.top - 12} y2={baseline} />
-			<text class="landmark-label" x={x(l.year)} y={margin.top - 18}>{l.label}</text>
+			<text
+				class="landmark-label"
+				x={x(l.year) + (l.anchor === 'end' ? 4 : 0)}
+				y={margin.top - 18}
+				text-anchor={l.anchor ?? 'middle'}
+			>
+				{l.label}
+			</text>
 		{/each}
 
 		{#each placed as p (p.d.ticker)}
@@ -167,23 +166,11 @@
 </div>
 
 <style>
-	.controls {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.5rem;
-		margin: 1rem 0 0.5rem;
-		font-size: 0.9rem;
-	}
-	input {
-		flex: 0 1 320px;
-		padding: 0.3rem 0.6rem;
-		border: 1px solid #bbb;
-		border-radius: 6px;
-		font: inherit;
-	}
 	.timeline {
 		position: relative;
+	}
+	svg.pointing {
+		cursor: pointer;
 	}
 	svg {
 		width: 100%;
@@ -196,12 +183,11 @@
 	}
 	.landmark-label {
 		font-size: 11px;
-		text-anchor: middle;
 		fill: #666;
 	}
 	.pin {
 		stroke: var(--company-dark);
-		stroke-width: 1.5;
+		stroke-width: 2;
 	}
 	.pin-label {
 		font-size: 13px;

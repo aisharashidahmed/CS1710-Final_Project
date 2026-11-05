@@ -60,9 +60,9 @@
 	ul {
 		display: flex;
 		gap: 0.25rem;
-		max-width: 860px;
+		max-width: 1200px;
 		margin: 0 auto;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 2rem;
 		overflow-x: auto;
 		list-style: none;
 		scrollbar-width: none;
@@ -73,7 +73,7 @@
 		padding: 0.3rem 0.7rem;
 		border-radius: 999px;
 		color: #555;
-		font-size: 0.85rem;
+		font-size: 0.9rem;
 		text-decoration: none;
 		white-space: nowrap;
 	}

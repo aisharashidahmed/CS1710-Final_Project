@@ -65,6 +65,14 @@
 	<section id="hook">
 		<p class="kicker">A data story for labor union representatives</p>
 		<h1>The CEO Pay Gap</h1>
+		<p class="about">
+			Every year, S&amp;P 500 companies must report what their CEO earned and what their
+			<span class="worker">median worker</span> (the employee in the middle of the pay scale)
+			earned. This page uses those reports for 492 companies in 2021. In four short parts, you'll see
+			how far back in history the gap reaches, which industries are worst, whether the gap comes from
+			the top or the bottom, and who is paid below the poverty line. Then you can look up your own
+			company and take its numbers to the bargaining table.
+		</p>
 		<p class="lede">
 			In 2021, <span class="ceo">Amazon's CEO</span> earned <strong>6,474 times</strong> what the
 			company's <span class="worker">median worker</span> earned. Watch that gap grow while you read.
@@ -81,18 +89,21 @@
 		<p class="kicker">Part 1 · Timeline</p>
 		<h2>When would you have had to start working?</h2>
 		<p>
-			A company's pay ratio is also the number of years its
-			<span class="worker">median worker</span> would need to work to earn what the
-			<span class="ceo">CEO</span> made in one year.
+			At Amazon, the pay ratio is 6,474 to 1, so the
+			<span class="worker">median worker</span> would have to work <strong>6,474 years</strong> to
+			earn what the <span class="ceo">CEO</span> made in one. To finish by 2021, that worker would
+			have had to start in <strong>4454 BCE</strong>. Search for a company to see its numbers as
+			years, careers, and minutes.
 		</p>
 		{#if data}
 			<p class="hint">
-				Each dot is one company, stacked by century. Hover a dot for details, or search for your
-				company to pin it on the timeline.
+				On the timeline below, each dot is one company, placed at the year its worker would have had
+				to start. Dots are stacked by century. Hover a dot for details, and click it to see its
+				numbers in the card above.
 			</p>
 			<PyramidTimeline {data} />
 			<p class="showing">
-				Amazon's median worker would have had to start in <strong>4453 BCE</strong>, before the
+				Amazon's median worker would have had to start in <strong>4454 BCE</strong>, before the
 				Great Pyramid was built. At <strong>180</strong> companies the start date is 1776 or
 				earlier, and the typical company lands in <strong>1831</strong>.
 			</p>
@@ -236,9 +247,10 @@
 
 <style>
 	main {
-		max-width: 860px;
+		/* Wide layout: text and charts share one column that fills most of the screen. */
+		max-width: 1200px;
 		margin: 0 auto;
-		padding: 2rem 1rem 4rem;
+		padding: 2rem 2rem 4rem;
 		line-height: 1.55;
 	}
 
@@ -261,8 +273,13 @@
 	}
 
 	#hook h1 {
-		font-size: clamp(2.6rem, 8vw, 4.5rem);
+		font-size: clamp(2.8rem, 8vw, 6rem);
 		letter-spacing: -0.02em;
+	}
+
+	.about {
+		margin: 0.5rem 0 1.25rem;
+		color: #444;
 	}
 
 	.kicker {
@@ -303,8 +320,7 @@
 	}
 
 	section > p {
-		max-width: 680px;
-		font-size: 1.05rem;
+		font-size: 1.15rem;
 	}
 
 	section > .kicker {
@@ -383,7 +399,7 @@
 	}
 
 	.lede {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 	}
 
 

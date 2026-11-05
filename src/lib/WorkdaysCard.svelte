@@ -52,31 +52,31 @@
 		background: #fff;
 		border: 1px solid #ddd;
 		border-radius: 6px;
-		padding: 12px 14px;
+		padding: 16px 20px;
 		min-height: 120px;
 	}
 	h3 {
 		margin: 0;
-		font-size: 16px;
+		font-size: 20px;
 	}
 	.big {
 		margin: 6px 0 0;
-		font-size: 26px;
+		font-size: 36px;
 		font-weight: bold;
 		color: var(--ceo);
 	}
 	p {
 		margin: 4px 0;
-		font-size: 14px;
+		font-size: 17px;
 	}
 	.small,
 	.empty {
-		font-size: 13px;
+		font-size: 15px;
 		color: #555;
 	}
 	svg {
 		width: 100%;
-		max-width: 360px;
+		max-width: 520px;
 		display: block;
 		margin: 6px 0;
 	}

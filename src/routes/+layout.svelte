@@ -56,6 +56,7 @@
 	/* Site-wide basics. */
 	:global(body) {
 		margin: 0;
+		font-size: 18px;
 		background: #fff;
 		color: #222;
 		font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -63,13 +64,13 @@
 
 	:global(h1) {
 		margin: 0 0 0.5rem;
-		font-size: 2.5rem;
+		font-size: 3rem;
 		line-height: 1.15;
 	}
 
 	:global(h2) {
-		margin: 0 0 0.5rem;
-		font-size: 1.6rem;
+		margin: 0 0 0.75rem;
+		font-size: clamp(1.6rem, 3vw, 2.3rem);
 		line-height: 1.25;
 	}
 

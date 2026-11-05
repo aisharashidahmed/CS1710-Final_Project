@@ -45,8 +45,9 @@
 	}
 
 	.intro {
-		font-size: 0.95rem;
-		color: #555;
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: #333;
 	}
 
 	.row {
@@ -59,23 +60,25 @@
 		flex: 1 1 240px;
 		display: flex;
 		flex-direction: column;
-		padding: 1.25rem 1.5rem;
+		padding: 1.5rem 2rem;
 		border-radius: 8px;
 		background: #f6f6f6;
 	}
 
 	.who {
-		font-size: 0.95rem;
+		font-size: 1rem;
+		font-weight: 700;
 	}
 
 	.rate {
-		font-size: 0.85rem;
-		color: #666;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: #555;
 	}
 
 	.amount {
 		margin: 0.25rem 0;
-		font-size: clamp(2.2rem, 6vw, 3.4rem);
+		font-size: clamp(2.4rem, 6vw, 4.5rem);
 		line-height: 1.1;
 		font-weight: 700;
 		font-variant-numeric: tabular-nums;

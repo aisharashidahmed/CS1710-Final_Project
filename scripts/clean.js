@@ -41,8 +41,10 @@ for (const d of companies) {
 	d.workdays = +(WORKDAYS_PER_YEAR / d.pay_ratio).toFixed(3);
 	d.work_hours = +(WORK_HOURS_PER_YEAR / d.pay_ratio).toFixed(3);
 	// Year the median worker would have had to start working to earn the CEO's one-year pay
-	// (negative = BCE). Amazon: 2021 - 6474 = -4453, i.e. 4453 BCE.
+	// (negative = BCE). The calendar has no year 0 (1 BCE is followed by 1 CE), so years at or
+	// before 0 shift back by one. Amazon: 2021 - 6474 = -4453, which is 4454 BCE (stored as -4454).
 	d.start_year = YEAR - d.pay_ratio;
+	if (d.start_year <= 0) d.start_year -= 1;
 	d.below_poverty = d.worker_pay < POVERTY_LINE;
 }
 

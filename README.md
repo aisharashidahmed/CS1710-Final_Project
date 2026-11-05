@@ -79,7 +79,7 @@ npm run clean
 - fixes sector names (`Consumer%20Discretionary` → `Consumer Discretionary`)
 - renames `salary` to `ceo_pay` (the column holds total CEO pay, not base salary)
 - drops rows with missing values (none in the current file)
-- adds `workdays` and `work_hours` (time for the CEO to earn the median worker's yearly pay), `start_year` (2021 − pay ratio; negative = BCE), `below_poverty` (median worker pay under the 2021 poverty line of $26,500 for a family of four), `ceo_pay_rank` and `ratio_rank`
+- adds `workdays` and `work_hours` (time for the CEO to earn the median worker's yearly pay), `start_year` (2021 − pay ratio; negative = BCE, shifted back one year because there is no year 0), `below_poverty` (median worker pay under the 2021 poverty line of $26,500 for a family of four), `ceo_pay_rank` and `ratio_rank`
 
 ## Project structure
 ```
