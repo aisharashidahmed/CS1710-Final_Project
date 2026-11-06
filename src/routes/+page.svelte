@@ -45,8 +45,9 @@
 		data && selectedSector ? data.filter((d) => d.sector === selectedSector) : data
 	);
 
-	// Company clicked in the scatterplot, shown in the workdays card (click again to clear).
-	let selectedTicker = $state(null);
+	// Company clicked in the scatterplot, shown in the workdays card. Amazon is shown first,
+	// so the card has an answer before the reader clicks anything.
+	let selectedTicker = $state('AMZN');
 	let selectedCompany = $derived(data?.find((d) => d.ticker === selectedTicker) ?? null);
 
 	onMount(async () => {
@@ -156,17 +157,23 @@
 			<span class="worker">very low worker pay</span>.
 		</p>
 		{#if data}
-			<p class="hint">
-				Each dot is one company. Dots above a dashed line have a higher pay ratio than that line.
-				Hover a dot for its pay details. Click a dot to see how long its CEO takes to earn a worker's
-				year.
-			</p>
-			<WorkdaysCard company={selectedCompany} />
-			<PayScatter
-				{data}
-				{selectedTicker}
-				onselect={(t) => (selectedTicker = selectedTicker === t ? null : t)}
-			/>
+			<!-- Card beside the scatterplot, so clicking a dot updates the card right next to it. -->
+			<div class="side-by-side scatter-row">
+				<div>
+					<p class="hint">
+						The card shows how long a CEO takes to earn their median worker's yearly pay. Click any
+						dot to switch companies.
+					</p>
+					<WorkdaysCard company={selectedCompany} />
+				</div>
+				<div>
+					<p class="hint">
+						Each dot is one company. Dots above a dashed line have a higher pay ratio than that line.
+						Hover a dot for its pay details.
+					</p>
+					<PayScatter {data} {selectedTicker} onselect={(t) => (selectedTicker = t)} />
+				</div>
+			</div>
 		{:else}
 			<Placeholder label="Loading companies…" height={420} />
 		{/if}
@@ -403,6 +410,10 @@
 		align-items: start;
 		width: min(1500px, calc(100vw - 4rem));
 		margin-left: calc(50% - min(750px, calc(50vw - 2rem)));
+	}
+
+	.scatter-row {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
 	}
 
 	.sector-examples {
