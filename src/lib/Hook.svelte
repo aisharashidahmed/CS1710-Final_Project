@@ -62,7 +62,7 @@
 		flex-direction: column;
 		padding: 1.5rem 2rem;
 		border-radius: 8px;
-		background: #f6f6f6;
+		background: var(--card);
 	}
 
 	.who {
@@ -93,10 +93,12 @@
 	}
 
 	.ceo-box {
+		background: var(--ceo-tint);
 		border-top: 4px solid var(--ceo);
 	}
 
 	.worker-box {
+		background: var(--worker-tint);
 		border-top: 4px solid var(--worker);
 	}
 

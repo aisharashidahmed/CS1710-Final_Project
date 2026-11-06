@@ -94,7 +94,7 @@
 				style:transform="translateY({y(sector)}px)"
 				width={width - margin.left - margin.right}
 				height={y.bandwidth()}
-				fill={i % 2 ? '#fff' : '#f1f5f9'}
+				fill={i % 2 ? 'transparent' : 'rgba(120, 90, 40, 0.06)'}
 				transition:fade={{ duration: DURATION }}
 			/>
 		{/each}

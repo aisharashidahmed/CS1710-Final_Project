@@ -171,7 +171,8 @@
 		margin: 0 0 60vh;
 		padding: 1.25rem 1.5rem;
 		border-radius: 8px;
-		background: #f6f6f6;
+		background: var(--card);
+		border: 1px solid #e2d6c1;
 		opacity: 0.4;
 		transition: opacity 300ms;
 	}
@@ -212,10 +213,11 @@
 		gap: 0.4rem;
 		margin-top: 0.25rem;
 		padding: 0.3rem 0.8rem;
-		border: 1px solid #ccc;
+		border: 1.5px solid var(--sector-dark);
 		border-radius: 999px;
-		background: #fff;
-		color: #444;
+		background: var(--card);
+		color: #222;
+		font-weight: 600;
 		font: inherit;
 		font-size: 0.9rem;
 		text-decoration: none;
@@ -223,7 +225,7 @@
 	}
 
 	.next:hover {
-		background: #f3f3f3;
+		background: #e6dbc7;
 	}
 
 	.step.explore .next {
@@ -259,7 +261,7 @@
 			top: 3rem;
 			height: auto;
 			z-index: 1;
-			background: #fff;
+			background: var(--bg);
 		}
 
 		.steps {
@@ -268,7 +270,7 @@
 		}
 
 		.step {
-			background: rgba(255, 255, 255, 0.96);
+			background: rgba(239, 230, 214, 0.97);
 			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
 		}
 	}

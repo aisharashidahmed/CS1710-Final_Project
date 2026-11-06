@@ -20,6 +20,12 @@
 		--company-dark: #5e3c99;
 		--sector: #9a9a9a;
 		--sector-dark: #333;
+
+		/* Page colors: warm off-white page, cards are a deeper shade of the same color. */
+		--bg: #faf6ef;
+		--card: #efe6d6;
+		--ceo-tint: #fbeeee;
+		--worker-tint: #ecf2f9;
 	}
 
 	/* Highlight key numbers in the story text. */
@@ -57,7 +63,7 @@
 	:global(body) {
 		margin: 0;
 		font-size: 18px;
-		background: #fff;
+		background: var(--bg);
 		color: #222;
 		font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
 	}
@@ -78,14 +84,14 @@
 		padding: 0.2rem 0.7rem;
 		border: 1px solid #bbb;
 		border-radius: 999px;
-		background: #fff;
+		background: var(--card);
 		font: inherit;
 		font-size: 0.85rem;
 		cursor: pointer;
 	}
 
 	:global(button:hover) {
-		background: #f3f3f3;
+		background: #e6dbc7;
 	}
 
 	:global(svg text) {

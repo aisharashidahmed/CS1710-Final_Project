@@ -353,7 +353,7 @@
 		margin: 0;
 		padding: 1rem 1rem 1rem 3.25rem;
 		border-radius: 8px;
-		background: #f6f6f6;
+		background: var(--card);
 		counter-increment: step;
 	}
 
@@ -437,7 +437,7 @@
 		margin-top: 2rem;
 		padding: 0.5rem 0.75rem;
 		border-left: 3px solid var(--sector-dark);
-		background: #f5f5f5;
+		background: var(--card);
 	}
 
 	.lede {

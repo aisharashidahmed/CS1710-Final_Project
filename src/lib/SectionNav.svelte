@@ -51,8 +51,8 @@
 		position: sticky;
 		top: 0;
 		z-index: 10;
-		border-bottom: 1px solid #e5e5e5;
-		background: rgba(255, 255, 255, 0.95);
+		border-bottom: 1px solid #e8dfd0;
+		background: rgba(250, 246, 239, 0.95);
 		backdrop-filter: blur(4px);
 	}
 
@@ -79,7 +79,7 @@
 	}
 
 	a:hover {
-		background: #f3f3f3;
+		background: #e6dbc7;
 	}
 
 	a.current {

@@ -62,6 +62,7 @@ When a chart stores a picked or hovered company in state, use `$state.raw(...)`,
   - `var(--worker)` blue = worker pay
   - `var(--company)` / `var(--company-dark)` light / dark purple = a company or its ratio
   - `var(--sector)` / `var(--sector-dark)` gray / near-black = a sector
+  - `var(--bg)` warm off-white page background, `var(--card)` a deeper cream for cards, boxes, tooltips and buttons, `var(--ceo-tint)` / `var(--worker-tint)` pale red / blue box backgrounds. Never use white (#fff) backgrounds: white next to cream is hard on the eyes.
 - In text, wrap CEO numbers in `<span class="ceo">` and worker numbers in `<span class="worker">`.
 - Hover: show the shared `Tooltip.svelte` (`tip = { company, x, y, flip, extra? }`, where `extra` is an optional last line) and outline the hovered mark in `#111`. Highlight = fade others to about 0.15 opacity; never remove them.
 - Ratios run from 2:1 to 6,474:1 (24 companies are above 1,000:1), so ratio and pay axes usually need a log scale; if a chart uses a linear scale, say why.

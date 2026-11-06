@@ -107,7 +107,7 @@
 		padding: 4px 0;
 		border: 1px solid #ddd;
 		border-radius: 6px;
-		background: #fff;
+		background: var(--card);
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 		list-style: none;
 	}
@@ -127,7 +127,7 @@
 		font-size: 0.95rem;
 	}
 	button:hover {
-		background: #f3f3f3;
+		background: #e6dbc7;
 	}
 	.sector {
 		margin-left: 0.4rem;

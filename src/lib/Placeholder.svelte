@@ -26,7 +26,7 @@
 		padding: 1rem 1.5rem;
 		border: 2px dashed #bbb;
 		border-radius: 8px;
-		background: #f3f3f3;
+		background: var(--card);
 		color: #555;
 		text-align: center;
 	}

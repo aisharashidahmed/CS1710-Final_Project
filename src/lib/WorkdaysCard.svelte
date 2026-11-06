@@ -49,7 +49,7 @@
 
 <style>
 	.card {
-		background: #fff;
+		background: var(--card);
 		border: 1px solid #ddd;
 		border-radius: 6px;
 		padding: 16px 20px;

@@ -62,7 +62,7 @@
 		padding: 1rem 1.5rem;
 		border-left: 4px solid var(--company-dark);
 		border-radius: 8px;
-		background: #f7f4fb;
+		background: var(--card);
 	}
 	h3 {
 		margin: 0 0 0.5rem;
