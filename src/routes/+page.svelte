@@ -120,9 +120,21 @@
 	<section id="history">
 		<p class="kicker">Part 2 · History since 1965</p>
 		<h2>How did the gap get this big?</h2>
+		<p>
+			In 1965, CEOs at big U.S. companies made about <strong>21 times</strong> what a typical worker
+			made. By 2021, it was <strong>408 times</strong>. Over the same years, the share of workers in a
+			union fell from <span class="worker">28% to 10%</span>. Two lines moving in opposite directions
+			don't prove one caused the other, but a union is one of the few ways workers can push back on
+			pay. Hover a year to see both.
+		</p>
 		{#if history}
 			<PayHistory {history} />
 		{/if}
+		<p class="source-note">
+			These numbers come from the Economic Policy Institute, which studies the 350 largest U.S.
+			companies and counts stock when the CEO cashes it in. That's why its 2021 ratio (408 to 1) is
+			higher than the 190 to 1 at the typical S&amp;P 500 company in the rest of this page.
+		</p>
 	</section>
 
 	<!-- Rising insight 3 -->
@@ -270,6 +282,11 @@
 				<strong>Bring the comparison to the table.</strong> If a competitor pays fairly, a smaller gap
 				is possible.
 			</li>
+			<li>
+				<strong>Bargain together.</strong> In 2024, union workers earned about
+				<span class="worker">13% more</span> than similar workers without a union. As union membership
+				fell, the gap grew (see <a href="#history">Part 2</a>).
+			</li>
 		</ol>
 	</section>
 
@@ -279,7 +296,8 @@
 			year 2021.
 			{#if data}{data.length} companies loaded.{:else}Loading data…{/if}
 			Each company chooses its own "median employee" (sometimes part-time or outside the U.S.), which
-			explains some extreme ratios.
+			explains some extreme ratios. History (Part 2) and the union pay figure: Economic Policy
+			Institute, State of Working America Data Library, 1965–2024.
 		</p>
 		<p>
 			<strong>Made by</strong> Ashle Sanchez, Aisha Ahmed and Kayleen Mukire for CS 1710: Data
@@ -499,6 +517,12 @@
 
 	.lede {
 		font-size: 1.5rem;
+	}
+
+	.source-note {
+		margin-top: 0.75rem;
+		font-size: 0.9rem;
+		color: #666;
 	}
 
 
