@@ -6,6 +6,13 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<!-- Fonts: a serif for headings (newspaper feel), a clean sans for text and chart labels. -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+	/>
 </svelte:head>
 
 {@render children()}
@@ -65,7 +72,13 @@
 		font-size: 18px;
 		background: var(--bg);
 		color: #222;
-		font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+		font-family: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+		line-height: 1.55;
+	}
+
+	:global(h1, h2, h3) {
+		font-family: 'Source Serif 4', Georgia, serif;
+		font-weight: 700;
 	}
 
 	:global(h1) {
