@@ -8,6 +8,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"clean": "node scripts/clean.js",
+		"clean:history": "node scripts/clean-history.js",
 		"prepare": "svelte-kit sync || echo ''"
 	},
 	"devDependencies": {
