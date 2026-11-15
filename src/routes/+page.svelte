@@ -82,10 +82,11 @@
 			</p>
 		</div>
 		<p class="about">
-			Since 2018, public U.S. companies have had to report two numbers every year: what their CEO was
+			Since 2018, public U.S. companies have had to report <strong>two numbers</strong> every year: what their CEO was
 			paid, and what their <span class="worker">median worker</span> was paid. The median worker is
-			the one in the middle: half the company earns more, half earns less. We use these numbers for
-			492 S&amp;P 500 companies in 2021. At the end, you can look up your own company.
+			the one in the middle: <strong>half the company earns more, half earns less</strong>. We use these numbers for
+			<strong>492 S&amp;P 500 companies in 2021</strong>. <strong>The gap hasn't closed since</strong>: AFL-CIO's newest numbers put the
+			typical S&amp;P 500 company at <strong>198 to 1 in 2025</strong>. At the end, you can look up your own company.
 		</p>
 		<p class="lede">
 			In 2021, <span class="ceo">Amazon's CEO</span> earned <strong>6,474 times</strong> what the
@@ -94,7 +95,7 @@
 		</p>
 		<Hook />
 		<a class="scroll-cue" href="#timeline">
-			Amazon is the most extreme case. Scroll down to see where other companies land.
+			Amazon is <strong>the most extreme case</strong>. Scroll down to see where other companies land.
 			<span class="arrow" aria-hidden="true">↓</span>
 		</a>
 	</section>
@@ -104,9 +105,9 @@
 		<p class="kicker">Part 1 · Timeline</p>
 		<h2>How long would a worker need to earn the CEO's yearly pay?</h2>
 		<p>
-			A ratio of 190 to 1 means the <span class="worker">median worker</span> needs 190 years to
+			A ratio of <strong>190 to 1</strong> means the <span class="worker">median worker</span> needs <strong>190 years</strong> to
 			earn what the <span class="ceo">CEO</span> got in one year. Counting back from 2021 gives the
-			year they would have had to start working. Keep scrolling and the timeline zooms out, from the
+			<strong>year they would have had to start working</strong>. Keep scrolling and the timeline zooms out, from the
 			smallest gap to the biggest.
 		</p>
 		{#if data}
@@ -124,7 +125,7 @@
 			In 1965, CEOs at big U.S. companies made about <strong>21 times</strong> what a typical worker
 			made. By 2021, it was <strong>408 times</strong>. Over the same years, the share of workers in a
 			union fell from <span class="worker">28% to 10%</span>. Two lines moving in opposite directions
-			don't prove one caused the other, but a union is one of the few ways workers can push back on
+			<strong>don't prove one caused the other</strong>, but a union is one of the few ways workers can push back on
 			pay. Hover a year to see both.
 		</p>
 		{#if history}
@@ -142,8 +143,8 @@
 		<p class="kicker">Part 3 · Sectors</p>
 		<h2>Which sectors have the biggest gaps?</h2>
 		<p>
-			A sector is a group of similar businesses, like banks or grocery chains. The bars show the
-			typical pay ratio in each sector. The dots show every company, so you can see how much
+			A <strong>sector</strong> is a group of similar businesses, like banks or grocery chains. The <strong>bars</strong> show the
+			typical pay ratio in each sector. The <strong>dots</strong> show every company, so you can see how much
 			companies in the same sector differ.
 		</p>
 		{#if data}
@@ -191,8 +192,9 @@
 		<p class="kicker">Part 4 · CEO pay or worker pay?</p>
 		<h2>Is the gap caused by high CEO pay or low worker pay?</h2>
 		<p>
-			It can be either. Amazon's gap comes from its <span class="ceo">CEO's $212.7 million</span>.
-			McDonald's has the 5th-biggest gap, but its CEO is only the 125th-highest paid. Its gap comes
+			<strong>It can be either.</strong> Amazon's gap comes from its <span class="ceo">CEO's $212.7 million</span>.
+			McDonald's has the <strong>5th-biggest gap</strong>, but its CEO is only the
+			<strong>125th-highest paid</strong>. Its gap comes
 			from its <span class="worker">median worker earning $8,897</span>.
 		</p>
 		{#if data}
@@ -226,7 +228,7 @@
 		<p class="kicker">Part 5 · Poverty line</p>
 		<h2>At 34 companies, the median worker is paid below the poverty line</h2>
 		<p>
-			The poverty line for a family of four was $26,500 in 2021. At <strong>34</strong> S&amp;P 500
+			The poverty line for a family of four was <strong>$26,500</strong> in 2021. At <strong>34</strong> S&amp;P 500
 			companies, the <span class="worker">median worker</span> earned less than that. Each card is
 			one of those companies, with its <span class="worker">worker's pay</span> next to its
 			<span class="ceo">CEO's pay</span>.
@@ -241,9 +243,9 @@
 		<p class="kicker">The main point</p>
 		<h2>Companies in the same sector choose very different gaps</h2>
 		<p>
-			Each row is one sector. The left dot is the company with the smallest gap, and the right dot
-			is the company with the biggest. A long line means competitors pay very differently, so a big
-			gap is a company's choice, not a rule of its industry.
+			Each row is one sector. The <strong>left dot</strong> is the company with the smallest gap, and the
+			<strong>right dot</strong> is the company with the biggest. A long line means competitors pay very differently, so <strong>a big
+			gap is a company's choice</strong>, not a rule of its industry.
 		</p>
 		{#if data}
 			<SectorRange {data} {order} />
@@ -255,8 +257,8 @@
 		<p class="kicker">Your company</p>
 		<h2>Print your company's pay receipt</h2>
 		<p>
-			Search for a company to see its CEO's pay and its median worker's pay on one receipt. You can
-			download it as an image to share.
+			Search for a company to see its CEO's pay and its median worker's pay on <strong>one receipt</strong>. You can
+			<strong>download it as an image</strong> to share.
 		</p>
 		{#if data}
 			<PayReceipt {data} />
@@ -268,7 +270,7 @@
 		<h2>Take action</h2>
 		<p>
 			Since 2018, the Dodd-Frank Act has required public companies to report their CEO-to-worker
-			pay ratio, so any worker can look it up.
+			pay ratio, so <strong>any worker can look it up</strong>.
 		</p>
 		<ol class="steps">
 			<li>
