@@ -66,13 +66,22 @@
 
 <div class="scrolly">
 	<div class="graphic">
-		<PyramidTimeline
-			{data}
-			view={step.view}
-			pinned={step.explore ? picked : (step.pinned ?? null)}
-			marker={step.marker ?? null}
-			onpick={step.explore ? (d) => (picked = d) : null}
-		/>
+		<!-- The title sits inside the sticky graphic, so it stays on screen with the chart. -->
+		<figure>
+			<figcaption>
+				<h3>The year each company's median worker would have had to start working</h3>
+				<p>
+					Each dot is one company. Showing {yearLabel(step.view.start)} to {step.view.end}.
+				</p>
+			</figcaption>
+			<PyramidTimeline
+				{data}
+				view={step.view}
+				pinned={step.explore ? picked : (step.pinned ?? null)}
+				marker={step.marker ?? null}
+				onpick={step.explore ? (d) => (picked = d) : null}
+			/>
+		</figure>
 	</div>
 
 	<div class="steps">
@@ -156,8 +165,21 @@
 		align-self: start;
 	}
 
-	.graphic > :global(*) {
+	.graphic > figure {
 		flex: 1;
+		margin: 0;
+	}
+
+	figcaption h3 {
+		margin: 0 0 0.2rem;
+		font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+		line-height: 1.25;
+	}
+
+	figcaption p {
+		margin: 0 0 0.5rem;
+		font-size: 0.95rem;
+		color: #555;
 	}
 
 	.steps {
@@ -267,6 +289,11 @@
 		.steps {
 			position: relative;
 			z-index: 2;
+		}
+
+		/* Keep the stuck chart short on phones: title only. */
+		figcaption p {
+			display: none;
 		}
 
 		.step {
