@@ -66,6 +66,17 @@
 	<section id="hook">
 		<p class="kicker">A data story for labor union representatives</p>
 		<h1>The CEO Pay Gap</h1>
+		<!-- The one term the whole page depends on, defined first and big. -->
+		<div class="definition">
+			<p class="formula">
+				<span class="term">Pay ratio</span> =
+				<span class="ceo">CEO pay</span> ÷ <span class="worker">median worker pay</span>
+			</p>
+			<p class="example">
+				At the typical S&amp;P 500 company it is <strong>190 to 1</strong>: the CEO makes in one
+				year what the median worker makes in 190 years.
+			</p>
+		</div>
 		<p class="about">
 			Every year, S&amp;P 500 companies must report what their CEO earned and what their
 			<span class="worker">median worker</span> (the employee in the middle of the pay scale)
@@ -286,6 +297,30 @@
 	#hook h1 {
 		font-size: clamp(2.8rem, 8vw, 6rem);
 		letter-spacing: -0.02em;
+	}
+
+	.definition {
+		margin: 1rem 0 1.5rem;
+		padding: 1.25rem 1.5rem;
+		border-left: 6px solid var(--company-dark);
+		border-radius: 8px;
+		background: var(--card);
+	}
+
+	.formula {
+		margin: 0 0 0.5rem;
+		font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.term {
+		color: var(--company-dark);
+	}
+
+	.example {
+		margin: 0;
+		font-size: clamp(1.1rem, 1.8vw, 1.35rem);
 	}
 
 	.about {
