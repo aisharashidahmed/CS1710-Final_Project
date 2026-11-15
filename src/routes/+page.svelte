@@ -1,7 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	import { loadCompanies, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
+	import { loadCompanies, loadHistory, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
+	import PayHistory from '#lib/PayHistory.svelte';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
 	import TimelineStory from '#lib/TimelineStory.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
@@ -20,6 +21,7 @@
 	const sections = [
 		{ id: 'hook', label: 'Start' },
 		{ id: 'timeline', label: 'Timeline' },
+		{ id: 'history', label: 'History' },
 		{ id: 'sectors', label: 'Sectors' },
 		{ id: 'drivers', label: 'CEO or worker pay?' },
 		{ id: 'poverty', label: 'Poverty line' },
@@ -50,8 +52,10 @@
 	let selectedTicker = $state('AMZN');
 	let selectedCompany = $derived(data?.find((d) => d.ticker === selectedTicker) ?? null);
 
+	let history = $state.raw(null);
+
 	onMount(async () => {
-		data = await loadCompanies();
+		[data, history] = await Promise.all([loadCompanies(), loadHistory()]);
 	});
 </script>
 
@@ -112,9 +116,18 @@
 		{/if}
 	</section>
 
-	<!-- Rising insight 2 -->
+	<!-- Rising insight 2: real history, right after the imagined time of the timeline. -->
+	<section id="history">
+		<p class="kicker">Part 2 · History since 1965</p>
+		<h2>How did the gap get this big?</h2>
+		{#if history}
+			<PayHistory {history} />
+		{/if}
+	</section>
+
+	<!-- Rising insight 3 -->
 	<section id="sectors">
-		<p class="kicker">Part 2 · Sectors</p>
+		<p class="kicker">Part 3 · Sectors</p>
 		<h2>Which sectors have the biggest gaps?</h2>
 		<p>
 			A sector is a group of similar businesses, like banks or grocery chains. The bars show the
@@ -161,9 +174,9 @@
 		{/if}
 	</section>
 
-	<!-- Rising insight 3 -->
+	<!-- Rising insight 4 -->
 	<section id="drivers">
-		<p class="kicker">Part 3 · CEO pay or worker pay?</p>
+		<p class="kicker">Part 4 · CEO pay or worker pay?</p>
 		<h2>Is the gap caused by high CEO pay or low worker pay?</h2>
 		<p>
 			It can be either. Amazon's gap comes from its <span class="ceo">CEO's $212.7 million</span>.
@@ -196,9 +209,9 @@
 		{/if}
 	</section>
 
-	<!-- Rising insight 4 -->
+	<!-- Rising insight 5 -->
 	<section id="poverty">
-		<p class="kicker">Part 4 · Poverty line</p>
+		<p class="kicker">Part 5 · Poverty line</p>
 		<h2>At 34 companies, the median worker is paid below the poverty line</h2>
 		<p>
 			The poverty line for a family of four was $26,500 in 2021. At <strong>34</strong> S&amp;P 500

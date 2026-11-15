@@ -135,8 +135,8 @@
 			<p>Search for a company, or click any dot on the timeline.</p>
 			<CompanySearch {data} selected={picked} onpick={(d) => (picked = d)} />
 			<TimeCompare company={picked} />
-			<a class="next" href="#sectors">
-				Next: which sectors have the biggest gaps? <span class="arrow" aria-hidden="true">↓</span>
+			<a class="next" href="#history">
+				Next: was the gap always this big? <span class="arrow" aria-hidden="true">↓</span>
 			</a>
 		</div>
 	</div>

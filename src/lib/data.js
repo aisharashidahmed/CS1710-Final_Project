@@ -6,6 +6,16 @@ export async function loadCompanies() {
 	return d3.csv(asset('/data/companies.csv'), parseRow);
 }
 
+// U.S. history, 1965–2024, cleaned by scripts/clean-history.js (npm run clean:history).
+// payRatio = EPI CEO-to-worker pay ratio; unionShare = percent of workers in a union.
+export async function loadHistory() {
+	return d3.csv(asset('/data/history.csv'), (d) => ({
+		year: +d.year,
+		payRatio: +d.pay_ratio,
+		unionShare: +d.union_share
+	}));
+}
+
 export function parseRow(d) {
 	return {
 		ticker: d.ticker,
