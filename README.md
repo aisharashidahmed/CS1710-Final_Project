@@ -41,22 +41,22 @@ We present these limitations alongside the visualizations so that viewers can in
 This project was created for CS 1710: Data Visualization at Harvard University.
 ## Process book
 Our design process, research questions, sketches, voting process, and design-review notes are documented in the project process book.
-## Project status (Milestone 8, Prototype I)
-The site is one scrolling story page that follows our Milestone 7 storyboard:
+## Project status (Milestone 11, Prototype III)
+The site is one scrolling story page:
 
 | Section | Status |
 |---|---|
-| Hook: live counter of Amazon CEO vs. median worker pay | Working |
-| Pyramid timeline | Planned (placeholder) |
-| Sector bar chart + company dot plot (hover links, click filters) | Working D3 chart |
-| CEO vs. worker pay scatterplot + workdays card (click a company) | Working D3 chart |
-| Slope chart: CEO pay rank vs. pay ratio rank | Planned (placeholder) |
-| Below-the-poverty-line callout | Planned (placeholder) |
-| Most vs. least equal company in each sector | Planned (placeholder) |
-| Pay receipt (novel view) | Planned (placeholder) |
+| Hook: pay ratio definition and live counter of Amazon CEO vs. median worker pay | Working |
+| Part 1 · Timeline: scroll story that zooms from Berkshire (6:1) to Amazon (4454 BCE), then company search | Working D3 chart |
+| Part 2 · History: U.S. pay ratio and union membership, 1965–2024, linked hover, law markers | Working D3 chart |
+| Part 3 · Sectors: sector bar chart + company dot plot (hover links, click filters, log/regular scale) | Working D3 chart |
+| Part 4 · CEO or worker pay: scatterplot + workdays card, slope chart of CEO pay rank vs. ratio rank | Working D3 charts |
+| Part 5 · Poverty line: 34 companies whose median worker is below the poverty line | Working |
+| Main point: lowest vs. highest ratio company in each sector | Working D3 chart |
+| Pay receipt (novel view) with image download | Working |
 | Take action | Text |
 
-The current prototype uses one dataset: the Kaggle copy of AFL-CIO Executive Paywatch (492 S&P 500 companies, fiscal year 2021). The other sources above may be added in later milestones.
+The site uses two datasets: the Kaggle copy of AFL-CIO Executive Paywatch (492 S&P 500 companies, fiscal year 2021) and the Economic Policy Institute's State of Working America Data Library (U.S. history, 1965–2024).
 
 ## Running the site
 Requires Node.js.
@@ -71,7 +71,8 @@ Pushing to `main` deploys the site to GitHub Pages through `.github/workflows/de
 
 ## Data pipeline
 ```sh
-npm run clean
+npm run clean           # companies
+npm run clean:history   # history
 ```
 
 `scripts/clean.js` reads `data/raw/ceo_data_pay_merged_sp500.csv` and writes `static/data/companies.csv`, which the site loads. It:
@@ -81,19 +82,32 @@ npm run clean
 - drops rows with missing values (none in the current file)
 - adds `workdays` and `work_hours` (time for the CEO to earn the median worker's yearly pay), `start_year` (2021 − pay ratio; negative = BCE, shifted back one year because there is no year 0), `below_poverty` (median worker pay under the 2021 poverty line of $26,500 for a family of four), `ceo_pay_rank` and `ratio_rank`
 
+`scripts/clean-history.js` reads `data/raw/epi/ceo_pay_ratio.csv` and `data/raw/epi/historical_union_membership.csv` and writes `static/data/history.csv`: one row per year, 1965–2024, with `pay_ratio` (EPI's realized CEO-to-worker pay ratio for the 350 largest U.S. firms) and `union_share` (percent of workers in a union). See `data/raw/README.md` for details.
+
 ## Project structure
 ```
 data/raw/              original data, unchanged
-scripts/clean.js       data cleaning (npm run clean)
+scripts/clean.js       company data cleaning (npm run clean)
+scripts/clean-history.js  history data cleaning (npm run clean:history)
 static/data/           cleaned data loaded by the site
 src/routes/+page.svelte  the story page and shared chart state
 src/lib/               charts and helpers
-  data.js              loads companies.csv, formatting helpers
+  data.js              loads companies.csv and history.csv, formatting helpers
   Hook.svelte          live pay counter
+  TimelineStory.svelte scroll story around the timeline
+  PyramidTimeline.svelte  start-year timeline (unit chart)
+  TimeCompare.svelte   years, careers and CEO time for one company
+  CompanySearch.svelte type-to-search box
+  PayHistory.svelte    pay ratio and union membership, 1965–2024
+  SectionNav.svelte    sticky section menu
   SectorBars.svelte    sector bar chart
   CompanyStrip.svelte  company dot plot
   PayScatter.svelte    CEO vs. worker pay scatterplot
   WorkdaysCard.svelte  workdays detail for a clicked company
+  SlopeChart.svelte    CEO pay rank vs. pay ratio rank
+  PovertyCards.svelte  companies below the poverty line
+  SectorRange.svelte   lowest vs. highest ratio per sector
+  PayReceipt.svelte    pay receipt (novel view)
   Tooltip.svelte       hover details
-  Placeholder.svelte   boxes for charts not built yet
+  Placeholder.svelte   loading boxes
 ```
