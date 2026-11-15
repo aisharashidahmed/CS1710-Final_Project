@@ -21,7 +21,7 @@
 		{ id: 'hook', label: 'Start' },
 		{ id: 'timeline', label: 'Timeline' },
 		{ id: 'sectors', label: 'Sectors' },
-		{ id: 'drivers', label: 'Top or bottom?' },
+		{ id: 'drivers', label: 'CEO or worker pay?' },
 		{ id: 'poverty', label: 'Poverty line' },
 		{ id: 'message', label: 'Same industry' },
 		{ id: 'receipt', label: 'Pay receipt' },
@@ -78,20 +78,19 @@
 			</p>
 		</div>
 		<p class="about">
-			Every year, S&amp;P 500 companies must report what their CEO earned and what their
-			<span class="worker">median worker</span> (the employee in the middle of the pay scale)
-			earned. This page uses those reports for 492 companies in 2021. In four short parts, you'll see
-			how far back in history the gap reaches, which industries are worst, whether the gap comes from
-			the top or the bottom, and who is paid below the poverty line. Then you can look up your own
-			company and take its numbers to the bargaining table.
+			Since 2018, public U.S. companies have had to report two numbers every year: what their CEO was
+			paid, and what their <span class="worker">median worker</span> was paid. The median worker is
+			the one in the middle: half the company earns more, half earns less. We use these numbers for
+			492 S&amp;P 500 companies in 2021. At the end, you can look up your own company.
 		</p>
 		<p class="lede">
 			In 2021, <span class="ceo">Amazon's CEO</span> earned <strong>6,474 times</strong> what the
-			company's <span class="worker">median worker</span> earned. Watch that gap grow while you read.
+			company's <span class="worker">median worker</span> earned. Both counters started when you opened
+			this page.
 		</p>
 		<Hook />
 		<a class="scroll-cue" href="#timeline">
-			Every company tells a version of this story. Scroll to see where yours fits.
+			Amazon is the most extreme case. Scroll down to see where other companies land.
 			<span class="arrow" aria-hidden="true">↓</span>
 		</a>
 	</section>
@@ -99,12 +98,12 @@
 	<!-- Rising insight 1 -->
 	<section id="timeline">
 		<p class="kicker">Part 1 · Timeline</p>
-		<h2>When would you have had to start working?</h2>
+		<h2>How long would a worker need to earn the CEO's yearly pay?</h2>
 		<p>
-			A pay ratio is also the number of years the <span class="worker">median worker</span> would
-			need to work to earn what the <span class="ceo">CEO</span> made in one year. Count back from
-			2021, and you get the year that worker would have had to start. Scroll to go from a small gap
-			to the largest one.
+			A ratio of 190 to 1 means the <span class="worker">median worker</span> needs 190 years to
+			earn what the <span class="ceo">CEO</span> got in one year. Counting back from 2021 gives the
+			year they would have had to start working. Keep scrolling and the timeline zooms out, from the
+			smallest gap to the biggest.
 		</p>
 		{#if data}
 			<TimelineStory {data} />
@@ -117,7 +116,11 @@
 	<section id="sectors">
 		<p class="kicker">Part 2 · Sectors</p>
 		<h2>Which sectors have the biggest gaps?</h2>
-		<p>Every sector has a large gap, but the companies inside each sector differ even more.</p>
+		<p>
+			A sector is a group of similar businesses, like banks or grocery chains. The bars show the
+			typical pay ratio in each sector. The dots show every company, so you can see how much
+			companies in the same sector differ.
+		</p>
 		{#if data}
 			{@const focus = hoveredSector ?? selectedSector}
 			<!-- Bars and dots side by side, so linking and filtering show up next to the bar you touch. -->
@@ -160,12 +163,12 @@
 
 	<!-- Rising insight 3 -->
 	<section id="drivers">
-		<p class="kicker">Part 3 · Top or bottom?</p>
-		<h2>Is it high pay at the top, or low pay at the bottom?</h2>
+		<p class="kicker">Part 3 · CEO pay or worker pay?</p>
+		<h2>Is the gap caused by high CEO pay or low worker pay?</h2>
 		<p>
-			The companies with the most extreme ratios are not always the ones with the
-			<span class="ceo">highest-paid CEOs</span>. Sometimes the gap comes from
-			<span class="worker">very low worker pay</span>.
+			It can be either. Amazon's gap comes from its <span class="ceo">CEO's $212.7 million</span>.
+			McDonald's has the 5th-biggest gap, but its CEO is only the 125th-highest paid. Its gap comes
+			from its <span class="worker">median worker earning $8,897</span>.
 		</p>
 		{#if data}
 			<!-- Card beside the scatterplot, so clicking a dot updates the card right next to it. -->
@@ -196,10 +199,12 @@
 	<!-- Rising insight 4 -->
 	<section id="poverty">
 		<p class="kicker">Part 4 · Poverty line</p>
-		<h2>Below the poverty line</h2>
+		<h2>At 34 companies, the median worker is paid below the poverty line</h2>
 		<p>
-			At <strong>34</strong> S&amp;P 500 companies, the <span class="worker">median worker</span>
-			earns less than the poverty line for a family of four.
+			The poverty line for a family of four was $26,500 in 2021. At <strong>34</strong> S&amp;P 500
+			companies, the <span class="worker">median worker</span> earned less than that. Each card is
+			one of those companies, with its <span class="worker">worker's pay</span> next to its
+			<span class="ceo">CEO's pay</span>.
 		</p>
 		{#if data}
 			<PovertyCards {data} />
@@ -208,11 +213,12 @@
 
 	<!-- Main message -->
 	<section id="message">
-		<p class="kicker">Main message</p>
-		<h2>Same industry, different choices</h2>
+		<p class="kicker">The main point</p>
+		<h2>Companies in the same sector choose very different gaps</h2>
 		<p>
-			Competitors in the same sector have very different gaps, so the size of the gap is a company
-			decision, not an industry rule.
+			Each row is one sector. The left dot is the company with the smallest gap, and the right dot
+			is the company with the biggest. A long line means competitors pay very differently, so a big
+			gap is a company's choice, not a rule of its industry.
 		</p>
 		{#if data}
 			<SectorRange {data} {order} />
@@ -222,8 +228,11 @@
 	<!-- Solution -->
 	<section id="receipt">
 		<p class="kicker">Your company</p>
-		<h2>Get your company's pay receipt</h2>
-		<p>Pick a company and see when its CEO "earned" a year of your pay.</p>
+		<h2>Print your company's pay receipt</h2>
+		<p>
+			Search for a company to see its CEO's pay and its median worker's pay on one receipt. You can
+			download it as an image to share.
+		</p>
 		{#if data}
 			<PayReceipt {data} />
 		{/if}
@@ -234,7 +243,7 @@
 		<h2>Take action</h2>
 		<p>
 			Since 2018, the Dodd-Frank Act has required public companies to report their CEO-to-worker
-			pay ratio. That makes the gap something workers can look up and challenge.
+			pay ratio, so any worker can look it up.
 		</p>
 		<ol class="steps">
 			<li>
