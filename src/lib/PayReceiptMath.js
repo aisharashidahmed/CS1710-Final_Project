@@ -27,6 +27,27 @@ export function receiptNumbers(c) {
 	};
 }
 
+// Unit chart: worker-years per square. Picks the smallest power of ten (1, 10, 100, ...)
+// that keeps the chart at maxSquares or fewer. Returns null for missing or invalid input.
+export function squareUnit(value, maxSquares = 100) {
+	if (!ok(value)) return null;
+	let unit = 1;
+	while (value / unit > maxSquares) unit *= 10;
+	return unit;
+}
+
+// Full squares plus the exact share (0 to <1) of one last, partly filled square.
+// The visual is never rounded up: 64.74 squares = 64 full + one square filled 74%.
+export function squareLayout(value, maxSquares = 100) {
+	const unit = squareUnit(value, maxSquares);
+	if (!unit) return null;
+	const squares = value / unit;
+	// Tiny epsilon only absorbs floating-point noise (e.g. 38.0000000001), not real data.
+	const full = Math.floor(squares + 1e-9);
+	const partial = Math.max(0, squares - full) < 1e-9 ? 0 : squares - full;
+	return { unit, squares, full, partial, count: full + (partial > 0 ? 1 : 0) };
+}
+
 // Year a worker would have had to start (counting back from the reference year).
 // No year 0: 1 BCE is followed by 1 CE. Returns a signed astronomical-free label year.
 export function startYear(years) {

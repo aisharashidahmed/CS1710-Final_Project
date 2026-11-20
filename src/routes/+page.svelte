@@ -241,11 +241,10 @@
 	<!-- Main message -->
 	<section id="message">
 		<p class="kicker">The main point</p>
-		<h2>Companies in the same sector choose very different gaps</h2>
+		<h2>Same sector, different pay gaps</h2>
 		<p>
-			Each row is one sector. The <strong>left dot</strong> is the company with the smallest gap, and the
-			<strong>right dot</strong> is the company with the biggest. A long line means competitors pay very differently, so <strong>a big
-			gap is a company's choice</strong>, not a rule of its industry.
+			Each row connects the lowest and highest reported CEO-to-worker pay ratios among companies in one
+			sector in our dataset. Select a sector to compare the companies' CEO and median worker compensation.
 		</p>
 		{#if data}
 			<SectorRange {data} {order} />
