@@ -16,6 +16,15 @@ export async function loadHistory() {
 	}));
 }
 
+// Productivity vs. pay, 1948–2024, both indexes with 1948 = 100 (scripts/clean-history.js).
+export async function loadProductivity() {
+	return d3.csv(asset('/data/productivity.csv'), (d) => ({
+		year: +d.year,
+		productivity: +d.productivity,
+		pay: +d.pay
+	}));
+}
+
 export function parseRow(d) {
 	return {
 		ticker: d.ticker,

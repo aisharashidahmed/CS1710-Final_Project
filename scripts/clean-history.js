@@ -1,5 +1,6 @@
-// Cleans two EPI tables into static/data/history.csv, which the "How did we get here?" section loads.
-// Run with: npm run clean:history
+// Cleans EPI tables into two files the site loads. Run with: npm run clean:history
+//   static/data/history.csv       pay ratio and union membership, 1965-2024 (Part 2: History)
+//   static/data/productivity.csv  productivity vs. pay, 1948-2024 ("Where did the money go?")
 import { readFileSync, writeFileSync } from 'node:fs';
 import * as d3 from 'd3';
 
@@ -41,3 +42,34 @@ for (let year = FIRST; year <= LAST; year++) {
 
 writeFileSync(OUT, d3.csvFormat(rows) + '\n');
 console.log(`Wrote ${rows.length} years (${FIRST}–${LAST}) to ${OUT}`);
+
+// ---- Productivity vs. pay, 1948-2024 ----
+// Both are indexes with 1948 = 100. "Net productivity" = output per hour of work across the economy;
+// "Total compensation per hour" = a typical worker's hourly pay plus benefits, adjusted for inflation.
+const PRODUCTIVITY = 'data/raw/epi/productivity_and_pay_indexes.csv';
+const OUT_PRODUCTIVITY = 'static/data/productivity.csv';
+const PROD_FIRST = 1948;
+
+const indexByYear = d3.rollup(
+	read(PRODUCTIVITY).filter(
+		(d) => d.measure === 'Productivity and pay real index, base = 1948' && d.date_interval === 'year'
+	),
+	(v) => Object.fromEntries(v.map((d) => [d.group_value, +d.value])),
+	(d) => +d.year
+);
+
+const prodRows = [];
+for (let year = PROD_FIRST; year <= LAST; year++) {
+	const d = indexByYear.get(year);
+	const productivity = d?.['Net productivity (output per hour)'];
+	const pay = d?.['Total compensation per hour'];
+	if (productivity == null || pay == null) throw new Error(`Missing productivity data for ${year}`);
+	prodRows.push({
+		year,
+		productivity: Math.round(productivity * 10) / 10,
+		pay: Math.round(pay * 10) / 10
+	});
+}
+
+writeFileSync(OUT_PRODUCTIVITY, d3.csvFormat(prodRows) + '\n');
+console.log(`Wrote ${prodRows.length} years (${PROD_FIRST}–${LAST}) to ${OUT_PRODUCTIVITY}`);

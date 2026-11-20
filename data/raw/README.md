@@ -9,8 +9,9 @@ Original files, kept unchanged. `npm run clean` reads from here.
 
 ## `epi/`: Economic Policy Institute, State of Working America Data Library (data version 2026.9.22)
 
-National, yearly tables. `npm run clean:history` reads the first two and writes `static/data/history.csv` (1965–2024).
+National, yearly tables. `npm run clean:history` writes `static/data/history.csv` (pay ratio and union membership, 1965–2024) and `static/data/productivity.csv` (productivity vs. pay, 1948–2024).
 
 - `ceo_pay_ratio.csv`: U.S. CEO-to-worker pay ratio, 1965–2025. We use the "realized" measure (stock options counted when cashed in). EPI uses the 350 largest U.S. firms, so its ratio is higher than our S&P 500 median.
 - `historical_union_membership.csv`: share of workers who are union members, 1917–2024.
 - `union_wage_premium.csv`: how much more union workers earn than similar non-union workers, 2003–2024 (12.8% overall in 2024). Quoted in the text, not charted.
+- `productivity_and_pay_indexes.csv`: productivity (net output per hour of work) and a typical worker's hourly pay plus benefits, adjusted for inflation, as indexes with 1948 = 100. We use the yearly rows ("base = 1948"), 1948–2024.
