@@ -95,7 +95,7 @@
 		</p>
 		<Hook />
 		<a class="scroll-cue" href="#timeline">
-			Amazon is <strong>the most extreme case</strong>. Scroll down to see where other companies land.
+			Amazon is <strong>the most extreme case.</strong> Scroll down to see where other companies land.
 			<span class="arrow" aria-hidden="true">↓</span>
 		</a>
 	</section>
