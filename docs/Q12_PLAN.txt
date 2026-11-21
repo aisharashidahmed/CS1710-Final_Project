@@ -1,0 +1,226 @@
+Q12 PLAN: HOW MUCH OF THEIR PAY GOES TO BASIC NEEDS?
+=====================================================
+For: Aisha / Kayleen (and the Claude or Copilot session helping them).
+Goes in: Part 5 (Poverty line), right after the poverty cards.
+Final submission due Sun Nov 30, 11:59pm. Read CLAUDE.md in the repo first.
+
+
+----------------------------------------------------------------
+1. THE QUESTION AND THE ONE-SENTENCE ANSWER WE WANT
+----------------------------------------------------------------
+Q12 (from Milestone 3/4): "How much of each person's income is consumed by
+basic necessities compared to their CEO?"
+
+What the reader should take away, e.g.:
+  "At Dollar Tree, basic needs (housing, food, transportation and health
+   care) cost about X% of the median worker's pay. For the CEO, about 0.X%."
+
+It belongs in Part 5 because Part 5 is about pay too low to live on.
+
+
+----------------------------------------------------------------
+2. THE DATA
+----------------------------------------------------------------
+Source: U.S. Bureau of Labor Statistics (BLS), Consumer Expenditure Survey,
+Table 1101 "Quintiles of income before taxes", calendar year 2021.
+
+The 2021 file is ALREADY in the repo:
+  data/raw/bls/cu-income-quintiles-before-taxes-2021.xlsx
+(Download links are in section 9 if you need them.)
+
+The table splits U.S. households ("consumer units") into five equal groups by
+income, lowest 20% to highest 20%. Rows we need (2021 file, checked):
+
+  Row label                        What to take          2021 values (lowest .. highest)
+  -------------------------------  --------------------  ----------------------------------------------
+  "Lower limit" (row 5)            income where each     n.a., 24,128, 46,506, 78,259, 129,534
+                                   group starts
+  "Income before taxes" (row 9)    the "Mean" row        13,165, 34,767, 61,214, 100,527, 226,386
+  "Food" (row 60)                  the "Mean" row        4,875, 5,808, 7,367, 9,407, 13,973
+  "Housing" (row 202)              the "Mean" row        12,854, 16,672, 19,947, 24,997, 38,526
+  "Transportation" (row 404)       the "Mean" row        4,273, 7,988, 10,285, 12,984, 19,204
+  "Healthcare" (row 465)           the "Mean" row        3,078, 4,252, 4,802, 6,359, 8,738
+
+  Necessities (sum of the four):                         25,080, 34,720, 42,401, 53,747, 80,441
+
+Use the column for each quintile ("Lowest 20 percent" ... "Highest 20
+percent"), not "All consumer units".
+
+IMPORTANT: the table's "Share" rows are each item's share of total SPENDING,
+not of income. Don't use them. Compute shares of PAY ourselves (section 4).
+
+
+----------------------------------------------------------------
+3. FILES TO ADD (follow the repo's pattern)
+----------------------------------------------------------------
+  data/raw/bls/cu-income-quintiles-before-taxes-2021.xlsx   ALREADY ADDED (original, unchanged)
+  data/raw/bls/necessities_2021.csv     the 5 quintiles typed in by hand from the
+                                        xlsx (easier than parsing Excel; no new
+                                        library needed). Columns:
+                                          quintile (1-5), lower_limit, income_mean,
+                                          food, housing, transportation, healthcare
+  scripts/clean-necessities.js          reads necessities_2021.csv, adds
+                                          necessities = food + housing +
+                                          transportation + healthcare,
+                                        writes static/data/necessities.csv
+  package.json                          add  "clean:necessities": "node scripts/clean-necessities.js"
+  src/lib/data.js                       add  loadNecessities() (same pattern as loadHistory())
+  src/lib/NecessitiesCard.svelte        NEW chart file (owned by Aisha/Kayleen)
+  src/routes/+page.svelte               Ash places <NecessitiesCard> in Part 5 (ask Ash)
+  DATA.md                               add a section for necessities.csv
+  data/raw/README.md                    add the BLS source
+
+Ask Ash before editing data.js, +page.svelte, DATA.md or README files
+(shared files). Or send Ash the code to add.
+
+
+----------------------------------------------------------------
+4. THE MATH (keep it exactly like this, for truthfulness)
+----------------------------------------------------------------
+For a picked company:
+
+  WORKER
+  1. Find the worker's income group: the highest quintile whose lower_limit
+     <= the company's median worker pay (quintile 1 if below quintile 2's
+     lower limit).
+  2. needs = that quintile's necessities (food + housing + transportation
+     + healthcare), in dollars per year.
+  3. workerShare = needs / median worker pay.
+     If workerShare > 1, say "more than their whole pay": low-income
+     households often spend more than they earn (in 2021 the lowest group
+     spent $30,869 on everything with $13,165 of income).
+
+  CEO (an estimate, and labeled as one)
+  4. ceoNeeds = the HIGHEST quintile's necessities (the closest data we have).
+  5. ceoShare = ceoNeeds / CEO pay.
+  6. Always say: "estimate: the top 20% of households is the closest group in
+     the data. CEOs likely spend more, but it would still be a tiny share of
+     their pay."
+
+Do not round until the number is shown. Show shares to 1 decimal place
+(0.1% for the CEO is fine, use "<0.1%" if smaller).
+
+
+----------------------------------------------------------------
+5. THE VISUALIZATION (NecessitiesCard.svelte)
+----------------------------------------------------------------
+Answers the TF's "make the cards visual" feedback. Build this design.
+
+LAYOUT (one block per person: the median worker, then the CEO)
+
+  Median worker   Pay          [################ $13,490 ]|
+                  Basic needs  [hous.|food|trans.|health ]|////////////////]
+                                                          |<---- bracket --->|
+                                     Short by $11,590: needs cost 86% more than their pay
+                                                    "100% of pay" ^
+
+  CEO             Pay          [############################ $10,249,698 ]
+                  Basic needs  [|  <- a thin sliver
+                  Basic needs: 0.8% of pay (estimate)
+
+  - Company search: reuse src/lib/CompanySearch.svelte. Start on Dollar Tree
+    (DLTR); Ross (ROST) is another strong example.
+  - For EACH person, two bars on the SAME dollar scale (that person's own
+    scale, from $0 to max(pay, needs)):
+      * "Pay": one solid bar (worker = var(--worker), CEO = var(--ceo)),
+        with the dollar amount inside it when it fits.
+      * "Basic needs": a stacked bar right under it, in four colored pieces
+        (housing, food, transportation, health care), in that order.
+  - "100% of pay": a thick (2.5px) #111 line through BOTH bars where the pay
+    bar ends, labeled "100% of pay" above it. This is the reference point.
+  - When needs > pay (the shortfall):
+      * the needs bar runs past the line; shade the part past the line with a
+        light diagonal hatch over the colors,
+      * a bracket under that part,
+      * a bold label: "Short by $X: needs cost Y% more than their pay".
+    This is the key moment: it must be obvious that everything past the line
+    is money needed for basic needs that their pay doesn't cover.
+  - When needs <= pay: a label "Basic needs: X% of pay" (add "(estimate)" for
+    the CEO).
+  - Hover a piece: Tooltip.svelte with the item and its dollars a year.
+  - A legend above the chart (on var(--card)): "Basic needs:" then a swatch
+    and name for each of the four pieces.
+  - One takeaway sentence under it (section 1), e.g. "At Dollar Tree, Inc.,
+    basic needs cost 186% of the median worker's pay (more than they earn).
+    For the CEO: about 0.8%."
+
+COLORS FOR THE FOUR NEEDS: THE OWNER DECIDES
+  The four needs are different categories, so they need four different
+  colors. None may be the site's blue (workers), red (CEOs) or purple
+  (companies). Keep rose for health care; don't use violet. Try these three
+  candidate sets in the chart, and check each one with Chrome's color-vision
+  simulator: DevTools > More tools > Rendering > "Emulate vision
+  deficiencies" (protanopia, deuteranopia, tritanopia, achromatopsia =
+  grayscale).
+
+    Set                    Housing    Food       Transportation  Health care
+    A: Okabe-Ito           #009E73    #E69F00    #8C510A         #CC6677
+    B: Earth + teal        #4e6e58    #d08c2e    #2a9d8f         #c4566b
+    C: Green/gold/slate    #117733    #DDAA33    #5A6E7F         #CC6677
+
+  How to choose: in EVERY simulated mode (especially deuteranopia, the most
+  common, and grayscale, for printed process books), each piece must still
+  look different from the piece next to it. Neighbors should differ in
+  lightness, not just hue. A and C were expected to hold up best. Pick one,
+  then:
+    - define the four colors once at the top of NecessitiesCard.svelte as
+      named constants (e.g. const NEED_COLORS = { housing: '#...', ... }),
+    - write in the process book which set you picked and why (with a
+      screenshot of the color-blind check).
+
+Look and feel (from CLAUDE.md):
+  - No white backgrounds: use var(--card) for the legend block.
+  - Wrap the SVG in <div class="chart">; fixed viewBox, width 100%.
+  - Hover outline #111; transitions with DURATION/easing from #lib/motion.js
+    (bars grow when the company changes).
+  - When storing the picked company, use $state.raw(...).
+  - Plain, short sentences like the rest of the page.
+
+
+----------------------------------------------------------------
+6. CAVEATS TO SHOW (small gray note under the chart)
+----------------------------------------------------------------
+  - Spending is the average for U.S. households in the same income group,
+    from the BLS Consumer Expenditure Survey (2021). Households can have more
+    than one earner, so this is an estimate for one worker's pay.
+  - The CEO's share uses the top 20% of households (the highest group in the
+    data), so it's an estimate. CEOs likely spend more.
+  - Basic needs here = housing, food, transportation and health care.
+
+
+----------------------------------------------------------------
+7. HOW TO CHECK IT (before pushing)
+----------------------------------------------------------------
+  - npm run clean:necessities, then open static/data/necessities.csv: 5 rows,
+    necessities = the sum of the four columns.
+  - Hand-check one company with a calculator. Worked example, Dollar Tree:
+      median pay $13,490 is below $24,128, so the lowest group.
+      needs = 4,875 + 12,854 + 4,273 + 3,078 = $25,080
+      workerShare = 25,080 / 13,490 = 185.9%  (more than their whole pay)
+      CEO: top group needs = $80,441; CEO pay $10,249,698
+      ceoShare = 80,441 / 10,249,698 = 0.8%  (estimate)
+    The chart must show these same numbers.
+  - npm run build passes; npm run dev shows the card in Part 5.
+  - Commit only your own files; pull before and after.
+
+
+----------------------------------------------------------------
+8. PROCESS BOOK
+----------------------------------------------------------------
+  - Q12 status: built (Part 5). Note the CEO estimate and the household
+    vs. worker caveat.
+  - Screenshot of the card with Dollar Tree (or whichever company you start on).
+
+
+----------------------------------------------------------------
+9. 2021 DOWNLOAD LINK
+----------------------------------------------------------------
+Table 1101, Quintiles of income before taxes, Consumer Expenditure Surveys 2021:
+  xlsx: https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2021.xlsx
+  pdf:  https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2021.pdf
+  Listing page: https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error.htm
+
+bls.gov blocks scripts, so open these in a web browser. If bls.gov won't
+load, an archived copy of the xlsx is here:
+  http://web.archive.org/web/20240926211735/https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2021.xlsx
+Cite the bls.gov link, not the archive.
