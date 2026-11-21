@@ -279,12 +279,22 @@
 
 		<h3 class="sub-heading">What if companies shared their profits with workers?</h3>
 		<p>
-			Pick a company and move the slider. Its 2021 profit splits into what the company keeps and
-			what goes to workers, divided equally among every employee.
+			That extra value shows up as <strong>profit</strong>. Pick a company and move the slider: its
+			2021 profit splits into what the company keeps and what goes to workers,
+			<strong>divided equally among every employee</strong>. At most companies, sharing even 10% of
+			profit is worth far more to each worker than the CEO's <strong>entire</strong> paycheck.
 		</p>
 		{#if profits}
 			<ProfitRiver data={profits} />
 		{/if}
+		<p class="source-note">
+			This is a what-if: profit also pays for investment and goes to shareholders. Profit and
+			employees come from each company's 2021 annual report (10-K) to the SEC; for companies whose
+			year ends mid-year, it is the year ending in 2022, to match the pay data. Employee counts
+			include part-time workers. We show 43 companies whose workers are mostly in the U.S., and
+			left out franchise restaurants and hotels, whose employee counts leave out most of the people
+			who work under their name.
+		</p>
 	</section>
 
 	<!-- Solution -->
@@ -323,6 +333,11 @@
 				<strong>Bargain together.</strong> In 2024, union workers earned about
 				<span class="worker">13% more</span> than similar workers without a union. As union membership
 				fell, the gap grew (see <a href="#history">Part 2</a>).
+			</li>
+			<li>
+				<strong>Ask where the profit goes.</strong> A company's profit is in its annual report
+				(10-K). Divide it by the number of employees to see what even a small share would mean for
+				each worker (see <a href="#profits">the profit river</a>).
 			</li>
 		</ol>
 	</section>
