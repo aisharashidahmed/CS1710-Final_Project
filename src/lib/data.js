@@ -39,6 +39,20 @@ export async function loadProfits() {
 	}));
 }
 
+// Household spending on basic needs by income group (BLS 2021, scripts/clean-necessities.js), for Part 5.
+export async function loadNecessities() {
+	return d3.csv(asset('/data/necessities.csv'), (d) => ({
+		quintile: +d.quintile,
+		lowerLimit: +d.lower_limit,
+		incomeMean: +d.income_mean,
+		food: +d.food,
+		housing: +d.housing,
+		transportation: +d.transportation,
+		healthcare: +d.healthcare,
+		necessities: +d.necessities
+	}));
+}
+
 export function parseRow(d) {
 	return {
 		ticker: d.ticker,

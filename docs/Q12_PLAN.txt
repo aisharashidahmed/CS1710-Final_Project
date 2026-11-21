@@ -1,6 +1,6 @@
 Q12 PLAN: HOW MUCH OF THEIR PAY GOES TO BASIC NEEDS?
 =====================================================
-For: Aisha / Kayleen (and the Claude or Copilot session helping them).
+For: whoever takes this task (and the Claude or Copilot session helping them).
 Goes in: Part 5 (Poverty line), right after the poverty cards.
 Final submission due Sun Nov 30, 11:59pm. Read CLAUDE.md in the repo first.
 
@@ -51,27 +51,32 @@ not of income. Don't use them. Compute shares of PAY ourselves (section 4).
 
 
 ----------------------------------------------------------------
-3. FILES TO ADD (follow the repo's pattern)
+3. WHAT'S ALREADY DONE, AND THE ONE FILE YOU EDIT
 ----------------------------------------------------------------
-  data/raw/bls/cu-income-quintiles-before-taxes-2021.xlsx   ALREADY ADDED (original, unchanged)
-  data/raw/bls/necessities_2021.csv     the 5 quintiles typed in by hand from the
-                                        xlsx (easier than parsing Excel; no new
-                                        library needed). Columns:
-                                          quintile (1-5), lower_limit, income_mean,
-                                          food, housing, transportation, healthcare
-  scripts/clean-necessities.js          reads necessities_2021.csv, adds
-                                          necessities = food + housing +
-                                          transportation + healthcare,
-                                        writes static/data/necessities.csv
-  package.json                          add  "clean:necessities": "node scripts/clean-necessities.js"
-  src/lib/data.js                       add  loadNecessities() (same pattern as loadHistory())
-  src/lib/NecessitiesCard.svelte        NEW chart file (owned by Aisha/Kayleen)
-  src/routes/+page.svelte               Ash places <NecessitiesCard> in Part 5 (ask Ash)
-  DATA.md                               add a section for necessities.csv
-  data/raw/README.md                    add the BLS source
+Ash already set up everything around the chart:
+  data/raw/bls/cu-income-quintiles-before-taxes-2021.xlsx   the BLS table, unchanged
+  data/raw/bls/necessities_2021.csv     the 5 income groups, typed in from it
+  scripts/clean-necessities.js          npm run clean:necessities
+  static/data/necessities.csv           5 rows, ready to use
+  src/lib/data.js                       loadNecessities()
+  src/routes/+page.svelte               already places the card in Part 5:
+                                          <NecessitiesCard {data} {necessities} />
+  DATA.md, data/raw/README.md           already document the data
 
-Ask Ash before editing data.js, +page.svelte, DATA.md or README files
-(shared files). Or send Ash the code to add.
+YOUR ONE FILE: src/lib/NecessitiesCard.svelte
+  It is currently a "Coming soon" placeholder. Replace the placeholder with
+  the chart. It already receives two props:
+    data         every company (fields: see parseRow in src/lib/data.js;
+                 you need company, ticker, workerPay, ceoPay)
+    necessities  5 income groups, quintile 1 (lowest) to 5 (highest):
+                 { quintile, lowerLimit, incomeMean, food, housing,
+                   transportation, healthcare, necessities }
+                 (necessities = food + housing + transportation + healthcare)
+
+Don't edit any other file. If you need something changed elsewhere, ask Ash.
+Deadline: push by Mon Nov 24 (code freeze). If it isn't ready, Ash replaces
+the placeholder with a short "planned" note so the final site has no
+"Coming soon" box.
 
 
 ----------------------------------------------------------------
@@ -191,8 +196,6 @@ Look and feel (from CLAUDE.md):
 ----------------------------------------------------------------
 7. HOW TO CHECK IT (before pushing)
 ----------------------------------------------------------------
-  - npm run clean:necessities, then open static/data/necessities.csv: 5 rows,
-    necessities = the sum of the four columns.
   - Hand-check one company with a calculator. Worked example, Dollar Tree:
       median pay $13,490 is below $24,128, so the lowest group.
       needs = 4,875 + 12,854 + 4,273 + 3,078 = $25,080

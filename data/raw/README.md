@@ -23,3 +23,8 @@ National, yearly tables. `npm run clean:history` writes `static/data/history.csv
 `npm run clean:profits` joins it with `companies.csv` and writes `static/data/profits.csv`. It keeps only companies whose workforce is mostly in the U.S., and whose employee count covers the workers behind the median pay. Left out: franchises (McDonald's, Yum!, Domino's), mostly non-U.S. workforces (Coca-Cola, PepsiCo, P&G, Pfizer, Visa, Oracle), and hotels (Marriott, Hilton). The reasons are listed in `scripts/clean-profits.js`.
 
 Employee counts are each company's own figure: most are rounded "approximately" headcounts that include part-time workers; a few are full-time or full-time equivalents (Apple, Microsoft, Netflix, Oracle, Verizon, Comcast, Delta).
+
+## `bls/`: Bureau of Labor Statistics, Consumer Expenditure Survey 2021
+
+- `cu-income-quintiles-before-taxes-2021.xlsx`: Table 1101, average yearly household spending by quintile of income before taxes, 2021. From https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2021.xlsx
+- `necessities_2021.csv`: the rows we use, typed in from the table (the "Mean" rows for income before taxes, food, housing, transportation and healthcare, plus each group's lower income limit). `npm run clean:necessities` writes `static/data/necessities.csv`.

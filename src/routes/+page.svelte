@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	import { loadCompanies, loadHistory, loadProductivity, loadProfits, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
+	import { loadCompanies, loadHistory, loadProductivity, loadProfits, loadNecessities, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
 	import PayHistory from '#lib/PayHistory.svelte';
 	import ProductivityPay from '#lib/ProductivityPay.svelte';
 	import ProfitRiver from '#lib/ProfitRiver.svelte';
@@ -12,6 +12,7 @@
 	// Teammates' charts (each person edits only their own file).
 	import SlopeChart from '#lib/SlopeChart.svelte';
 	import PovertyCards from '#lib/PovertyCards.svelte';
+	import NecessitiesCard from '#lib/NecessitiesCard.svelte';
 	import SectorRange from '#lib/SectorRange.svelte';
 	import PayReceipt from '#lib/PayReceipt.svelte';
 	import Hook from '#lib/Hook.svelte';
@@ -58,13 +59,15 @@
 	let history = $state.raw(null);
 	let productivity = $state.raw(null);
 	let profits = $state.raw(null);
+	let necessities = $state.raw(null);
 
 	onMount(async () => {
-		[data, history, productivity, profits] = await Promise.all([
+		[data, history, productivity, profits, necessities] = await Promise.all([
 			loadCompanies(),
 			loadHistory(),
 			loadProductivity(),
-			loadProfits()
+			loadProfits(),
+			loadNecessities()
 		]);
 	});
 </script>
@@ -245,6 +248,9 @@
 		</p>
 		{#if data}
 			<PovertyCards {data} />
+		{/if}
+		{#if data && necessities}
+			<NecessitiesCard {data} {necessities} />
 		{/if}
 	</section>
 

@@ -31,6 +31,7 @@ Three people work on this page at once, so **each chart lives in its own file an
 | `src/lib/PovertyCards.svelte` | 34 companies below the poverty line | Aisha / Kayleen |
 | `src/lib/SectorRange.svelte` | most vs. least equal company per sector (range plot) | Aisha / Kayleen |
 | `src/lib/PayReceipt.svelte` | pay receipt (novel view) | Aisha / Kayleen |
+| `src/lib/NecessitiesCard.svelte` | basic needs as a share of pay, Part 5 (plan: `docs/Q12_PLAN.txt`) | whoever takes it |
 
 - Each chart file starts as a "Coming soon" placeholder that describes the plan. Replace the placeholder with the chart.
 - A new helper component goes in a new file named after its chart (e.g. `PayReceiptSearch.svelte`). Shared files (`data.js`, `motion.js`, `Tooltip.svelte`, `Placeholder.svelte`, `+layout.svelte`) can be imported but not edited.

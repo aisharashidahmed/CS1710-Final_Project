@@ -87,6 +87,7 @@ Pushing to `main` deploys the site to GitHub Pages through `.github/workflows/de
 npm run clean           # companies.csv
 npm run clean:history   # history.csv and productivity.csv
 npm run clean:profits   # profits.csv (run npm run clean first)
+npm run clean:necessities  # necessities.csv
 ```
 
 Field-by-field descriptions of every cleaned file are in [`DATA.md`](DATA.md).
@@ -126,6 +127,7 @@ src/lib/               charts and helpers
   WorkdaysCard.svelte  workdays detail for a clicked company
   SlopeChart.svelte    CEO pay rank vs. pay ratio rank
   PovertyCards.svelte  companies below the poverty line
+  NecessitiesCard.svelte  basic needs as a share of pay (Part 5)
   SectorRange.svelte   lowest vs. highest ratio per sector
   ProductivityPay.svelte  productivity vs. pay, 1948–2024
   ProfitRiver.svelte   profit-sharing river (search + slider)
