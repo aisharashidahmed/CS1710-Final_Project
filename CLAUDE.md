@@ -26,7 +26,7 @@ Three people work on this page at once, so **each chart lives in its own file an
 
 | File | Chart | Owner |
 |---|---|---|
-| `src/lib/Hook.svelte`, `TimelineStory`, `PyramidTimeline`, `TimeCompare`, `CompanySearch`, `PayHistory`, `SectorBars`, `CompanyStrip`, `PayScatter`, `WorkdaysCard`, page layout and styles | everything else | Ash |
+| `src/lib/Hook.svelte`, `TimelineStory`, `PyramidTimeline`, `TimeCompare`, `CompanySearch`, `PayHistory`, `ProductivityPay`, `ProfitRiver`, `SectorBars`, `CompanyStrip`, `PayScatter`, `WorkdaysCard`, page layout and styles | everything else | Ash |
 | `src/lib/SlopeChart.svelte` | CEO pay rank vs. pay ratio rank | Aisha / Kayleen |
 | `src/lib/PovertyCards.svelte` | 34 companies below the poverty line | Aisha / Kayleen |
 | `src/lib/SectorRange.svelte` | most vs. least equal company per sector (range plot) | Aisha / Kayleen |
@@ -54,6 +54,8 @@ Three people work on this page at once, so **each chart lives in its own file an
 When a chart stores a picked or hovered company in state, use `$state.raw(...)`, not `$state(...)`. Plain `$state` wraps the object in a proxy, so `d === picked` stops matching the original company object (or store the `ticker` instead and compare tickers).
 
 `PayHistory` receives `history` instead: one row per year, 1965–2024, from `loadHistory()` (`year`, `payRatio` = EPI's CEO-to-worker ratio for the 350 largest U.S. firms, `unionShare` = percent of workers in a union). EPI's ratio is higher than our S&P 500 median (408:1 vs. 190:1 in 2021), so never mix the two in one chart.
+
+`ProductivityPay` and `ProfitRiver` also have their own data (loaded in `+page.svelte` with `loadProductivity()` and `loadProfits()`): see [`DATA.md`](DATA.md) for every field.
 
 `SectorRange` also receives `order`: sector names from highest to lowest median ratio, the same order as the sector bars. Helpers in `data.js`: `money` ($212,701,169), `moneyShort` ($213M), `ratioLabel` (6,474:1), and `SECTOR_EXAMPLES[sector]` (plain examples, e.g. "retail, restaurants, travel, cars").
 

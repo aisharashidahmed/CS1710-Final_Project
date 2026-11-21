@@ -41,7 +41,7 @@ We present these limitations alongside the visualizations so that viewers can in
 This project was created for CS 1710: Data Visualization at Harvard University.
 ## Process book
 Our design process, research questions, sketches, voting process, and design-review notes are documented in the project process book.
-## Project status (Milestone 11, Prototype III)
+## Project status
 The site is one scrolling story page:
 
 | Section | Status |
@@ -53,10 +53,20 @@ The site is one scrolling story page:
 | Part 4 · CEO or worker pay: scatterplot + workdays card, slope chart of CEO pay rank vs. ratio rank | Working D3 charts |
 | Part 5 · Poverty line: 34 companies whose median worker is below the poverty line | Working |
 | Main point: lowest vs. highest ratio company in each sector | Working D3 chart |
+| Where did the money go?: productivity vs. pay since 1948, then a profit-sharing river for 43 companies (search, 0–100% slider) | Working D3 charts |
 | Pay receipt (novel view) with image download | Working |
 | Take action | Text |
 
-The site uses two datasets: the Kaggle copy of AFL-CIO Executive Paywatch (492 S&P 500 companies, fiscal year 2021) and the Economic Policy Institute's State of Working America Data Library (U.S. history, 1965–2024).
+The site uses three sources: the Kaggle copy of AFL-CIO Executive Paywatch (492 S&P 500 companies, fiscal year 2021), the Economic Policy Institute's State of Working America Data Library (U.S. history, 1948–2024), and company profit and employee counts from 10-K annual reports on SEC EDGAR (43 companies). Every field is described in [`DATA.md`](DATA.md).
+
+## Libraries
+- [SvelteKit](https://svelte.dev/docs/kit) 3 with [Svelte](https://svelte.dev) 5 (runes) for the page and components
+- [D3](https://d3js.org) 7 for scales, axes, shapes, CSV loading and the hover search (`d3.Delaunay`)
+- [Vite](https://vite.dev) 8 to run and build the site
+- `@sveltejs/adapter-static` to build a static site for GitHub Pages
+- Fonts: Source Serif 4 and Source Sans 3 from Google Fonts
+
+All versions are in `package.json`. No other libraries are used.
 
 ## Running the site
 Requires Node.js.
@@ -71,9 +81,12 @@ Pushing to `main` deploys the site to GitHub Pages through `.github/workflows/de
 
 ## Data pipeline
 ```sh
-npm run clean           # companies
-npm run clean:history   # history
+npm run clean           # companies.csv
+npm run clean:history   # history.csv and productivity.csv
+npm run clean:profits   # profits.csv (run npm run clean first)
 ```
+
+Field-by-field descriptions of every cleaned file are in [`DATA.md`](DATA.md).
 
 `scripts/clean.js` reads `data/raw/ceo_data_pay_merged_sp500.csv` and writes `static/data/companies.csv`, which the site loads. It:
 - turns text money and ratios ("$25,670,673", "1,013:1") into numbers
@@ -82,17 +95,21 @@ npm run clean:history   # history
 - drops rows with missing values (none in the current file)
 - adds `workdays` and `work_hours` (time for the CEO to earn the median worker's yearly pay), `start_year` (2021 − pay ratio; negative = BCE, shifted back one year because there is no year 0), `below_poverty` (median worker pay under the 2021 poverty line of $26,500 for a family of four), `ceo_pay_rank` and `ratio_rank`
 
-`scripts/clean-history.js` reads `data/raw/epi/ceo_pay_ratio.csv` and `data/raw/epi/historical_union_membership.csv` and writes `static/data/history.csv`: one row per year, 1965–2024, with `pay_ratio` (EPI's realized CEO-to-worker pay ratio for the 350 largest U.S. firms) and `union_share` (percent of workers in a union). See `data/raw/README.md` for details.
+`scripts/clean-history.js` reads `data/raw/epi/ceo_pay_ratio.csv` and `data/raw/epi/historical_union_membership.csv` and writes `static/data/history.csv`: one row per year, 1965–2024, with `pay_ratio` (EPI's realized CEO-to-worker pay ratio for the 350 largest U.S. firms) and `union_share` (percent of workers in a union). It also reads `data/raw/epi/productivity_and_pay_indexes.csv` and writes `static/data/productivity.csv` (productivity vs. pay, 1948–2024). See `data/raw/README.md` for details.
+
+`scripts/clean-profits.js` reads `data/raw/profits_2021.csv` (net income and employees for 54 companies, from their 10-Ks), joins median worker pay and CEO pay from `companies.csv`, leaves out franchises, hotels and companies with mostly non-U.S. workforces (reasons listed in the script), and writes `static/data/profits.csv` (43 companies).
 
 ## Project structure
 ```
 data/raw/              original data, unchanged
 scripts/clean.js       company data cleaning (npm run clean)
-scripts/clean-history.js  history data cleaning (npm run clean:history)
+scripts/clean-history.js  history and productivity data cleaning (npm run clean:history)
+scripts/clean-profits.js  profit data cleaning (npm run clean:profits)
+DATA.md                what every field in static/data/ means
 static/data/           cleaned data loaded by the site
 src/routes/+page.svelte  the story page and shared chart state
 src/lib/               charts and helpers
-  data.js              loads companies.csv and history.csv, formatting helpers
+  data.js              loads every CSV in static/data/, formatting helpers
   Hook.svelte          live pay counter
   TimelineStory.svelte scroll story around the timeline
   PyramidTimeline.svelte  start-year timeline (unit chart)
@@ -107,6 +124,8 @@ src/lib/               charts and helpers
   SlopeChart.svelte    CEO pay rank vs. pay ratio rank
   PovertyCards.svelte  companies below the poverty line
   SectorRange.svelte   lowest vs. highest ratio per sector
+  ProductivityPay.svelte  productivity vs. pay, 1948–2024
+  ProfitRiver.svelte   profit-sharing river (search + slider)
   PayReceipt.svelte    pay receipt (novel view)
   Tooltip.svelte       hover details
   Placeholder.svelte   loading boxes
