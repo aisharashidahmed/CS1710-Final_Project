@@ -1,38 +1,41 @@
-# CEO Pay, Worker Pay, and the Cost of Living
+# The CEO Pay Gap
 
-CS 1710 final project.
+CS 1710 final project: a scrolling data story about the gap between CEO pay and median worker pay at S&P 500 companies.
 
 **Live site:** https://aisharashidahmed.github.io/CS1710-Final_Project/
 
 ## About the project
-This project examines the gap between executive compensation and worker pay in the United States. Through interactive data visualizations, we explore how CEO-to-worker pay disparities vary across companies and economic sectors, how worker pay compares with inflation and cost of living, and how alternative distributions of executive compensation could affect employees.
-Our primary audience is labor union representatives and other worker advocates. We want to make large financial differences easier to understand and provide evidence that can support conversations about fair compensation, workplace conditions, and the distribution of corporate wealth.
-## Questions we explore
-The project focuses on five connected questions:
-1. Has typical worker pay kept pace with inflation and the cost of living?
-2. Which economic sectors have the largest CEO-to-worker pay gaps?
-3. How would employees' compensation change if CEO bonuses or a portion of company profits were redistributed among workers?
-4. How does CEO-to-worker pay disparity relate to workers' everyday spending on necessities such as housing, food, transportation, and healthcare?
-5. How do individual companies compare with one another within and across sectors?
-We initially considered studying whether CEO-to-worker pay ratios were related to labor-investment efficiency. However, existing research did not support the direction of our original claim, so we removed that question from the final focus of the project.
+Since 2018, U.S. public companies have had to report their CEO's pay and their median worker's pay. This project turns those reports into an interactive story for **labor union representatives**: how big the gap is, how it grew, where it is worst, what drives it, and what could be different. The story ends with a pay receipt for the reader's own company and steps to take to the bargaining table.
+
+## Questions we answer
+1. **How big is the gap?** If a pay ratio is 190 to 1, the median worker needs 190 years to earn the CEO's yearly pay. The timeline shows the year each company's worker would have had to start working (Amazon: 4454 BCE).
+2. **Has it always been this big?** The U.S. pay ratio from 1965 to 2024, next to falling union membership.
+3. **Which sectors have the biggest gaps, and how do companies in the same sector compare?**
+4. **Is the gap caused by high CEO pay or low worker pay?** It can be either (Amazon vs. McDonald's).
+5. **Who is paid below the poverty line?** The 34 companies whose median worker earns under the poverty line. *Planned:* how much of that pay basic needs (housing, food, transportation, health care) would take.
+6. **Where did the money go?** Since 1973, productivity has grown much faster than pay. A profit-sharing chart shows what each worker would get if a company shared part of its 2021 profit.
+
+Questions we dropped or changed along the way:
+- **Redistributing CEO pay** became **sharing profits**: spreading a CEO's pay across all workers adds very little per worker (about $11 at Walmart), while even a small share of profit adds far more.
+- **Cost of living by state** was dropped: adjusting both the CEO's and the worker's pay by the same prices leaves the ratio unchanged.
+- **Pay ratios and labor-investment efficiency** was dropped: published research did not support our original claim.
+
 ## Data sources
-Our analysis draws on publicly available data from:
-- Federal Reserve Economic Data (FRED) for consumer price inflation
-- Economic Policy Institute for historical CEO-to-worker pay ratios and worker pay indices
-- AFL-CIO Executive Paywatch for executive and worker compensation data
-- AFL-CIO Company Pay Ratios for company-level pay comparisons
-- U.S. Securities and Exchange Commission filings for detailed executive compensation and employee information
-- Bureau of Economic Analysis for regional price parity and cost-of-living comparisons by state
-- Bureau of Labor Statistics Consumer Expenditure Survey for household spending patterns by income group
-- A Kaggle company compensation dataset for additional company-level comparisons
+- **AFL-CIO Executive Paywatch** (Kaggle copy): CEO pay, median worker pay and pay ratio for 492 S&P 500 companies, fiscal year 2021
+- **Economic Policy Institute**, State of Working America Data Library: U.S. CEO-to-worker pay ratio, union membership, productivity and pay, 1948–2024
+- **SEC EDGAR annual reports (10-K)**: 2021 profit and employee counts for 43 companies
+- **Bureau of Labor Statistics**, Consumer Expenditure Survey 2021: household spending on basic needs by income group (for the planned basic-needs view)
+
+Every field is described in [`DATA.md`](DATA.md); where each raw file came from is in [`data/raw/README.md`](data/raw/README.md).
+
 ## Important data limitations
-The available datasets do not measure every aspect of the pay gap in exactly the same way. In particular:
-- Companies define their own median employee, which can include part-time or non-U.S. workers.
-- Some datasets report pay ratios but not CEO compensation in dollar amounts.
-- Cost-of-living data is available by state and year, while company headquarters may not represent where most employees live.
-- Household spending data for the highest income group is used as an estimate for executive spending patterns; it does not represent CEOs directly.
-- Detailed executive compensation data is available for only a limited sample of companies.
-We present these limitations alongside the visualizations so that viewers can interpret the comparisons appropriately.
+- Each company chooses its own median employee, who can be part-time or outside the U.S. This explains some extreme ratios.
+- EPI's national pay ratio uses the 350 largest U.S. firms and a different method, so it is higher than our S&P 500 median (408:1 vs. 190:1 in 2021). The two are never mixed in one chart.
+- The profit-sharing chart covers 43 companies whose workforce is mostly in the U.S. Franchise restaurants and hotels are left out because their employee counts miss most of the people working under their name. For companies whose year ends mid-year, profit and pay are from the fiscal year ending in 2022.
+- Household spending is an average for households in an income group, not one worker's budget, and the top group (top 20% of households) can only estimate a CEO's spending.
+
+The site states these limits next to the charts they affect.
+
 ## Team
 - Ashle Sanchez
 - Aisha Ahmed
