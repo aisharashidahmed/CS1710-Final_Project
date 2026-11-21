@@ -354,8 +354,9 @@
 			year 2021.
 			{#if data}{data.length} companies loaded.{:else}Loading data…{/if}
 			Each company chooses its own "median employee" (sometimes part-time or outside the U.S.), which
-			explains some extreme ratios. History (Part 2) and the union pay figure: Economic Policy
-			Institute, State of Working America Data Library, 1965–2024.
+			explains some extreme ratios. History (Part 2), productivity and pay, and the union pay
+			figure: Economic Policy Institute, State of Working America Data Library, 1948–2024. Company
+			profit and employees: each company's 2021 annual report (10-K) on SEC EDGAR.
 		</p>
 		<p>
 			<strong>Made by</strong> Ashle Sanchez, Aisha Ahmed and Kayleen Mukire for CS 1710: Data
