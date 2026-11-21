@@ -25,6 +25,20 @@ export async function loadProductivity() {
 	}));
 }
 
+// Profit and employees for 43 companies (scripts/clean-profits.js), for the profit-sharing river.
+export async function loadProfits() {
+	return d3.csv(asset('/data/profits.csv'), (d) => ({
+		ticker: d.ticker,
+		company: d.company,
+		fiscalYearEnd: d.fiscal_year_end,
+		netIncome: +d.net_income,
+		employees: +d.employees,
+		workerPay: +d.median_worker_pay,
+		ceoPay: +d.ceo_pay,
+		note: d.note
+	}));
+}
+
 export function parseRow(d) {
 	return {
 		ticker: d.ticker,

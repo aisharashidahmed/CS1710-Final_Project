@@ -1,9 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	import { loadCompanies, loadHistory, loadProductivity, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
+	import { loadCompanies, loadHistory, loadProductivity, loadProfits, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
 	import PayHistory from '#lib/PayHistory.svelte';
 	import ProductivityPay from '#lib/ProductivityPay.svelte';
+	import ProfitRiver from '#lib/ProfitRiver.svelte';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
 	import TimelineStory from '#lib/TimelineStory.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
@@ -56,12 +57,14 @@
 
 	let history = $state.raw(null);
 	let productivity = $state.raw(null);
+	let profits = $state.raw(null);
 
 	onMount(async () => {
-		[data, history, productivity] = await Promise.all([
+		[data, history, productivity, profits] = await Promise.all([
 			loadCompanies(),
 			loadHistory(),
-			loadProductivity()
+			loadProductivity(),
+			loadProfits()
 		]);
 	});
 </script>
@@ -273,6 +276,15 @@
 		<p class="source-note">
 			Source: Economic Policy Institute, productivity and pay of U.S. workers, 1948–2024.
 		</p>
+
+		<h3 class="sub-heading">What if companies shared their profits with workers?</h3>
+		<p>
+			Pick a company and move the slider. Its 2021 profit splits into what the company keeps and
+			what goes to workers, divided equally among every employee.
+		</p>
+		{#if profits}
+			<ProfitRiver data={profits} />
+		{/if}
 	</section>
 
 	<!-- Solution -->
@@ -542,6 +554,11 @@
 
 	.lede {
 		font-size: 1.5rem;
+	}
+
+	.sub-heading {
+		margin: 2.5rem 0 0.5rem;
+		font-size: clamp(1.3rem, 2.2vw, 1.7rem);
 	}
 
 	.source-note {
