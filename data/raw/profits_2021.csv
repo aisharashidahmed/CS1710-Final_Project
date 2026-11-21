@@ -1,0 +1,55 @@
+ticker,company,fiscal_year_end,net_income_usd,employees_total,employees_us,notes
+AMZN,"Amazon.com, Inc.",2021-12-31,33364000000,1608000,,"approx 1,608,000 full- and part-time employees; no US count"
+MCD,McDonald's Corporation,2021-12-31,7545200000,200000,,"FRANCHISE: ~200,000 company employees; over 2 million work in franchised restaurants (excluded); over 75% outside US"
+BRK.B,Berkshire Hathaway Inc.,2021-12-31,89795000000,372000,,Net earnings include large investment gains (not operating earnings); ~77% of employees in US
+GOOGL,Alphabet Inc.,2021-12-31,76033000000,156500,,employees from MD&A table
+EXPE,"Expedia Group, Inc.",2021-12-31,12000000,14800,,"$12M attributable to Expedia; after preferred dividends/redemption, net LOSS to common stockholders -269,000,000"
+WMT,Walmart Inc.,2022-01-31,13673000000,2300000,1700000,counts rounded (approx 2.3M / 1.7M US)
+COST,Costco Wholesale Corporation,2022-08-28,5844000000,304000,202000,"our pay values match Costco FY ended Aug 28 2022 (proxy filed Dec 2022), not FY2021; FY2021 alt: NI 5,007,000,000, 288,000 / 192,000 US"
+SBUX,Starbucks Corporation,2021-10-03,4199300000,383000,245000,licensed-store workers excluded; median employee is a part-time barista in Canada
+TGT,Target Corporation,2022-01-29,6946000000,450000,,"full-time, part-time and seasonal; vast majority US"
+HD,"The Home Depot, Inc.",2022-01-30,16433000000,490600,437000,US 89.1%
+AAPL,Apple Inc.,2021-09-25,94680000000,154000,,"full-time equivalents, not headcount"
+KO,The Coca-Cola Company,2021-12-31,9771000000,79000,9400,median employee is a UK Costa barista; only ~12% of employees in US
+DIS,The Walt Disney Company,2021-10-02,1995000000,190000,,
+NKE,"NIKE, Inc.",2022-05-31,6046000000,79100,,our pay = FY ending May 2022
+UPS,"United Parcel Service, Inc.",2021-12-31,12890000000,534000,444000,excludes seasonal temps
+LOW,"Lowes Companies, Inc.",2022-01-28,8442000000,340000,,"~200,000 full-time + 140,000 part-time; primarily US, India, Canada"
+KR,The Kroger Co.,2022-01-29,1655000000,420000,,"over 420,000 (floor)"
+CVS,CVS Health Corporation,2021-12-31,7910000000,300000,,"as originally reported (later restated 8,001,000,000); primarily US"
+WBA,"Walgreens Boots Alliance, Inc.",2022-08-31,4337000000,325000,,our pay = FY ending Aug 2022; 78% US
+DG,Dollar General Corporation,2022-01-28,2399232000,163000,,headcount as of Feb 25 2022
+DLTR,"Dollar Tree, Inc.",2022-01-29,1327900000,210565,,"61,886 full-time + 148,679 part-time"
+TJX,"The TJX Companies, Inc.",2022-01-29,3282815000,340000,,"~340,000 worldwide"
+ROST,"Ross Stores, Inc.",2022-01-29,1722589000,100000,,full- and part-time
+BBY,"Best Buy Co., Inc.",2022-01-29,2454000000,105000,,US and Canada
+ULTA,"Ulta Beauty, Inc.",2022-01-29,985837000,40500,,"16,500 full-time + 24,000 part-time"
+CMG,"Chipotle Mexican Grill, Inc.",2021-12-31,652984000,97660,96443,all restaurants company-owned (no franchise workers)
+YUM,"Yum! Brands, Inc.",2021-12-31,1575000000,36000,23000,FRANCHISOR: excludes franchisee employees; counts rounded
+DPZ,"Domino's Pizza, Inc.",2022-01-02,510467000,13500,,"FRANCHISOR: franchisee employees excluded; ~6,100 part-time"
+MSFT,Microsoft Corporation,2022-06-30,72738000000,221000,122000,"our pay = FY ending June 2022; full-time only; FY2021 NI alt 61,271,000,000"
+META,"Meta Platforms, Inc.",2021-12-31,39370000000,71970,,
+NFLX,"Netflix, Inc.",2021-12-31,5116228000,11300,,full-time only; two co-CEOs
+NVDA,NVIDIA Corporation,2022-01-30,9752000000,22473,,
+INTC,Intel Corporation,2021-12-25,19868000000,121100,,CEO pay includes one-time new-hire grants
+ORCL,Oracle Corporation,2022-05-31,6717000000,143000,48000,"our pay = FY ending May 2022; full-time approx; FY2021 NI alt 13,746,000,000"
+PEP,"PepsiCo, Inc.",2021-12-25,7618000000,309000,129000,
+PG,The Procter & Gamble Company,2022-06-30,14742000000,106000,,our pay = FY ending June 2022; 26% of employees in US
+HSY,The Hershey Company,2021-12-31,1477512000,18990,,"16,620 full-time + 2,370 part-time"
+TSN,"Tyson Foods, Inc.",2022-10-01,3238000000,142000,124000,our pay = FY ending Oct 2022
+JPM,JPMorgan Chase & Co.,2021-12-31,46503000000,271025,,net income applicable to common; over 60% US
+BAC,Bank of America Corporation,2021-12-31,30557000000,208000,,net income applicable to common; 80% US
+WFC,Wells Fargo & Company,2021-12-31,20256000000,247848,,net income applicable to common; ~84% US
+V,Visa Inc.,2022-09-30,14957000000,26500,,our pay = FY ending Sept 2022; ~46% US
+F,Ford Motor Company,2021-12-31,17937000000,183000,,North America 99k incl. Canada/Mexico
+GM,General Motors Company,2021-12-31,10019000000,157000,98000,US = salaried 53k + hourly 45k
+FDX,FedEx Corporation,2022-05-31,3826000000,547000,,our pay = FY ending May 2022; 345k full-time + 202k part-time
+T,AT&T Inc.,2021-12-31,20081000000,203000,,headcount as of Jan 31 2022; includes WarnerMedia
+VZ,Verizon Communications Inc.,2021-12-31,22065000000,118400,,full-time equivalents; 89% US
+CMCSA,Comcast Corporation,2021-12-31,14159000000,189000,,full-time equivalents; ~70% US
+UNH,UnitedHealth Group Incorporated,2021-12-31,17285000000,350000,,
+PFE,Pfizer Inc.,2021-12-31,21979000000,79000,29000,
+XOM,Exxon Mobil Corporation,2021-12-31,23040000000,63000,,regular employees only; excludes contractors
+MAR,"Marriott International, Inc.",2021-12-31,1099000000,120000,97000,direct employees only; excludes ~205k at owner-employed managed hotels and franchisees
+HLT,"Hilton Worldwide Holdings, Inc.",2021-12-31,410000000,142000,,includes managed-hotel staff (not comparable with Marriott); excludes 223k franchisee/owner staff
+DAL,"Delta Air Lines, Inc.",2021-12-31,280000000,83000,81000,full-time equivalents

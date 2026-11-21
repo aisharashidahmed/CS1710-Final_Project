@@ -9,6 +9,7 @@
 		"preview": "vite preview",
 		"clean": "node scripts/clean.js",
 		"clean:history": "node scripts/clean-history.js",
+		"clean:profits": "node scripts/clean-profits.js",
 		"prepare": "svelte-kit sync || echo ''"
 	},
 	"devDependencies": {

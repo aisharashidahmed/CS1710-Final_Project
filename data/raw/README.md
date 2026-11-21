@@ -15,3 +15,11 @@ National, yearly tables. `npm run clean:history` writes `static/data/history.csv
 - `historical_union_membership.csv`: share of workers who are union members, 1917–2024.
 - `union_wage_premium.csv`: how much more union workers earn than similar non-union workers, 2003–2024 (12.8% overall in 2024). Quoted in the text, not charted.
 - `productivity_and_pay_indexes.csv`: productivity (net output per hour of work) and a typical worker's hourly pay plus benefits, adjusted for inflation, as indexes with 1948 = 100. We use the yearly rows ("base = 1948"), 1948–2024.
+
+## `profits_2021.csv`: company profit and employees (gathered by hand from SEC filings)
+
+54 well-known S&P 500 companies from our dataset. For each: net income (GAAP, attributable to the company; for banks, applicable to common stock) and year-end employees from the company's annual report (10-K) on SEC EDGAR. The fiscal year always matches our pay data, checked by matching the median worker pay in the company's proxy statement. For companies whose year ends mid-year (Costco, Microsoft, Oracle, Walgreens, P&G, Tyson, Visa, Nike, FedEx), that is the fiscal year ending in 2022.
+
+`npm run clean:profits` joins it with `companies.csv` and writes `static/data/profits.csv`. It keeps only companies whose workforce is mostly in the U.S., and whose employee count covers the workers behind the median pay. Left out: franchises (McDonald's, Yum!, Domino's), mostly non-U.S. workforces (Coca-Cola, PepsiCo, P&G, Pfizer, Visa, Oracle), and hotels (Marriott, Hilton). The reasons are listed in `scripts/clean-profits.js`.
+
+Employee counts are each company's own figure: most are rounded "approximately" headcounts that include part-time workers; a few are full-time or full-time equivalents (Apple, Microsoft, Netflix, Oracle, Verizon, Comcast, Delta).
