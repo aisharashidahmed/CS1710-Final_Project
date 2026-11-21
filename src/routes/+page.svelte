@@ -1,8 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
-	import { loadCompanies, loadHistory, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
+	import { loadCompanies, loadHistory, loadProductivity, sectorOrder, ratioLabel, SECTOR_EXAMPLES } from '#lib/data.js';
 	import PayHistory from '#lib/PayHistory.svelte';
+	import ProductivityPay from '#lib/ProductivityPay.svelte';
 	import CompanyStrip from '#lib/CompanyStrip.svelte';
 	import TimelineStory from '#lib/TimelineStory.svelte';
 	import PayScatter from '#lib/PayScatter.svelte';
@@ -26,6 +27,7 @@
 		{ id: 'drivers', label: 'CEO or worker pay?' },
 		{ id: 'poverty', label: 'Poverty line' },
 		{ id: 'message', label: 'Same industry' },
+		{ id: 'profits', label: 'Profits' },
 		{ id: 'receipt', label: 'Pay receipt' },
 		{ id: 'action', label: 'Take action' }
 	];
@@ -53,9 +55,14 @@
 	let selectedCompany = $derived(data?.find((d) => d.ticker === selectedTicker) ?? null);
 
 	let history = $state.raw(null);
+	let productivity = $state.raw(null);
 
 	onMount(async () => {
-		[data, history] = await Promise.all([loadCompanies(), loadHistory()]);
+		[data, history, productivity] = await Promise.all([
+			loadCompanies(),
+			loadHistory(),
+			loadProductivity()
+		]);
 	});
 </script>
 
@@ -249,6 +256,23 @@
 		{#if data}
 			<SectorRange {data} {order} />
 		{/if}
+	</section>
+
+	<!-- What could be different: where the money went, then what sharing profits would mean. -->
+	<section id="profits">
+		<p class="kicker">Where did the money go?</p>
+		<h2>Workers produce 4× more. Their pay grew 2.4×.</h2>
+		<p>
+			Until 1973, workers' pay grew as fast as what they produced. Since then, <strong>most of the extra value
+			workers create has gone to company owners and profits</strong> (the shaded gap), not to their
+			pay. Hover a year to compare.
+		</p>
+		{#if productivity}
+			<ProductivityPay data={productivity} />
+		{/if}
+		<p class="source-note">
+			Source: Economic Policy Institute, productivity and pay of U.S. workers, 1948–2024.
+		</p>
 	</section>
 
 	<!-- Solution -->
